@@ -5,7 +5,10 @@ import { StyleSheet, Text, View } from "react-native";
 export default function App() {
   return (
     <View style={styles.container}>
-      <Text>27 /12 / 2015</Text>
+      <Text>27 /12 / 2015
+        Puuure Love
+        I Love You
+      </Text>
       <StatusBar style="auto" />
     </View>
   );
