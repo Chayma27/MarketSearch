@@ -9,7 +9,7 @@ export default function App() {
         <Text style={styles.textBar}>Connexion</Text>
       </View>
       <View style={styles.container}>
-        <Text style={styles.Text}>I love You too </Text>
+        <Text style={styles.Text}>Identifiez-vous </Text>
         <StatusBar style="auto" />
       </View>
     </Fragment>
@@ -21,12 +21,13 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#EFF1F8",
     flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "center",
   },
   Text: {
-    fontSize: 20,
+    fontSize: 28,
     color: "black",
+    fontWeight: "700",
+    marginTop: "40%",
+    marginLeft: "2%",
   },
   statusBar: {
     backgroundColor: "#0c7a1e",
