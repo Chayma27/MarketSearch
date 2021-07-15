@@ -1,6 +1,12 @@
 import { StatusBar } from "expo-status-bar";
 import React, { Fragment } from "react";
-import { StyleSheet, Text, View, TextInput } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  TextInput,
+  TouchableOpacity,
+} from "react-native";
 
 export default function App() {
   return (
@@ -15,6 +21,12 @@ export default function App() {
           <TextInput style={styles.textInput} />
           <TextInput style={styles.textInput} />
         </View>
+        {/* <View style={styles.VButton}>
+          <Button title="Se connecter" color="white"  />
+        </View> */}
+        <TouchableOpacity style={styles.VButton}>
+          <Text style={styles.textButton}>Se connecter</Text>
+        </TouchableOpacity>
       </View>
     </Fragment>
   );
@@ -56,5 +68,21 @@ const styles = StyleSheet.create({
     marginHorizontal: "5%",
     marginVertical: "4%",
     backgroundColor: "white",
+  },
+  VButton: {
+    backgroundColor: "green",
+    width: "75%",
+    marginHorizontal: "14%",
+    marginVertical: "6%",
+    height: 70,
+    fontSize: 30,
+    borderRadius: 30,
+  },
+  textButton: {
+    color: "white",
+    textAlign: "center",
+    marginTop: 21,
+    fontSize: 25,
+    fontWeight: "700",
   },
 });
