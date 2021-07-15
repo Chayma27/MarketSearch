@@ -18,8 +18,22 @@ export default function App() {
         <Text style={styles.Text}>Identifiez-vous </Text>
         <StatusBar style="auto" />
         <View style={styles.containerInput}>
-          <TextInput style={styles.textInput} />
-          <TextInput style={styles.textInput} />
+          <TextInput
+            autoCorrect={false}
+            placeholderTextColor="#aaaaaa"
+            autoCompleteType="off"
+            placeholder="Identifiant"
+            style={styles.textInput}
+          />
+          <TextInput
+            autoCorrect={false}
+            placeholderTextColor="#aaaaaa"
+            autoCompleteType="password"
+            textContentType="password"
+            secureTextEntry={true}
+            placeholder="Mot de passe"
+            style={styles.textInput}
+          />
         </View>
         {/* <View style={styles.VButton}>
           <Button title="Se connecter" color="white"  />
@@ -68,6 +82,9 @@ const styles = StyleSheet.create({
     marginHorizontal: "5%",
     marginVertical: "4%",
     backgroundColor: "white",
+    fontSize: 22,
+    color: "black",
+    paddingLeft: "3%",
   },
   VButton: {
     backgroundColor: "green",
