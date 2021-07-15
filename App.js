@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import React, { Fragment } from "react";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, TextInput } from "react-native";
 
 export default function App() {
   return (
@@ -11,6 +11,10 @@ export default function App() {
       <View style={styles.container}>
         <Text style={styles.Text}>Identifiez-vous </Text>
         <StatusBar style="auto" />
+        <View style={styles.containerInput}>
+          <TextInput style={styles.textInput} />
+          <TextInput style={styles.textInput} />
+        </View>
       </View>
     </Fragment>
   );
@@ -40,5 +44,17 @@ const styles = StyleSheet.create({
     fontWeight: "600",
     textAlign: "center",
     marginTop: "2%",
+  },
+  containerInput: {
+    marginTop: 30,
+  },
+  textInput: {
+    borderWidth: 2,
+    height: 70,
+    borderColor: "#c6c6c6",
+    width: "90%",
+    marginHorizontal: "5%",
+    marginVertical: "4%",
+    backgroundColor: "white",
   },
 });
