@@ -35,12 +35,13 @@ export default function App() {
             style={styles.textInput}
           />
         </View>
-        {/* <View style={styles.VButton}>
-          <Button title="Se connecter" color="white"  />
-        </View> */}
         <TouchableOpacity style={styles.VButton}>
           <Text style={styles.textButton}>Se connecter</Text>
         </TouchableOpacity>
+        <View style={styles.Vlink}>
+          <Text style={styles.link}>Créer un compte</Text>
+          <Text style={styles.link}> Mot de passe oublié ? </Text>
+        </View>
       </View>
     </Fragment>
   );
@@ -87,7 +88,7 @@ const styles = StyleSheet.create({
     paddingLeft: "3%",
   },
   VButton: {
-    backgroundColor: "green",
+    backgroundColor: "#3f9d2f",
     width: "75%",
     marginHorizontal: "14%",
     marginVertical: "6%",
@@ -101,5 +102,15 @@ const styles = StyleSheet.create({
     marginTop: 21,
     fontSize: 25,
     fontWeight: "700",
+  },
+  Vlink: {
+    alignItems: "center",
+    marginVertical: "10%",
+  },
+  link: {
+    color: "#2b7bd6",
+    fontSize: 25,
+    marginBottom: 17,
+    fontWeight: "600",
   },
 });
