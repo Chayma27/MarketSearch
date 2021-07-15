@@ -1,5 +1,8 @@
 import { StatusBar } from "expo-status-bar";
 import React, { Fragment } from "react";
+import { Ionicons } from "@expo/vector-icons";
+import { FontAwesome, FontAwesome5 } from "@expo/vector-icons";
+
 import {
   StyleSheet,
   Text,
@@ -18,12 +21,25 @@ export default function App() {
         <Text style={styles.Text}>Identifiez-vous </Text>
         <StatusBar style="auto" />
         <View style={styles.containerInput}>
+          <FontAwesome
+            style={styles.userIcon}
+            name="user"
+            size={30}
+            color="#3B3636"
+          />
           <TextInput
             autoCorrect={false}
             placeholderTextColor="#aaaaaa"
+            placeholderStyle={{ fontWeight: "900" }}
             autoCompleteType="off"
             placeholder="Identifiant"
             style={styles.textInput}
+          />
+          <FontAwesome5
+            style={styles.keyIcon}
+            name="key"
+            size={30}
+            color="#3B3636"
           />
           <TextInput
             autoCorrect={false}
@@ -74,6 +90,7 @@ const styles = StyleSheet.create({
   },
   containerInput: {
     marginTop: 30,
+    position: "relative",
   },
   textInput: {
     borderWidth: 2,
@@ -85,7 +102,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     fontSize: 22,
     color: "black",
-    paddingLeft: "3%",
+    paddingLeft: "15%",
   },
   VButton: {
     backgroundColor: "#3f9d2f",
@@ -112,5 +129,19 @@ const styles = StyleSheet.create({
     fontSize: 25,
     marginBottom: 17,
     fontWeight: "600",
+  },
+  userIcon: {
+    position: "absolute",
+    marginTop: 27,
+    marginLeft: "8%",
+    fontSize: 48,
+    zIndex: 2,
+  },
+  keyIcon: {
+    position: "absolute",
+    marginTop: 135,
+    marginLeft: "8%",
+    fontSize: 40,
+    zIndex: 2,
   },
 });
