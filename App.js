@@ -15,7 +15,7 @@ export default function App() {
   return (
     <Fragment>
       <View style={styles.statusBar}>
-        <Text style={styles.textBar}>Connexion</Text>
+        <Text style={styles.textBar}>Connexion </Text>
       </View>
       <View style={styles.container}>
         <Text style={styles.Text}>Identifiez-vous </Text>
@@ -32,7 +32,7 @@ export default function App() {
             placeholderTextColor="#aaaaaa"
             placeholderStyle={{ fontWeight: "900" }}
             autoCompleteType="off"
-            placeholder="Identifiant"
+            placeholder="Identifiant *"
             style={styles.textInput}
           />
           <FontAwesome5
@@ -43,11 +43,12 @@ export default function App() {
           />
           <TextInput
             autoCorrect={false}
+            autoCompleteType="off"
             placeholderTextColor="#aaaaaa"
             autoCompleteType="password"
             textContentType="password"
             secureTextEntry={true}
-            placeholder="Mot de passe"
+            placeholder="Mot de passe *"
             style={styles.textInput}
           />
         </View>
