@@ -16,8 +16,10 @@ const styles = StyleSheet.create({
     backgroundColor: "#EFF1F8", // EFF1F8
   },
   text: {
-    fontSize: 18,
-    fontWeight: "400",
+    fontSize: 25,
+    fontWeight: "bold",
+    marginTop: "29%",
+    textAlign: "center",
   },
 });
 
