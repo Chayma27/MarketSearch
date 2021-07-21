@@ -2,16 +2,22 @@ import React from "react";
 import { Text, View, StyleSheet } from "react-native";
 
 const Inscription = () => {
+  const { container, text } = styles;
   return (
-    <View style={styles.Container}>
-      <Text> Screen Inscription</Text>
+    <View style={container}>
+      <Text style={text}>Créer un nouveau compte client</Text>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
-  Container: {
-    textAlign: "center",
+  container: {
+    flex: 1,
+    backgroundColor: "#EFF1F8", // EFF1F8
+  },
+  text: {
+    fontSize: 18,
+    fontWeight: "400",
   },
 });
 
