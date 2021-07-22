@@ -11,21 +11,30 @@ import {
 } from "react-native";
 
 const Connexion = () => {
+  const {
+    statusBar,
+    textBar,
+    container,
+    text,
+    containerInput,
+    userIcon,
+    keyIcon,
+    VButton,
+    textButton,
+    Vlink,
+    link,
+    textInput,
+  } = styles;
   return (
     <Fragment>
-      <View style={styles.statusBar}>
-        <Text style={styles.textBar}>Connexion</Text>
+      <View style={statusBar}>
+        <Text style={textBar}>Connexion</Text>
       </View>
-      <View style={styles.container}>
-        <Text style={styles.Text}>Identifiez-vous </Text>
+      <View style={container}>
+        <Text style={text}>Identifiez-vous </Text>
         <StatusBar style="auto" />
-        <View style={styles.containerInput}>
-          <FontAwesome
-            style={styles.userIcon}
-            name="user"
-            size={30}
-            color="#3B3636"
-          />
+        <View style={containerInput}>
+          <FontAwesome style={userIcon} name="user" size={30} color="#3B3636" />
           <TextInput
             autoCorrect={false}
             placeholderTextColor="#aaaaaa"
@@ -34,12 +43,7 @@ const Connexion = () => {
             placeholder="Identifiant *"
             style={styles.textInput}
           />
-          <FontAwesome5
-            style={styles.keyIcon}
-            name="key"
-            size={30}
-            color="#3B3636"
-          />
+          <FontAwesome5 style={keyIcon} name="key" size={30} color="#3B3636" />
           <TextInput
             autoCorrect={false}
             placeholderTextColor="#aaaaaa"
@@ -47,15 +51,15 @@ const Connexion = () => {
             textContentType="password"
             secureTextEntry={true}
             placeholder="Mot de passe *"
-            style={styles.textInput}
+            style={textInput}
           />
         </View>
-        <TouchableOpacity style={styles.VButton}>
-          <Text style={styles.textButton}>Se connecter</Text>
+        <TouchableOpacity style={VButton}>
+          <Text style={textButton}>Se connecter</Text>
         </TouchableOpacity>
-        <View style={styles.Vlink}>
-          <Text style={styles.link}>Créer un compte</Text>
-          <Text style={styles.link}> Mot de passe oublié ? </Text>
+        <View style={Vlink}>
+          <Text style={link}>Créer un compte</Text>
+          <Text style={link}> Mot de passe oublié ? </Text>
         </View>
       </View>
     </Fragment>
@@ -68,7 +72,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#EFF1F8",
     flexDirection: "column",
   },
-  Text: {
+  text: {
     fontSize: 28,
     color: "black",
     fontWeight: "700",
@@ -77,7 +81,7 @@ const styles = StyleSheet.create({
   },
   statusBar: {
     backgroundColor: "#0c7a1e",
-    height: "5%",
+    height: "5%", // 
     marginTop: "7.6%",
   },
   textBar: {
