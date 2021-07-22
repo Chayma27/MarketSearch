@@ -4,6 +4,6 @@ import Inscription from "./src/screens/Inscription";
 export default function App() {
   return (
 
-<Connexion /> 
+<Inscription /> 
   );
 }

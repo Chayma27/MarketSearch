@@ -4,7 +4,7 @@ import { Text, View, StyleSheet } from "react-native";
 const Inscription = () => {
   return (
     <View style={styles.Container}>
-      <Text> Screen Inscription</Text>
+      <Text> Créer un nouveau compte client</Text>
     </View>
   );
 };
