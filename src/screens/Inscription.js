@@ -12,6 +12,7 @@ const Inscription = () => {
     boxInputC,
     textInput,
     textInputC,
+    labelMail,
     labelTel,
     textInput216,
     textInput216Right,
@@ -46,7 +47,7 @@ const Inscription = () => {
           />
         </View>
         <View style={boxInputC}>
-          <Text style={label}>Adresse e-mail</Text>
+          <Text style={labelMail}>Adresse e-mail</Text>
           <TextInput
             style={textInputC}
             autoCorrect={false}
@@ -112,7 +113,12 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     marginRight: '50%',
-    width : '100%'
+  },
+  labelMail: {
+    fontSize: 20,
+    fontWeight: 'bold',
+    marginRight: '50%',
+    width : '100%',
   },
   labelTel: {
     fontSize: 20,
@@ -153,13 +159,12 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     height: 50,
     borderColor: '#c6c6c6',
-    textAlign: 'center',
     width: '120%',
+    paddingLeft : '5%',
     backgroundColor: 'white',
     fontSize: 18,
     color: 'black',
     fontWeight: 'bold',
-    marginRight: '15%',
     borderRadius: 10,
     marginTop: 5,
   },
