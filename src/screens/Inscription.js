@@ -20,7 +20,7 @@ const Inscription = () => {
     <Fragment>
       <View style={container}>
         <View style={logoUser}>
-          <Ionicons name="person-circle" size={90} color="green" />
+          <Ionicons name="person-circle" size={90} color='green' />
         </View>
         <Text style={text}>Créer un nouveau compte client</Text>
         <View style={boxInputR}>
@@ -31,16 +31,16 @@ const Inscription = () => {
           <TextInput
             style={textInput}
             autoCorrect={false}
-            placeholderTextColor="#aaaaaa"
-            placeholderStyle={{ fontWeight: "500" }}
+            placeholderTextColor='#aaaaaa'
+            placeholderStyle={{ fontWeight: '500' }}
             autoCompleteType="off"
             placeholder="Nom de famille"
           />
           <TextInput
             style={textInput}
             autoCorrect={false}
-            placeholderTextColor="#aaaaaa"
-            placeholderStyle={{ fontWeight: "500" }}
+            placeholderTextColor='#aaaaaa'
+            placeholderStyle={{ fontWeight: '500' }}
             autoCompleteType="off"
             placeholder="Votre prénom"
           />
@@ -50,8 +50,8 @@ const Inscription = () => {
           <TextInput
             style={textInputC}
             autoCorrect={false}
-            placeholderTextColor="#aaaaaa"
-            placeholderStyle={{ fontWeight: "500" }}
+            placeholderTextColor='#aaaaaa'
+            placeholderStyle={{ fontWeight: '500' }}
             autoCompleteType="off"
             placeholder="prenom_nom@gmail.com"
           />
@@ -61,8 +61,8 @@ const Inscription = () => {
           <TextInput
             style={textInputC}
             autoCorrect={false}
-            placeholderTextColor="#aaaaaa"
-            placeholderStyle={{ fontWeight: "500" }}
+            placeholderTextColor='#aaaaaa'
+            placeholderStyle={{ fontWeight: '500' }}
             autoCompleteType="off"
             placeholder="Au moins 6 caractères"
           />
@@ -74,16 +74,16 @@ const Inscription = () => {
           <TextInput
             style={textInput216}
             autoCorrect={false}
-            placeholderTextColor="#aaaaaa"
-            placeholderStyle={{ fontWeight: "500" }}
+            placeholderTextColor='#aaaaaa'
+            placeholderStyle={{ fontWeight: '500' }}
             autoCompleteType="off"
             placeholder="+216"
           />
           <TextInput
             style={textInput216Right}
             autoCorrect={false}
-            placeholderTextColor="#aaaaaa"
-            placeholderStyle={{ fontWeight: "500" }}
+            placeholderTextColor='#aaaaaa'
+            placeholderStyle={{ fontWeight: '500' }}
             autoCompleteType="off"
             placeholder="12345678"
           />
@@ -96,97 +96,97 @@ const Inscription = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#EFF1F8", // EFF1F8
+    backgroundColor: '#EFF1F8',
   },
   text: {
     fontSize: 25,
-    fontWeight: "bold",
-    textAlign: "center",
+    fontWeight: 'bold',
+    textAlign: 'center',
   },
   logoUser: {
-    flexDirection: "row",
-    justifyContent: "center",
-    marginTop: "8%",
+    flexDirection: 'row',
+    justifyContent: 'center',
+    marginTop: '8%',
   },
   label: {
     fontSize: 20,
-    fontWeight: "bold",
-    marginRight: "50%",
+    fontWeight: 'bold',
+    marginRight: '50%',
   },
   labelTel: {
     fontSize: 20,
-    fontWeight: "bold",
-    marginRight: "50%",
-    width: "100%",
+    fontWeight: 'bold',
+    marginRight: '50%',
+    width: '100%',
   },
   boxInputR: {
-    flexDirection: "row",
-    justifyContent: "flex-start",
-    marginHorizontal: "25%",
-    marginTop: "5%",
-    marginLeft: "7%",
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    marginHorizontal: '25%',
+    marginTop: '5%',
+    marginLeft: '7%',
   },
   boxInputC: {
-    flexDirection: "column",
-    justifyContent: "flex-start",
-    marginHorizontal: "25%",
-    marginTop: "5%",
-    marginLeft: "7%",
+    flexDirection: 'column',
+    justifyContent: 'flex-start',
+    marginHorizontal: '25%',
+    marginTop: '5%',
+    marginLeft: '7%',
   },
 
   textInput: {
     borderWidth: 2,
     height: 50,
-    borderColor: "#c6c6c6",
-    textAlign: "center",
-    width: "53%",
-    backgroundColor: "white",
+    borderColor: '#c6c6c6',
+    textAlign: 'center',
+    width: '53%',
+    backgroundColor: 'white',
     fontSize: 18,
-    color: "black",
-    fontWeight: "bold",
-    marginRight: "15%",
+    color: 'black',
+    fontWeight: 'bold',
+    marginRight: '15%',
     borderRadius: 10,
     marginTop: -13,
   },
   textInputC: {
     borderWidth: 2,
     height: 50,
-    borderColor: "#c6c6c6",
-    textAlign: "center",
-    width: "130%",
-    backgroundColor: "white",
+    borderColor: '#c6c6c6',
+    textAlign: 'center',
+    width: '130%',
+    backgroundColor: 'white',
     fontSize: 18,
-    color: "black",
-    fontWeight: "bold",
-    marginRight: "15%",
+    color: 'black',
+    fontWeight: 'bold',
+    marginRight: '15%',
     borderRadius: 10,
     marginTop: 5,
   },
   textInput216: {
     borderWidth: 2,
     height: 50,
-    borderColor: "#c6c6c6",
-    textAlign: "center",
-    width: "26%",
-    backgroundColor: "white",
+    borderColor: '#c6c6c6',
+    textAlign: 'center',
+    width: '26%',
+    backgroundColor: 'white',
     fontSize: 18,
-    color: "black",
-    fontWeight: "bold",
-    marginRight: "6%",
+    color: 'black',
+    fontWeight: 'bold',
+    marginRight: '6%',
     borderRadius: 10,
     marginTop: -10,
   },
   textInput216Right: {
     borderWidth: 2,
     height: 50,
-    borderColor: "#c6c6c6",
-    textAlign: "center",
-    width: "100%",
-    backgroundColor: "white",
+    borderColor: '#c6c6c6',
+    textAlign: 'center',
+    width: '100%',
+    backgroundColor: 'white',
     fontSize: 18,
-    color: "black",
-    fontWeight: "bold",
-    marginRight: "6%",
+    color: 'black',
+    fontWeight: 'bold',
+    marginRight: '6%',
     borderRadius: 10,
     marginTop: -10,
   },
