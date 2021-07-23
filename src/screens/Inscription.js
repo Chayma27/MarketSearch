@@ -112,6 +112,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: 'bold',
     marginRight: '50%',
+    width : '100%'
   },
   labelTel: {
     fontSize: 20,
