@@ -54,7 +54,7 @@ const Inscription = () => {
             placeholderTextColor='#aaaaaa'
             placeholderStyle={{ fontWeight: '500' }}
             autoCompleteType="off"
-            placeholder="prenom_nom@gmail.com"
+            placeholder="Prenom_nom@gmail.com"
           />
         </View>
         <View style={boxInputC}>
@@ -145,8 +145,8 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     height: 50,
     borderColor: '#c6c6c6',
-    textAlign: 'center',
     width: '53%',
+    paddingLeft : '5%',
     backgroundColor: 'white',
     fontSize: 18,
     color: 'black',
@@ -172,8 +172,8 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     height: 50,
     borderColor: '#c6c6c6',
-    textAlign: 'center',
     width: '25%',
+    paddingLeft : '5%',
     backgroundColor: 'white',
     fontSize: 18,
     color: 'black',
@@ -186,8 +186,8 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     height: 50,
     borderColor: '#c6c6c6',
-    textAlign : 'center',
     width: '87%',
+    paddingLeft : '5%',
     backgroundColor: 'white',
     fontSize: 18,
     color: 'black',
