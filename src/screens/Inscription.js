@@ -16,6 +16,7 @@ const Inscription = () => {
     labelTel,
     textInput216,
     textInput216Right,
+    radioButton,
   } = styles;
   return (
     <Fragment>
@@ -89,6 +90,10 @@ const Inscription = () => {
             placeholder="12345678"
           />
         </View>
+        <View style={radioButton}>
+          <Text style={label}> Femme </Text>
+          <Text style={label}> Homme </Text>
+        </View>
       </View>
     </Fragment>
   );
@@ -145,7 +150,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     height: 50,
     borderColor: '#c6c6c6',
-    width: '53%',
+    width: '55%',
     paddingLeft : '5%',
     backgroundColor: 'white',
     fontSize: 18,
@@ -159,7 +164,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     height: 50,
     borderColor: '#c6c6c6',
-    width: '120%',
+    width: '125%',
     paddingLeft : '5%',
     backgroundColor: 'white',
     fontSize: 18,
@@ -172,7 +177,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     height: 50,
     borderColor: '#c6c6c6',
-    width: '25%',
+    width: '32%',
     paddingLeft : '5%',
     backgroundColor: 'white',
     fontSize: 18,
@@ -195,6 +200,14 @@ const styles = StyleSheet.create({
     marginRight: '6%',
     borderRadius: 10,
     marginTop: -10,
+  },
+  radioButton:
+  {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    marginHorizontal: '25%',
+    marginTop: '5%',
+    marginLeft: '7%',
   },
 });
 
