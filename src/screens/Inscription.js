@@ -116,7 +116,7 @@ const Inscription = () => {
         </TouchableOpacity>
         
         <View style={Vlink}>
-          <Text style={link}>Already have an account ? Sign in</Text>
+          <Text style={link}>Vous-avez déja un compte ? Connexion</Text>
         </View>
       </View>
     </Fragment>
@@ -237,25 +237,23 @@ const styles = StyleSheet.create({
     width: "50%",
     marginHorizontal: "25%",
     marginVertical: "3%",
-    height: 60,
+    height: 50,
     fontSize: 30,
     borderRadius: 30,
   },
   textButton: {
     color: "white",
     textAlign: "center",
-    marginTop: 10,
+    marginTop: 7,
     fontSize: 25,
     fontWeight: "700",
   },
   Vlink: {
     alignItems: "center",
-    marginVertical: "10%",
   },
   link: {
     color: "#2b7bd6",
-    fontSize: 25,
-    marginBottom: 17,
+    fontSize: 20,
     fontWeight: "600",
   },
 });
