@@ -2563,6 +2563,11 @@
   "resolved" "https://registry.npmjs.org/expo-modules-core/-/expo-modules-core-0.2.0.tgz"
   "version" "0.2.0"
 
+"expo-radio-button@^1.0.5":
+  "integrity" "sha512-laLZiFZnMoJjEenPsEy8mrE9JE0nInqxey5njxrw+KkEEAx1stMEk31XRqo1Ys/iIgQggb0sBYN7Htq0RRmQrQ=="
+  "resolved" "https://registry.npmjs.org/expo-radio-button/-/expo-radio-button-1.0.5.tgz"
+  "version" "1.0.5"
+
 "expo-status-bar@~1.0.4":
   "integrity" "sha512-s7nc496D/Zn1NGiMJ5wu6HyIdXxbgGtmZZtbHm7rpbcmLdf28GmMSNHDx7M0t00BMhky7VAurTCUo+BJs8ugsw=="
   "resolved" "https://registry.npmjs.org/expo-status-bar/-/expo-status-bar-1.0.4.tgz"
