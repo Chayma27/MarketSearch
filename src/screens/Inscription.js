@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from "react";
-import { Text, View, StyleSheet, TextInput } from "react-native";
+import { Text, View, StyleSheet, TextInput,TouchableOpacity } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import RadioButton from 'expo-radio-button'
 
@@ -20,6 +20,8 @@ const Inscription = () => {
     textInput216,
     textInput216Right,
     radioButton,
+    VButton,
+    textButton,
     Vlink,
     link,
   } = styles;
@@ -109,7 +111,10 @@ const Inscription = () => {
         <Text style={label}> Homme </Text>
       </RadioButton>
       </View>
-
+      <TouchableOpacity style={VButton}>
+          <Text style={textButton}>S'inscrire</Text>
+        </TouchableOpacity>
+        
         <View style={Vlink}>
           <Text style={link}>Already have an account ? Sign in</Text>
         </View>
@@ -226,6 +231,22 @@ const styles = StyleSheet.create({
     marginHorizontal: "45%",
     marginTop: "5%",
     marginLeft: "9%",
+  },
+  VButton: {
+    backgroundColor: "#3f9d2f",
+    width: "50%",
+    marginHorizontal: "25%",
+    marginVertical: "3%",
+    height: 60,
+    fontSize: 30,
+    borderRadius: 30,
+  },
+  textButton: {
+    color: "white",
+    textAlign: "center",
+    marginTop: 10,
+    fontSize: 25,
+    fontWeight: "700",
   },
   Vlink: {
     alignItems: "center",
