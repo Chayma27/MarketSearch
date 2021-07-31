@@ -1,13 +1,16 @@
 import { StatusBar } from "expo-status-bar";
 import React, { Fragment } from "react";
+import { MaterialCommunityIcons } from '@expo/vector-icons'; 
 import {
     StyleSheet,
     Text,
     View,
   } from "react-native";
   
+
   const MdpOublié = () => {
     const {
+      logoUser,
       statusBar,
       textBar,
     } = styles;
@@ -15,6 +18,9 @@ import {
       <Fragment>
         <View style={statusBar}>
           <Text style={textBar}> Réinitialisation du mot de passe</Text>
+          <View style={logoUser}>
+          <MaterialCommunityIcons name="lock-reset" size={130} color="black" />
+          </View>
         </View>
       </Fragment>
     );
@@ -25,13 +31,7 @@ import {
       backgroundColor: "#EFF1F8",
       flexDirection: "column",
     },
-    text: {
-      fontSize: 24,
-      color: "black",
-      fontWeight: "700",
-      marginTop: "40%",
-      marginLeft: "2%",
-    },
+
     statusBar: {
       backgroundColor: "#0c7a1e",
       height: "5%",
@@ -44,6 +44,11 @@ import {
       textAlign: "center",
       marginTop: "1%",
     },
+    logoUser: {
+        flexDirection: "row",
+        justifyContent: "center",
+        marginTop: "8%",
+      },
 });
 
 export default MdpOublié;
