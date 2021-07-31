@@ -121,7 +121,7 @@ import {
         position: 'absolute',
         marginTop: 10,
         marginLeft: '8%',
-        fontSize: 48,
+        fontSize: 50,
         zIndex: 2,
     },
     VButton: {
@@ -140,7 +140,6 @@ import {
         fontSize: 25,
         fontWeight: '700',
       },
-
 });
 
 export default MdpOublié;
