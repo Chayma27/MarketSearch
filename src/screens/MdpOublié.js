@@ -10,17 +10,21 @@ import {
 
   const MdpOublié = () => {
     const {
-      logoUser,
-      statusBar,
-      textBar,
+    ResetPasswoard,
+    statusBar,
+    textBar,
+    text,
     } = styles;
     return (
       <Fragment>
         <View style={statusBar}>
           <Text style={textBar}> Réinitialisation du mot de passe</Text>
-          <View style={logoUser}>
+          <View style={ResetPasswoard}>
           <MaterialCommunityIcons name="lock-reset" size={130} color="black" />
           </View>
+          <View>
+        <Text style={text}>Vous avez oublié votre mot de passe ?</Text>
+        </View>
         </View>
       </Fragment>
     );
@@ -44,10 +48,15 @@ import {
       textAlign: "center",
       marginTop: "1%",
     },
-    logoUser: {
+    ResetPasswoard: {
         flexDirection: "row",
         justifyContent: "center",
         marginTop: "8%",
+      },
+    text: {
+    fontSize: 26,
+    color: "black",
+    textAlign: "center",
       },
 });
 
