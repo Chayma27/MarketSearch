@@ -1,10 +1,12 @@
 import { StatusBar } from "expo-status-bar";
 import React, { Fragment } from "react";
 import { MaterialCommunityIcons } from '@expo/vector-icons'; 
+import { Ionicons } from '@expo/vector-icons'; 
 import {
     StyleSheet,
     Text,
     View,
+    TextInput,
   } from "react-native";
   
 
@@ -15,6 +17,8 @@ import {
     textBar,
     text,
     textReinit,
+    containerInput,
+    mail,
     } = styles;
     return (
       <Fragment>
@@ -28,6 +32,18 @@ import {
         </View>
         <View>
         <Text style={textReinit}>Pour réinitialiser votre mot de passe, saisissez votre adresse e-mail ci-dessous</Text>
+        </View>
+        <StatusBar style="auto" />
+        <View style={containerInput}>
+        <Ionicons style={mail} name="mail" size={24} color="black"/>
+        <TextInput
+            autoCorrect={false}
+            placeholderTextColor="#aaaaaa"
+            placeholderStyle={{ fontWeight: "900" }}
+            autoCompleteType="off"
+            placeholder=" Adresse e-mail"
+            style={styles.textInput}
+          />
         </View>
         </View>
       </Fragment>
@@ -58,18 +74,38 @@ import {
         marginTop: '8%',
       },
     text: {
-    fontSize: 26,
-    color: 'black',
-    textAlign: 'center',
+        fontSize: 26,
+        color: 'black',
+        textAlign: 'center',
       },
     textReinit: {
-    fontSize: 22,
-    color: '#687089',
-    marginTop: '10%',
-    marginLeft: '3%',
+        fontSize: 22,
+        color: '#687089',
+        marginTop: '10%',
+        marginLeft: '3%',
     },   
-    
-    
+    containerInput: {
+        marginTop: 30,
+        position: 'relative',
+      },
+      textInput: {
+        borderWidth: 2,
+        height: 70,
+        borderColor: '#c6c6c6',
+        width: '90%',
+        marginHorizontal: '5%',
+        marginVertical: '4%',
+        backgroundColor: 'white',
+        fontSize: 22,
+        paddingLeft: '15%',
+      },
+      mail: {
+        position: 'absolute',
+        marginTop: 27,
+        marginLeft: '8%',
+        fontSize: 48,
+        zIndex: 2,
+    },
 });
 
 export default MdpOublié;
