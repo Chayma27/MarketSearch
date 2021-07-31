@@ -1,6 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import React, { Fragment } from "react";
 import {
+    StyleSheet,
     Text,
     View,
   } from "react-native";
@@ -13,40 +14,36 @@ import {
     return (
       <Fragment>
         <View style={statusBar}>
-          <Text style={textBar}>Connexion</Text>
-        </View>
-        <View style={container}>
-          <Text style={text}>Identifiez-vous </Text>
-          <StatusBar style="auto" />
-          <View style={containerInput}>
-            <FontAwesome style={userIcon} name="user" size={30} color="#3B3636" />
-            <TextInput
-              autoCorrect={false}
-              placeholderTextColor="#aaaaaa"
-              placeholderStyle={{ fontWeight: "900" }}
-              autoCompleteType="off"
-              placeholder="Identifiant *"
-              style={styles.textInput}
-            />
-            <FontAwesome5 style={keyIcon} name="key" size={30} color="#3B3636" />
-            <TextInput
-              autoCorrect={false}
-              placeholderTextColor="#aaaaaa"
-              autoCompleteType="password"
-              textContentType="password"
-              secureTextEntry={true}
-              placeholder="Mot de passe *"
-              style={textInput}
-            />
-          </View>
-          <TouchableOpacity style={VButton}>
-            <Text style={textButton}>Se connecter</Text>
-          </TouchableOpacity>
-          <View style={Vlink}>
-            <Text style={link}>Créer un compte</Text>
-            <Text style={link}> Mot de passe oublié ? </Text>
-          </View>
+          <Text style={textBar}> Réinitialisation du mot de passe</Text>
         </View>
       </Fragment>
     );
   };
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      backgroundColor: "#EFF1F8",
+      flexDirection: "column",
+    },
+    text: {
+      fontSize: 24,
+      color: "black",
+      fontWeight: "700",
+      marginTop: "40%",
+      marginLeft: "2%",
+    },
+    statusBar: {
+      backgroundColor: "#0c7a1e",
+      height: "5%",
+      marginTop: "6%",
+    },
+    textBar: {
+      color: "white",
+      fontSize: 21,
+      fontWeight: "600",
+      textAlign: "center",
+      marginTop: "1%",
+    },
+});
+
+export default MdpOublié;
