@@ -24,8 +24,8 @@ import {
     send,
     VButton,
     textButton,
-    Vlink,
-    link,
+    Vlien,
+    lien,
     } = styles;
     return (
       <Fragment>
@@ -56,6 +56,9 @@ import {
         <MaterialIcons style={send} name="send" size={30} color="white" />
           <Text style={textButton}>Envoyer</Text>
         </TouchableOpacity>
+        <View style={Vlien}>
+          <Text style={lien}>Contactez-nous</Text>
+        </View>
         </View>
       </Fragment>
     );
@@ -125,10 +128,10 @@ import {
         zIndex: 2,
     },
     VButton: {
-        backgroundColor: "#3f9d2f",
-        width: "75%",
-        marginHorizontal: "14%",
-        marginVertical: "6%",
+        backgroundColor: '#3f9d2f',
+        width: '75%',
+        marginHorizontal: '14%',
+        marginVertical: '6%',
         height: 70,
         fontSize: 30,
         borderRadius: 30,
@@ -139,6 +142,16 @@ import {
         marginTop: 19,
         fontSize: 25,
         fontWeight: '700',
+      },
+      Vlien : {
+        alignItems : 'center',
+        marginVertical : '10%',
+      },
+      lien : {
+        color: '#2b7bd6',
+        fontSize : 22,
+        fontWeight: '600',
+
       },
 });
 
