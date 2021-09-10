@@ -28,11 +28,11 @@ const Connexion = () => {
   } = styles;
   return (
     <Fragment>
-      <KeyboardAwareScrollView>
-        <View style={statusBar}>
-          <Text style={textBar}>Connexion</Text>
-        </View>
-        <View style={container}>
+      <View style={statusBar}>
+        <Text style={textBar}>Connexion</Text>
+      </View>
+      <View style={container}>
+        <KeyboardAwareScrollView>
           <Text style={text}>Identifiez-vous </Text>
           <StatusBar style="auto" />
           <View style={containerInput}>
@@ -77,8 +77,8 @@ const Connexion = () => {
               <Text style={link}> Mot de passe oublié ? </Text>
             </TouchableOpacity>
           </View>
-        </View>
-      </KeyboardAwareScrollView>
+        </KeyboardAwareScrollView>
+      </View>
     </Fragment>
   );
 };
