@@ -1,11 +1,17 @@
 import React, { Fragment, useState } from "react";
-import { Text, View, StyleSheet, TextInput,TouchableOpacity } from "react-native";
+import {
+  Text,
+  View,
+  StyleSheet,
+  TextInput,
+  TouchableOpacity,
+} from "react-native";
 import { Ionicons } from "@expo/vector-icons";
-import RadioButton from 'expo-radio-button'
+import RadioButton from "expo-radio-button";
 
 const Inscription = () => {
-  const [current, setCurrent] = useState("")
-  
+  const [current, setCurrent] = useState("");
+
   const {
     container,
     text,
@@ -98,25 +104,33 @@ const Inscription = () => {
           />
         </View>
         <View style={radioButton}>
-          <RadioButton value="option 1"
+          <RadioButton
+            value="option 1"
             containerStyle={{ marginBottom: 10 }}
-            selected={current} onSelected={(value) => setCurrent(value)} 
-            radioBackground="green" >
-          <Text style={label}> Femme </Text>
-      </RadioButton>
-      
-          <RadioButton value="option 2"
-            selected={current} onSelected={(value) => setCurrent(value)}
-            radioBackground="green" >
-        <Text style={label}> Homme </Text>
-      </RadioButton>
-      </View>
-      <TouchableOpacity style={VButton}>
+            selected={current}
+            onSelected={(value) => setCurrent(value)}
+            radioBackground="green"
+          >
+            <Text style={label}> Femme </Text>
+          </RadioButton>
+
+          <RadioButton
+            value="option 2"
+            selected={current}
+            onSelected={(value) => setCurrent(value)}
+            radioBackground="green"
+          >
+            <Text style={label}> Homme </Text>
+          </RadioButton>
+        </View>
+        <TouchableOpacity style={VButton}>
           <Text style={textButton}>S'inscrire</Text>
         </TouchableOpacity>
-        
+
         <View style={Vlink}>
-          <Text style={link}>Vous-avez déja un compte ? Connexion</Text>
+          <TouchableOpacity>
+            <Text style={link}>Vous-avez déja un compte ? Connexion</Text>
+          </TouchableOpacity>
         </View>
       </View>
     </Fragment>

@@ -1,7 +1,7 @@
 import React from "react";
 import Connexion from "./src/screens/Connexion";
 import Inscription from "./src/screens/Inscription";
-import MdpOublié from "./src/screens/MdpOublié";
+import MdpOublie from "./src/screens/MdpOublie";
 export default function App() {
-  return <MdpOublié />;
+  return <MdpOublie />;
 }

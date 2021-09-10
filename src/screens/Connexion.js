@@ -58,8 +58,12 @@ const Connexion = () => {
           <Text style={textButton}>Se connecter</Text>
         </TouchableOpacity>
         <View style={Vlink}>
-          <Text style={link}>Créer un compte</Text>
-          <Text style={link}> Mot de passe oublié ? </Text>
+          <TouchableOpacity>
+            <Text style={link}>Créer un compte</Text>
+          </TouchableOpacity>
+          <TouchableOpacity>
+            <Text style={link}> Mot de passe oublié ? </Text>
+          </TouchableOpacity>
         </View>
       </View>
     </Fragment>
