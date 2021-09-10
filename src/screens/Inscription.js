@@ -8,6 +8,7 @@ import {
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import RadioButton from "expo-radio-button";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 const Inscription = () => {
   const [current, setCurrent] = useState("");
@@ -34,104 +35,106 @@ const Inscription = () => {
   return (
     <Fragment>
       <View style={container}>
-        <View style={logoUser}>
-          <Ionicons name="person-circle" size={90} color="green" />
-        </View>
-        <Text style={text}>Créer un nouveau compte client</Text>
-        <View style={boxInputR}>
-          <Text style={label}> Nom </Text>
-          <Text style={label}> Prénom </Text>
-        </View>
-        <View style={boxInputR}>
-          <TextInput
-            style={textInput}
-            autoCorrect={false}
-            placeholderTextColor="#aaaaaa"
-            placeholderStyle={{ fontWeight: "500" }}
-            autoCompleteType="off"
-            placeholder="Nom de famille"
-          />
-          <TextInput
-            style={textInput}
-            autoCorrect={false}
-            placeholderTextColor="#aaaaaa"
-            placeholderStyle={{ fontWeight: "500" }}
-            autoCompleteType="off"
-            placeholder="Votre prénom"
-          />
-        </View>
-        <View style={boxInputC}>
-          <Text style={labelMail}>Adresse e-mail</Text>
-          <TextInput
-            style={textInputC}
-            autoCorrect={false}
-            placeholderTextColor="#aaaaaa"
-            placeholderStyle={{ fontWeight: "500" }}
-            autoCompleteType="off"
-            placeholder="Prenom_nom@gmail.com"
-          />
-        </View>
-        <View style={boxInputC}>
-          <Text style={label}>Mot de passe</Text>
-          <TextInput
-            style={textInputC}
-            autoCorrect={false}
-            placeholderTextColor="#aaaaaa"
-            placeholderStyle={{ fontWeight: "500" }}
-            autoCompleteType="off"
-            placeholder="Au moins 6 caractères"
-          />
-        </View>
-        <View style={boxInputR}>
-          <Text style={labelTel}> Numéro de téléphone </Text>
-        </View>
-        <View style={boxInputR}>
-          <TextInput
-            style={textInput216}
-            autoCorrect={false}
-            placeholderTextColor="#aaaaaa"
-            placeholderStyle={{ fontWeight: "500" }}
-            autoCompleteType="off"
-            placeholder="+216"
-          />
-          <TextInput
-            style={textInput216Right}
-            autoCorrect={false}
-            placeholderTextColor="#aaaaaa"
-            placeholderStyle={{ fontWeight: "500" }}
-            autoCompleteType="off"
-            placeholder="12345678"
-          />
-        </View>
-        <View style={radioButton}>
-          <RadioButton
-            value="option 1"
-            containerStyle={{ marginBottom: 10 }}
-            selected={current}
-            onSelected={(value) => setCurrent(value)}
-            radioBackground="green"
-          >
-            <Text style={label}> Femme </Text>
-          </RadioButton>
+        <KeyboardAwareScrollView>
+          <View style={logoUser}>
+            <Ionicons name="person-circle" size={90} color="green" />
+          </View>
+          <Text style={text}>Créer un nouveau compte client</Text>
+          <View style={boxInputR}>
+            <Text style={label}> Nom </Text>
+            <Text style={label}> Prénom </Text>
+          </View>
+          <View style={boxInputR}>
+            <TextInput
+              style={textInput}
+              autoCorrect={false}
+              placeholderTextColor="#aaaaaa"
+              placeholderStyle={{ fontWeight: "500" }}
+              autoCompleteType="off"
+              placeholder="Nom de famille"
+            />
+            <TextInput
+              style={textInput}
+              autoCorrect={false}
+              placeholderTextColor="#aaaaaa"
+              placeholderStyle={{ fontWeight: "500" }}
+              autoCompleteType="off"
+              placeholder="Votre prénom"
+            />
+          </View>
+          <View style={boxInputC}>
+            <Text style={labelMail}>Adresse e-mail</Text>
+            <TextInput
+              style={textInputC}
+              autoCorrect={false}
+              placeholderTextColor="#aaaaaa"
+              placeholderStyle={{ fontWeight: "500" }}
+              autoCompleteType="off"
+              placeholder="Prenom_nom@gmail.com"
+            />
+          </View>
+          <View style={boxInputC}>
+            <Text style={label}>Mot de passe</Text>
+            <TextInput
+              style={textInputC}
+              autoCorrect={false}
+              placeholderTextColor="#aaaaaa"
+              placeholderStyle={{ fontWeight: "500" }}
+              autoCompleteType="off"
+              placeholder="Au moins 6 caractères"
+            />
+          </View>
+          <View style={boxInputR}>
+            <Text style={labelTel}> Numéro de téléphone </Text>
+          </View>
+          <View style={boxInputR}>
+            <TextInput
+              style={textInput216}
+              autoCorrect={false}
+              placeholderTextColor="#aaaaaa"
+              placeholderStyle={{ fontWeight: "500" }}
+              autoCompleteType="off"
+              placeholder="+216"
+            />
+            <TextInput
+              style={textInput216Right}
+              autoCorrect={false}
+              placeholderTextColor="#aaaaaa"
+              placeholderStyle={{ fontWeight: "500" }}
+              autoCompleteType="off"
+              placeholder="12345678"
+            />
+          </View>
+          <View style={radioButton}>
+            <RadioButton
+              value="option 1"
+              containerStyle={{ marginBottom: 10 }}
+              selected={current}
+              onSelected={(value) => setCurrent(value)}
+              radioBackground="green"
+            >
+              <Text style={label}> Femme </Text>
+            </RadioButton>
 
-          <RadioButton
-            value="option 2"
-            selected={current}
-            onSelected={(value) => setCurrent(value)}
-            radioBackground="green"
-          >
-            <Text style={label}> Homme </Text>
-          </RadioButton>
-        </View>
-        <TouchableOpacity style={VButton}>
-          <Text style={textButton}>S'inscrire</Text>
-        </TouchableOpacity>
-
-        <View style={Vlink}>
-          <TouchableOpacity>
-            <Text style={link}>Vous-avez déja un compte ? Connexion</Text>
+            <RadioButton
+              value="option 2"
+              selected={current}
+              onSelected={(value) => setCurrent(value)}
+              radioBackground="green"
+            >
+              <Text style={label}> Homme </Text>
+            </RadioButton>
+          </View>
+          <TouchableOpacity style={VButton}>
+            <Text style={textButton}>S'inscrire</Text>
           </TouchableOpacity>
-        </View>
+
+          <View style={Vlink}>
+            <TouchableOpacity>
+              <Text style={link}>Vous-avez déja un compte ? Connexion</Text>
+            </TouchableOpacity>
+          </View>
+        </KeyboardAwareScrollView>
       </View>
     </Fragment>
   );

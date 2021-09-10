@@ -3,6 +3,7 @@ import React, { Fragment } from "react";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Ionicons } from "@expo/vector-icons";
 import { MaterialIcons } from "@expo/vector-icons";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import {
   StyleSheet,
   Text,
@@ -27,44 +28,47 @@ const MdpOublie = () => {
     lien,
   } = styles;
   return (
-    <View>
-      <View style={statusBar}>
-        <Text style={textBar}> Réinitialisation du mot de passe</Text>
-      </View>
-      <View style={ResetPasswoard}>
-        <MaterialCommunityIcons name="lock-reset" size={130} color="black" />
-      </View>
+    <KeyboardAwareScrollView>
       <View>
-        <Text style={text}>Vous avez oublié votre mot de passe ?</Text>
-      </View>
-      <View>
-        <Text style={textReinit}>
-          Pour réinitialiser votre mot de passe, saisissez votre adresse e-mail
-          ci-dessous
-        </Text>
-      </View>
-      <StatusBar style="auto" />
-      <View style={containerInput}>
-        <TextInput
-          autoCorrect={false}
-          placeholderTextColor="#aaaaaa"
-          placeholderStyle={{ fontWeight: "900" }}
-          autoCompleteType="off"
-          placeholder=" Adresse e-mail"
-          style={styles.textInput}
-        />
-        <Ionicons style={mail} name="mail" size={24} color="black" />
-      </View>
-      <TouchableOpacity style={VButton}>
-        <MaterialIcons style={send} name="send" size={30} color="white" />
-        <Text style={textButton}>Envoyer</Text>
-      </TouchableOpacity>
-      <View style={Vlien}>
-        <TouchableOpacity>
-          <Text style={lien}>Contactez-nous</Text>
+        <View style={statusBar}>
+          <Text style={textBar}> Réinitialisation du mot de passe</Text>
+        </View>
+        <View style={ResetPasswoard}>
+          <MaterialCommunityIcons name="lock-reset" size={130} color="black" />
+        </View>
+        <View>
+          <Text style={text}>Vous avez oublié votre mot de passe ?</Text>
+        </View>
+        <View>
+          <Text style={textReinit}>
+            Pour réinitialiser votre mot de passe, saisissez votre adresse
+            e-mail ci-dessous
+          </Text>
+        </View>
+        <StatusBar style="auto" />
+        <View style={containerInput}>
+          <TextInput
+            autoCorrect={false}
+            placeholderTextColor="#aaaaaa"
+            placeholderStyle={{ fontWeight: "900" }}
+            autoCompleteType="off"
+            placeholder=" Adresse e-mail"
+            style={styles.textInput}
+          />
+
+          <Ionicons style={mail} name="mail" size={24} color="black" />
+        </View>
+        <TouchableOpacity style={VButton}>
+          <MaterialIcons style={send} name="send" size={30} color="white" />
+          <Text style={textButton}>Envoyer</Text>
         </TouchableOpacity>
+        <View style={Vlien}>
+          <TouchableOpacity>
+            <Text style={lien}>Contactez-nous</Text>
+          </TouchableOpacity>
+        </View>
       </View>
-    </View>
+    </KeyboardAwareScrollView>
   );
 };
 const styles = StyleSheet.create({

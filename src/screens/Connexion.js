@@ -1,6 +1,7 @@
 import { StatusBar } from "expo-status-bar";
 import React, { Fragment } from "react";
 import { FontAwesome, FontAwesome5 } from "@expo/vector-icons";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 import {
   StyleSheet,
@@ -27,45 +28,57 @@ const Connexion = () => {
   } = styles;
   return (
     <Fragment>
-      <View style={statusBar}>
-        <Text style={textBar}>Connexion</Text>
-      </View>
-      <View style={container}>
-        <Text style={text}>Identifiez-vous </Text>
-        <StatusBar style="auto" />
-        <View style={containerInput}>
-          <FontAwesome style={userIcon} name="user" size={30} color="#3B3636" />
-          <TextInput
-            autoCorrect={false}
-            placeholderTextColor="#aaaaaa"
-            placeholderStyle={{ fontWeight: "900" }}
-            autoCompleteType="off"
-            placeholder="Identifiant *"
-            style={styles.textInput}
-          />
-          <FontAwesome5 style={keyIcon} name="key" size={30} color="#3B3636" />
-          <TextInput
-            autoCorrect={false}
-            placeholderTextColor="#aaaaaa"
-            autoCompleteType="password"
-            textContentType="password"
-            secureTextEntry={true}
-            placeholder="Mot de passe *"
-            style={textInput}
-          />
+      <KeyboardAwareScrollView>
+        <View style={statusBar}>
+          <Text style={textBar}>Connexion</Text>
         </View>
-        <TouchableOpacity style={VButton}>
-          <Text style={textButton}>Se connecter</Text>
-        </TouchableOpacity>
-        <View style={Vlink}>
-          <TouchableOpacity>
-            <Text style={link}>Créer un compte</Text>
+        <View style={container}>
+          <Text style={text}>Identifiez-vous </Text>
+          <StatusBar style="auto" />
+          <View style={containerInput}>
+            <FontAwesome
+              style={userIcon}
+              name="user"
+              size={30}
+              color="#3B3636"
+            />
+            <TextInput
+              autoCorrect={false}
+              placeholderTextColor="#aaaaaa"
+              placeholderStyle={{ fontWeight: "900" }}
+              autoCompleteType="off"
+              placeholder="Identifiant *"
+              style={styles.textInput}
+            />
+            <FontAwesome5
+              style={keyIcon}
+              name="key"
+              size={30}
+              color="#3B3636"
+            />
+            <TextInput
+              autoCorrect={false}
+              placeholderTextColor="#aaaaaa"
+              autoCompleteType="password"
+              textContentType="password"
+              secureTextEntry={true}
+              placeholder="Mot de passe *"
+              style={textInput}
+            />
+          </View>
+          <TouchableOpacity style={VButton}>
+            <Text style={textButton}>Se connecter</Text>
           </TouchableOpacity>
-          <TouchableOpacity>
-            <Text style={link}> Mot de passe oublié ? </Text>
-          </TouchableOpacity>
+          <View style={Vlink}>
+            <TouchableOpacity>
+              <Text style={link}>Créer un compte</Text>
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Text style={link}> Mot de passe oublié ? </Text>
+            </TouchableOpacity>
+          </View>
         </View>
-      </View>
+      </KeyboardAwareScrollView>
     </Fragment>
   );
 };
