@@ -45,7 +45,6 @@ const MdpOublie = () => {
       </View>
       <StatusBar style="auto" />
       <View style={containerInput}>
-        <Ionicons style={mail} name="mail" size={24} color="black" />
         <TextInput
           autoCorrect={false}
           placeholderTextColor="#aaaaaa"
@@ -54,6 +53,7 @@ const MdpOublie = () => {
           placeholder=" Adresse e-mail"
           style={styles.textInput}
         />
+        <Ionicons style={mail} name="mail" size={24} color="black" />
       </View>
       <TouchableOpacity style={VButton}>
         <MaterialIcons style={send} name="send" size={30} color="white" />
