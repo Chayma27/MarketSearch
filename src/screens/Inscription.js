@@ -10,7 +10,7 @@ import { Ionicons } from "@expo/vector-icons";
 import RadioButton from "expo-radio-button";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
-const Inscription = () => {
+const Inscription = (props) => {
   const [current, setCurrent] = useState("");
 
   const {
@@ -130,7 +130,9 @@ const Inscription = () => {
           </TouchableOpacity>
 
           <View style={Vlink}>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => props.navigation.navigate("Connexion")}
+            >
               <Text style={link}>Vous-avez déja un compte ? Connexion</Text>
             </TouchableOpacity>
           </View>

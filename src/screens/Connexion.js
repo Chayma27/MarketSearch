@@ -11,7 +11,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-const Connexion = () => {
+const Connexion = (props) => {
   const {
     statusBar,
     textBar,
@@ -66,14 +66,21 @@ const Connexion = () => {
               style={textInput}
             />
           </View>
-          <TouchableOpacity style={VButton}>
+          <TouchableOpacity
+            style={VButton}
+            onPress={() => props.navigation.navigate("Home")}
+          >
             <Text style={textButton}>Se connecter</Text>
           </TouchableOpacity>
           <View style={Vlink}>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => props.navigation.navigate("Inscription")}
+            >
               <Text style={link}>Créer un compte</Text>
             </TouchableOpacity>
-            <TouchableOpacity>
+            <TouchableOpacity
+              onPress={() => props.navigation.navigate("MdpOublie")}
+            >
               <Text style={link}> Mot de passe oublié ? </Text>
             </TouchableOpacity>
           </View>
