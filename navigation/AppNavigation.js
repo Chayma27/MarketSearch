@@ -14,6 +14,9 @@ const AppNavigation = () => {
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="Connexion" component={Connexion} />
+        <Stack.Screen name="Inscription" component={Inscription} />
+        <Stack.Screen name="MdpOublie" component={MdpOublie} />
+        <Stack.Screen name="Home" component={Home} />
       </Stack.Navigator>
     </NavigationContainer>
   );
