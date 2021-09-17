@@ -15,8 +15,6 @@ import {
 const MdpOublie = () => {
   const {
     ResetPasswoard,
-    statusBar,
-    textBar,
     text,
     textReinit,
     containerInput,
@@ -30,9 +28,6 @@ const MdpOublie = () => {
   return (
     <KeyboardAwareScrollView>
       <View>
-        <View style={statusBar}>
-          <Text style={textBar}> Réinitialisation du mot de passe</Text>
-        </View>
         <View style={ResetPasswoard}>
           <MaterialCommunityIcons name="lock-reset" size={130} color="black" />
         </View>
@@ -76,18 +71,6 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#EFF1F8",
     flexDirection: "column",
-  },
-  statusBar: {
-    backgroundColor: "#0c7a1e",
-    height: "5%",
-    marginTop: "6%",
-  },
-  textBar: {
-    color: "white",
-    fontSize: 21,
-    fontWeight: "600",
-    textAlign: "center",
-    marginTop: "1%",
   },
   ResetPasswoard: {
     flexDirection: "row",
@@ -152,7 +135,7 @@ const styles = StyleSheet.create({
   },
   Vlien: {
     alignItems: "center",
-    marginVertical: "10%",
+    marginVertical: "5%",
   },
   lien: {
     color: "#2b7bd6",
