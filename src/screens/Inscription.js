@@ -155,7 +155,6 @@ const styles = StyleSheet.create({
   logoUser: {
     flexDirection: "row",
     justifyContent: "center",
-    marginTop: "8%",
   },
   label: {
     fontSize: 20,
