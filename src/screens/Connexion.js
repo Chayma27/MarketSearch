@@ -13,8 +13,6 @@ import {
 
 const Connexion = (props) => {
   const {
-    statusBar,
-    textBar,
     container,
     text,
     containerInput,
@@ -28,9 +26,6 @@ const Connexion = (props) => {
   } = styles;
   return (
     <Fragment>
-      <View style={statusBar}>
-        <Text style={textBar}>Connexion</Text>
-      </View>
       <View style={container}>
         <KeyboardAwareScrollView>
           <Text style={text}>Identifiez-vous </Text>
@@ -95,6 +90,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#EFF1F8",
     flexDirection: "column",
+    marginTop: '-25%',
   },
   text: {
     fontSize: 28,
@@ -103,20 +99,8 @@ const styles = StyleSheet.create({
     marginTop: "40%",
     marginLeft: "2%",
   },
-  statusBar: {
-    backgroundColor: "#0c7a1e",
-    height: "5%",
-    marginTop: "7.6%",
-  },
-  textBar: {
-    color: "white",
-    fontSize: 22,
-    fontWeight: "600",
-    textAlign: "center",
-    marginTop: "2%",
-  },
   containerInput: {
-    marginTop: 30,
+    marginTop: 40,
     position: "relative",
   },
   textInput: {
@@ -135,8 +119,8 @@ const styles = StyleSheet.create({
     backgroundColor: "#3f9d2f",
     width: "75%",
     marginHorizontal: "14%",
-    marginVertical: "6%",
-    height: 70,
+    marginVertical: "10%",
+    height: 75,
     fontSize: 30,
     borderRadius: 30,
   },
@@ -149,7 +133,7 @@ const styles = StyleSheet.create({
   },
   Vlink: {
     alignItems: "center",
-    marginVertical: "10%",
+    marginVertical: "6%",
   },
   link: {
     color: "#2b7bd6",
