@@ -37,7 +37,7 @@ const MdpOublie = () => {
         <View>
           <Text style={textReinit}>
             Pour réinitialiser votre mot de passe, saisissez votre adresse
-            e-mail ci-dessous
+            e-mail associée à votre compte ci-dessous
           </Text>
         </View>
         <StatusBar style="auto" />
