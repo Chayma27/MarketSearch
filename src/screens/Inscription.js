@@ -125,7 +125,10 @@ const Inscription = (props) => {
               <Text style={label}> Homme </Text>
             </RadioButton>
           </View>
-          <TouchableOpacity style={VButton}>
+          <TouchableOpacity
+          style={VButton}
+          onPress={() => props.navigation.navigate("Connexion")}
+          >
             <Text style={textButton}>S'inscrire</Text>
           </TouchableOpacity>
 
