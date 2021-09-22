@@ -12,7 +12,7 @@ import {
   TouchableOpacity,
 } from "react-native";
 
-const MdpOublie = () => {
+const MdpOublie = (props) => {
   const {
     ResetPasswoard,
     text,
@@ -53,7 +53,10 @@ const MdpOublie = () => {
 
           <Ionicons style={mail} name="mail" size={24} color="black" />
         </View>
-        <TouchableOpacity style={VButton}>
+        <TouchableOpacity 
+        style={VButton}
+        onPress={() => props.navigation.navigate("NouveauMdp")}
+        >
           <MaterialIcons style={send} name="send" size={30} color="white" />
           <Text style={textButton}>Envoyer</Text>
         </TouchableOpacity>
