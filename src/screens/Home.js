@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet,Image } from "react-native";
 
 const Home = (props) => {
   return (
@@ -7,15 +7,12 @@ const Home = (props) => {
       <View style={styles.headerStyle1}>
 
       <View style = { styles.header}>
-      <Text style = {styles.bienvenue}>Market Search</Text>
-      <Text style = {styles.bienvenue}>Market Search</Text>
-      <Text style = {styles.bienvenue}>Market Search</Text>
-      <Text style = {styles.bienvenue}>Market Search</Text>
-      <Text style = {styles.bienvenue}>Market Search</Text>
-      <Text style = {styles.bienvenue}>Market Search</Text>
-      <Text style = {styles.bienvenue}>Market Search</Text>
-      <Text style = {styles.bienvenue}>Market Search</Text>
+      <Image style={styles.tinyLogo} source={require('../../assets/logo.png')} />
+     {/* <Text style = {styles.appName}>L</Text> */}
+      <Text style = {styles.appName}>Market Search</Text>
+      <Text style = {styles.appName}>P</Text>
       </View>
+      <Text style = {styles.appName}>Input</Text>
       </View>
 
       <View>
@@ -28,7 +25,7 @@ const Home = (props) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex : 1 , 
+    flex : 1 , // remplis toute la page 
 
   },
   headerStyle1: { 
@@ -36,10 +33,13 @@ const styles = StyleSheet.create({
 
   },
   header : { 
+    flexDirection:'row',
+    justifyContent: 'space-between',
     marginTop : '5%', 
     marginLeft : '3%',
+    marginRight: '3%',
   },
-  bienvenue : { 
+  appName : { 
     fontSize : 28, 
     fontWeight: 'bold',
     textAlign: 'center'
@@ -49,6 +49,11 @@ const styles = StyleSheet.create({
     color: '#008b8b', 
     marginTop : '5%', 
     marginLeft : '3%',
+  },
+  tinyLogo: {
+    width: 60,
+    height: 60,
+    borderRadius: 50
   }
 });
 export default Home;
