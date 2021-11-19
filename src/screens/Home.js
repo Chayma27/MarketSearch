@@ -1,13 +1,20 @@
 import React from "react";
-import { View, Text, StyleSheet,Image } from "react-native";
+import {
+  View,
+  Text,
+  StyleSheet,
+  Image,
+  TextInput, } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 
 const Home = (props) => {
   return (
     <View style= {styles.container}>
-      <View style={styles.headerStyle1}>
+            <KeyboardAwareScrollView>
 
+      <View style={styles.headerStyle1}>
       <View style = { styles.header}>
       <Image style={styles.tinyLogo} source={require('../../assets/logo.png')} />
      {/* <Text style = {styles.appName}>L</Text> */}
@@ -15,13 +22,23 @@ const Home = (props) => {
       {/* <Text style = {styles.appName}>P</Text> */}
       <Ionicons name="cart-sharp" size={40} color="black" />
       </View>
-      <Text style = {styles.appName}>Input</Text>
+      {/* <Text style = {styles.appName}>Input</Text> */}
+      <View style={styles.boxInputR}>
+            <TextInput
+              style={styles.textInput}
+              autoCorrect={false}
+              placeholderTextColor="#aaaaaa"
+              placeholderStyle={{ fontWeight: "500" }}
+              autoCompleteType="off"
+              placeholder="Nom de famille"
+            />
+        </View>
       </View>
 
       <View>
         <Text style={styles.newsArtcl}>Ajout récents</Text>
       </View>
-
+      </KeyboardAwareScrollView>
     </View>
   );
 };
@@ -57,6 +74,23 @@ const styles = StyleSheet.create({
     width: 60,
     height: 60,
     borderRadius: 50
-  }
+  },
+  boxInputR: {
+    flexDirection: "row",
+    justifyContent: "center",
+  },
+  textInput: {
+    borderWidth: 2,
+    height: 50,
+    borderColor: "#c6c6c6",
+    width: "85%",
+    paddingLeft: "5%",
+    backgroundColor: "white",
+    fontSize: 18,
+    color: "black",
+    fontWeight: "bold",
+    borderRadius: 10,
+    marginTop: 20,
+  },
 });
 export default Home;
