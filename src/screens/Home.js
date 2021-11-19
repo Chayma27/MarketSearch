@@ -23,15 +23,20 @@ const Home = (props) => {
       <Ionicons name="cart-sharp" size={40} color="black" />
       </View>
       {/* <Text style = {styles.appName}>Input</Text> */}
-      <View style={styles.boxInputR}>
-            <TextInput
-              style={styles.textInput}
-              autoCorrect={false}
-              placeholderTextColor="#aaaaaa"
-              placeholderStyle={{ fontWeight: "500" }}
-              autoCompleteType="off"
-              placeholder="Nom de famille"
-            />
+      <View style={styles.containerInput}>
+          <TextInput
+            autoCorrect={false}
+            placeholderTextColor="#aaaaaa"
+            placeholderStyle={{ fontWeight: "900" }}
+            autoCompleteType="off"
+            placeholder=" Rechercher"
+            style={styles.textInput}
+          />
+
+          <Ionicons style={styles.search} name="search" size={24} color="black" />
+          <Ionicons style={styles.camera} name="camera" size={24} color="black" />
+
+        
         </View>
       </View>
 
@@ -75,22 +80,34 @@ const styles = StyleSheet.create({
     height: 60,
     borderRadius: 50
   },
-  boxInputR: {
-    flexDirection: "row",
-    justifyContent: "center",
+  containerInput: {
+    marginTop: 30,
+    position: "relative",
   },
   textInput: {
     borderWidth: 2,
-    height: 50,
+    height: 60,
     borderColor: "#c6c6c6",
-    width: "85%",
-    paddingLeft: "5%",
+    width: "90%",
+    marginHorizontal: "5%",
     backgroundColor: "white",
-    fontSize: 18,
-    color: "black",
-    fontWeight: "bold",
-    borderRadius: 10,
-    marginTop: 20,
+    fontSize: 22,
+    paddingLeft: "15%",
+    borderRadius: 20,
+  },
+  search: {
+    position: "absolute",
+    marginTop: 7,
+    marginLeft: "8%",
+    fontSize: 46,
+    zIndex: 2,
+  },
+  camera: {
+    position: "absolute",
+    marginTop: 7,
+    marginLeft: "80%",
+    fontSize: 42,
+    zIndex: 2,
   },
 });
 export default Home;
