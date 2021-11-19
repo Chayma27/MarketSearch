@@ -1,5 +1,7 @@
 import React from "react";
 import { View, Text, StyleSheet,Image } from "react-native";
+import { Ionicons } from '@expo/vector-icons';
+
 
 const Home = (props) => {
   return (
@@ -10,7 +12,8 @@ const Home = (props) => {
       <Image style={styles.tinyLogo} source={require('../../assets/logo.png')} />
      {/* <Text style = {styles.appName}>L</Text> */}
       <Text style = {styles.appName}>Market Search</Text>
-      <Text style = {styles.appName}>P</Text>
+      {/* <Text style = {styles.appName}>P</Text> */}
+      <Ionicons name="cart-sharp" size={40} color="black" />
       </View>
       <Text style = {styles.appName}>Input</Text>
       </View>
@@ -29,7 +32,7 @@ const styles = StyleSheet.create({
 
   },
   headerStyle1: { 
-    backgroundColor: '#00ffff'
+    backgroundColor: '#cce4ff'
 
   },
   header : { 
