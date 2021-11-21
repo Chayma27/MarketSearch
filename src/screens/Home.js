@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -8,8 +8,15 @@ import {
 import { Ionicons, FontAwesome, FontAwesome5 } from '@expo/vector-icons';
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import Categories from "../components/home/Categories";
+import { SearchBar } from 'react-native-elements';
 
 const Home = (props) => {
+  const [search, setSearch] = useState('')
+
+  const updateSearch = () => { 
+    setSearch(search)
+  }
+
   return (
     <View style= {styles.container}>
             <KeyboardAwareScrollView>
@@ -20,6 +27,11 @@ const Home = (props) => {
       <Text style = {styles.appName}>Market Search</Text>
       <Ionicons name="cart-sharp" size={40} color="black" />
       </View>
+      <SearchBar
+        placeholder="Type Here..."
+        onChangeText={updateSearch}
+        value={search}
+      />
       <View style={styles.containerInput}>
           <TextInput
             autoCorrect={false}
