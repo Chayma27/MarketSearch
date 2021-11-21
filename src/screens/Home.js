@@ -5,20 +5,19 @@ import {
   StyleSheet,
   Image,
   ScrollView,
-  TextInput, } from "react-native";
+  TextInput } from "react-native";
 import { Ionicons, FontAwesome, FontAwesome5 } from '@expo/vector-icons';
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import Categories from "../components/home/Categories";
 import { SearchBar } from 'react-native-elements';
 
 const Home = (props) => {
-  
-  // const [search , setSearch] = useState('')
+  const [search, setSearch] = useState('')
 
-  // const updateSearch = () => { 
-  //   setSearch({search})
-  // }
-  // const {search} = search;
+  const updateSearch = () => { 
+    setSearch(search)
+  }
+
   return (
     <View style= {styles.container}>
       <ScrollView>
@@ -32,8 +31,8 @@ const Home = (props) => {
       </View>
       <SearchBar
         placeholder="Type Here..."
-        // onChangeText={updateSearch}
-        // value={search}
+        onChangeText={updateSearch}
+        value={search}
       />
       <View style={styles.containerInput}>
           <TextInput
