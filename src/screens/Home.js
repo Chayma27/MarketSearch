@@ -5,7 +5,7 @@ import {
   StyleSheet,
   Image,
   TextInput, } from "react-native";
-import { Ionicons } from '@expo/vector-icons';
+import { Ionicons, FontAwesome, FontAwesome5 } from '@expo/vector-icons';
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import Categories from "../components/home/Categories";
 
