@@ -7,7 +7,7 @@ import {
   TextInput, } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
-
+import Categories from "../components/home/Categories";
 
 const Home = (props) => {
   return (
@@ -17,12 +17,9 @@ const Home = (props) => {
       <View style={styles.headerStyle1}>
       <View style = { styles.header}>
       <Image style={styles.tinyLogo} source={require('../../assets/logo.png')} />
-     {/* <Text style = {styles.appName}>L</Text> */}
       <Text style = {styles.appName}>Market Search</Text>
-      {/* <Text style = {styles.appName}>P</Text> */}
       <Ionicons name="cart-sharp" size={40} color="black" />
       </View>
-      {/* <Text style = {styles.appName}>Input</Text> */}
       <View style={styles.containerInput}>
           <TextInput
             autoCorrect={false}
@@ -35,9 +32,9 @@ const Home = (props) => {
 
           <Ionicons style={styles.search} name="search" size={24} color="black" />
           <Ionicons style={styles.camera} name="camera" size={24} color="black" />
-
-        
         </View>
+        <Categories />
+
       </View>
 
       <View>
