@@ -1,17 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   View,
   Text,
   StyleSheet,
   Image,
+  ScrollView,
   TextInput, } from "react-native";
 import { Ionicons, FontAwesome, FontAwesome5 } from '@expo/vector-icons';
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import Categories from "../components/home/Categories";
+import { SearchBar } from 'react-native-elements';
 
 const Home = (props) => {
+  
+  // const [search , setSearch] = useState('')
+
+  // const updateSearch = () => { 
+  //   setSearch({search})
+  // }
+  // const {search} = search;
   return (
     <View style= {styles.container}>
+      <ScrollView>
             <KeyboardAwareScrollView>
 
       <View style={styles.headerStyle1}>
@@ -20,6 +30,11 @@ const Home = (props) => {
       <Text style = {styles.appName}>Market Search</Text>
       <Ionicons name="cart-sharp" size={40} color="black" />
       </View>
+      <SearchBar
+        placeholder="Type Here..."
+        // onChangeText={updateSearch}
+        // value={search}
+      />
       <View style={styles.containerInput}>
           <TextInput
             autoCorrect={false}
@@ -41,6 +56,7 @@ const Home = (props) => {
         <Text style={styles.newsArtcl}>Ajout récents</Text>
       </View>
       </KeyboardAwareScrollView>
+      </ScrollView>
     </View>
   );
 };
