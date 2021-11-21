@@ -6,10 +6,10 @@ const Categories = props => {
     return (
         <View style={styles.contenu}>
 
-            <Text style={styles.unboxing}> <FontAwesome5 name="tshirt" size={30}/>
-            Vêtements</Text>
-    
-
+            
+      <Text style={styles.unboxing}>  
+            <FontAwesome5 name="tshirt" size={30}/> {"\n"}Vêtements</Text>
+            
             <Text style={styles.unboxing} >Cuisine</Text>
             <Text style={styles.unboxing} >Informatique</Text>
             <Text style={styles.unboxing} >Décor</Text>
