@@ -94,11 +94,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1, // remplis toute la page
   },
-  card : { 
-    width : "300",
-    height: "400",
-    position : 'absolute'
-  },
   headerStyle1: {
     backgroundColor: "#cce4ff",
   },
@@ -113,12 +108,6 @@ const styles = StyleSheet.create({
     fontSize: 28,
     fontWeight: "bold",
     textAlign: "center",
-  },
-  newsArtcl: {
-    fontSize: 28,
-    color: "#008b8b",
-    marginTop: "5%",
-    marginLeft: "3%",
   },
   tinyLogo: {
     width: 60,
@@ -161,7 +150,18 @@ const styles = StyleSheet.create({
     position :'relative',
   }, 
   product : { 
-    flexDirection : 'row'
-  }
+    flexDirection : 'row',
+  },
+  newsArtcl: {
+    fontSize: 28,
+    color: "#008b8b",
+    marginTop: "5%",
+    marginLeft: "3%",
+  },
+  card : { 
+    width : '300',
+    height: '400',
+    position : 'absolute'
+  },
 });
 export default Home;
