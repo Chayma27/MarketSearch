@@ -3,8 +3,9 @@ import { View, Text, StyleSheet, Image, TextInput, ScrollView } from "react-nati
 import { Ionicons, FontAwesome, FontAwesome5 } from "@expo/vector-icons";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 import Categories from "../components/home/Categories";
-import { SearchBar } from "react-native-elements";
-import { PricingCard } from "react-native-elements";
+import { Button } from "react-native-elements";
+// import CardAnnonces from "../components/home/CardAnnonces";
+import Card from "../components/home/CardAnnonces";
 
 const Home = (props) => {
   const [search, setSearch] = useState("");
@@ -62,25 +63,16 @@ const Home = (props) => {
         </View>
         <ScrollView horizontal={true}>
         <View style={styles.product}>
-      <PricingCard style= {styles.card}
-       color="#4f9deb"
-       title="Mercedes Gla"
-       price="45.000 $"
-       info={['1 User', 'Basic Support', 'All Core Features']}
-      button={{ title: ' Contacter', icon: 'flight-takeoff' }}/>
+        <Card Titre = "Mon tresors diamant" prix= "1650 DT" description="test avec chayma pourr comprendre  ."  path={require('../../assets/MonTresor.jpg')}/>
+        <Card Titre = "Mercedes GLA" prix= "149.000 DT" description="Mercedes GLA excellant état, première main, toujours garée dans un garage fermé, édition limitée en finition avec toit ouvrant ."  path={require('../../assets/gla.jpeg')}/>
+        <Card Titre = "Thermomix TM5" prix= "2.475 DT" description="Thermomix connecté en très bon état, il vient d'être révisé et a donc un an de garantie confort.
+Pas sérieux s'abstenir" path={require('../../assets/thermomix.jpeg')}/>
+<Card Titre = "Nettoyeur bouteil lb" prix= "120 DT" description="Vend nettoyeur bouteille graver lb déposée je le vend 120 Dinars.
+Pas sérieux s'abstenir" path={require('../../assets/lb.jpeg')}/>
+<Card Titre = "sac chanel " prix= "8.000 DT" description="Véritable sac CHANEL modèle double rabat en cuir matelassé rouge. Caractérisé par la présence d'une pochette de chaque côté, à voir sur les photos. Modèle rare." path={require('../../assets/sac.jpeg')}/>
+<Card Titre = "Velo Vtc" prix= "450 DT" description="Velo vtc tres bon état general ,équipé du coffre arriére à clés amovible,panier avant, sacoche avec bidon,
+support avec pompe.compteur de vitesse.S i pas trop loin,je peux vous le livrer." path={require('../../assets/velo.jpeg')}/>
 
-      <PricingCard style= {styles.card}
-       color="#4f9deb"
-       title="TV SMART Samsung"
-       price="400 $"
-       info={['1 User', 'Basic Support', 'All Core Features']}
-      button={{ title: ' Contacter', icon: 'flight-takeoff' }}/>
-      <PricingCard style= {styles.card}
-       color="#4f9deb"
-       title="IPHONE 12 pro Max"
-       price="1241 $"
-       info={['1 User', 'Basic Support', 'All Core Features']}
-      button={{ title: ' Contacter', icon: 'flight-takeoff' }}/>
       </View>
       </ScrollView>
 
@@ -108,6 +100,13 @@ const styles = StyleSheet.create({
     fontSize: 28,
     fontWeight: "bold",
     textAlign: "center",
+  },
+  newsArtcl: {
+    fontSize: 28,
+    color: "#008b8b",
+    marginTop: "5%",
+    marginBottom : '2%',
+    marginLeft: "3%",
   },
   tinyLogo: {
     width: 60,
