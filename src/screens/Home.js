@@ -63,16 +63,30 @@ const Home = (props) => {
         </View>
         <ScrollView horizontal={true}>
         <View style={styles.product}>
-        <Card Titre = "Mon tresors diamant" prix= "1650 DT" description="test avec chayma pourr comprendre  ."  path={require('../../assets/MonTresor.jpg')}/>
-        <Card Titre = "Mercedes GLA" prix= "149.000 DT" description="Mercedes GLA excellant état, première main, toujours garée dans un garage fermé, édition limitée en finition avec toit ouvrant ."  path={require('../../assets/gla.jpeg')}/>
-        <Card Titre = "Thermomix TM5" prix= "2.475 DT" description="Thermomix connecté en très bon état, il vient d'être révisé et a donc un an de garantie confort.
-Pas sérieux s'abstenir" path={require('../../assets/thermomix.jpeg')}/>
-<Card Titre = "Nettoyeur bouteil lb" prix= "120 DT" description="Vend nettoyeur bouteille graver lb déposée je le vend 120 Dinars.
-Pas sérieux s'abstenir" path={require('../../assets/lb.jpeg')}/>
-<Card Titre = "sac chanel " prix= "8.000 DT" description="Véritable sac CHANEL modèle double rabat en cuir matelassé rouge. Caractérisé par la présence d'une pochette de chaque côté, à voir sur les photos. Modèle rare." path={require('../../assets/sac.jpeg')}/>
-<Card Titre = "Velo Vtc" prix= "450 DT" description="Velo vtc tres bon état general ,équipé du coffre arriére à clés amovible,panier avant, sacoche avec bidon,
-support avec pompe.compteur de vitesse.S i pas trop loin,je peux vous le livrer." path={require('../../assets/velo.jpeg')}/>
-
+        <Card Titre = "Mon tresors diamant" prix= "1650 DT" description="test avec chayma pourr comprendre  ."
+        path={require('../../assets/MonTresor.jpg')}/>
+        <Card Titre = "Mercedes GLA" prix= "149.000 DT" description="Mercedes GLA excellant état, première main, toujours garée dans un garage fermé, édition limitée en finition avec toit ouvrant ."
+        path={require('../../assets/gla.jpeg')}/>
+        <Card Titre = "Thermomix TM5" prix= "2.475 DT" description="Thermomix connecté en très bon état, il vient d'être révisé et a donc un an de garantie confort.Pas sérieux s'abstenir"
+        path={require('../../assets/thermomix.jpeg')}/>
+        <Card Titre = "Nettoyeur bouteil lb" prix= "120 DT" description="Vend nettoyeur bouteille graver lb déposée je le vend 120 Dinars.Pas sérieux s'abstenir"
+        path={require('../../assets/lb.jpeg')}/>
+        <Card Titre = "sac chanel " prix= "8.000 DT" description="Véritable sac CHANEL modèle double rabat en cuir matelassé rouge. Caractérisé par la présence d'une pochette de chaque côté, à voir sur les photos. Modèle rare."
+        path={require('../../assets/sac.jpeg')}/>
+        <Card Titre = "Velo Vtc" prix= "450 DT" description="Velo vtc tres bon état general ,équipé du coffre arriére à clés amovible,panier avant, sacoche avec bidon,support avec pompe.compteur de vitesse.S i pas trop loin,je peux vous le livrer."
+        path={require('../../assets/velo.jpeg')}/>
+        <Card Titre = "Pull" prix= "50 DT" description="Pull en maille retournée basique de la marque pull&bear"
+        path={require('../../assets/pull.jpg')}/>
+        <Card Titre = "Rouge à lévres" prix= "35 DT" description="Rouge à lèvres liquide ultra mat de la marque SEPHORA, ultra couvrant, longue tenue et sans transfert."
+        path={require('../../assets/Rouge.jpg')}/>
+        <Card Titre = "Eau de parfum mon Guerlain " prix= "352 DT" description="Mon Guerlain est le nouveau parfum de la Maison, un hommage à la féminité d’aujourd’hui : une féminité forte, libre et sensuelle, inspirée par Angelina Jolie."
+        path={require('../../assets/parfum.jpg')}/>
+        <Card Titre = "Apple Watch series 6 " prix= "1899 DT" description="L’Apple Watch Series 6 est une montre connectée. Elle représente la version 2020 de la célèbre montre d’Apple."
+        path={require('../../assets/applewatch.png')}/>
+        <Card Titre = "Short Nike " prix= "15 DT" description="Short Nike pour femme peu utilisé."
+        path={require('../../assets/short.jpg')}/>
+        <Card Titre = "Tv Samsung Smart " prix= "700 DT" description="Tv Samsung Smart état comme neuf, vente à cause de déménagement international."
+        path={require('../../assets/Tv.jpeg')}/>
       </View>
       </ScrollView>
 
