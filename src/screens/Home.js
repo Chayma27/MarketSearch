@@ -89,7 +89,26 @@ const Home = (props) => {
         path={require('../../assets/Tv.jpeg')}/>
       </View>
       </ScrollView>
+      <View>
+        <View style ={{  width: 400, flex : 1,
+    flexDirection: 'row',
+    justifyContent: 'center'}}>
+      <Image
+              style={styles.BlackFridayimg}
+              source={require("../../assets/black-friday.png")}
+            />
+            </View>
+          <Text style={styles.BlackFriday}>Black Friday</Text>
+        </View>
+        <ScrollView horizontal={true}>
+        <View style={styles.product}>
+        <Card Titre = "Mon tresors diamant" prix= "1650 DT" description="test avec chayma pourr comprendre  ."
+        path={require('../../assets/MonTresor.jpg')}/>
+        <Card Titre = "Mercedes GLA" prix= "149.000 DT" description="Mercedes GLA excellant état, première main, toujours garée dans un garage fermé, édition limitée en finition avec toit ouvrant ."
+        path={require('../../assets/gla.jpeg')}/>
 
+          </View>
+          </ScrollView>
       </KeyboardAwareScrollView>
      
     </View>
@@ -176,5 +195,19 @@ const styles = StyleSheet.create({
     height: '400',
     position : 'absolute'
   },
+  BlackFriday: { 
+    color : 'red',
+    fontSize: 28,
+    fontWeight : 'bold',
+    marginTop: "5%",
+    marginLeft: "3%",
+
+  }, 
+  BlackFridayimg: { 
+    width: 390,
+    height: 290,
+
+    // borderRadius: 50,
+  }
 });
 export default Home;
