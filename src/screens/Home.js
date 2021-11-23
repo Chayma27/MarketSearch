@@ -87,6 +87,7 @@ const Home = (props) => {
         path={require('../../assets/short.jpg')}/>
         <Card Titre = "Tv Samsung Smart " prix= "700 DT" description="Tv Samsung Smart état comme neuf, vente à cause de déménagement international."
         path={require('../../assets/Tv.jpeg')}/>
+        
       </View>
       </ScrollView>
       <View>
@@ -106,8 +107,15 @@ const Home = (props) => {
         path={require('../../assets/MonTresor.jpg')} soldeRemise= "SOLDE - 20%" newPrice ="1320 DT" />
         <Promo Titre = "Mercedes GLA" prix= "149.000 DT" description="Mercedes GLA excellant état, première main, toujours garée dans un garage fermé, édition limitée en finition avec toit ouvrant ."
         path={require('../../assets/gla.jpeg')} soldeRemise= "SOLDE - 10%" newPrice ="134.100 DT" />
-
-          </View>
+         <Promo Titre = "Eau de parfum mon Guerlain" prix= "352 DT" description="Mon Guerlain est le nouveau parfum de la Maison, un hommage à la féminité d’aujourd’hui : une féminité forte, libre et sensuelle, inspirée par Angelina Jolie."
+         path={require('../../assets/parfum.jpg')} soldeRemise= "SOLDE - 20%" newPrice ="281.6 DT" />
+        <Promo Titre = "Tv Samsung Smart " prix= "700 DT" description="Tv Samsung Smart état comme neuf, vente à cause de déménagement international."
+        path={require('../../assets/Tv.jpeg')} soldeRemise= "SOLDE - 40%" newPrice ="420 DT"/>          
+        <Promo Titre = "Rouge à lévres" prix= "35 DT" description="Rouge à lèvres liquide ultra mat de la marque SEPHORA, ultra couvrant, longue tenue et sans transfert."
+        path={require('../../assets/Rouge.jpg')} soldeRemise= "SOLDE -5%" newPrice ="33.25 DT"/>
+        <Promo Titre = "Apple Watch series 6 " prix= "1899 DT" description="L’Apple Watch Series 6 est une montre connectée. Elle représente la version 2020 de la célèbre montre d’Apple."
+        path={require('../../assets/applewatch.png')} soldeRemise= "SOLDE -30%" newPrice ="1329.3 DT"/>
+        </View>
           </ScrollView>
       </KeyboardAwareScrollView>
      
