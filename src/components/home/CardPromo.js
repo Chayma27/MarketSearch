@@ -22,7 +22,7 @@ const CardPromo = (props) => {
       <View style={{ padding: 10, width: 250 }}>
         <View style={{flexDirection : 'row' , justifyContent: 'space-between'}}>
         <Text style ={{color: "black" , fontWeight : 'bold' , fontSize : 16}}>{props.Titre}</Text> 
-        <Text style ={{color: "red" , textDecorationLine:'line-through' , textDecorationColor : '#'}}> {props.prix}</Text>
+        <Text style ={{color: "red" , textDecorationLine:'line-through'}}> {props.prix}</Text>
         </View>
         <Text style={{ color: "#777", paddingTop: 5 }}>
        {props.description} 
