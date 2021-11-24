@@ -7,7 +7,7 @@ import { Button } from "react-native-elements";
 const CardPromo = (props) => {
 
   return (
-<View style={{ flex: 1, alignItems: "center", justifyContent: "center" , backgroundColor: "#eee" , marginHorizontal: 10}}>
+<View style={{ flex: 1, alignItems: "center", justifyContent: "center", marginHorizontal: 10}}>
     <View style={{ backgroundColor: "#eee", borderRadius: 10, overflow: 'hidden' }}>
       <View style={{ height: 300, width: 250, overflow: 'hidden' }}>
         <Image
