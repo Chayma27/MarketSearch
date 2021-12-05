@@ -40,10 +40,10 @@ const Tab = createBottomTabNavigator();
 function HomeTabs() {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Categories" component={Categories} />
-      <Tab.Screen name="PublishAnnounce" component={PublishAnnonce} />
-      <Tab.Screen name="MyAccount" component={MyAccount} />
+      <Tab.Screen name="Home" component={Home} options={{headerShown:false}} />
+      <Tab.Screen name="Categories" component={Categories}  options={{headerShown:false}} />
+      <Tab.Screen name="PublishAnnounce" component={PublishAnnonce} options={{headerShown:false}} />
+      <Tab.Screen name="MyAccount" component={MyAccount} options={{headerShown:false}} />
     </Tab.Navigator>
   );
 }
@@ -52,8 +52,8 @@ const AppNavigation = () => {
   return (
     <NavigationContainer>
    <Stack.Navigator>
-      <Stack.Screen name="Connexion" component={Connexion} />
-      <Stack.Screen name="Home" component={HomeTabs} />
+      <Stack.Screen name="Connexion" component={Connexion} options={{headerLeft:()=> null}} />
+      <Stack.Screen name="Home" component={HomeTabs}  />
       <Stack.Screen name="Inscription" component={Inscription} />
       <Stack.Screen name="MdpOublie" component={MdpOublie} />
       <Stack.Screen name="NouveauMdp" component={NouveauMdp} />
