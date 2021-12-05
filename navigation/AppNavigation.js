@@ -44,8 +44,7 @@ function MyAccount() {
 function HomeTabs() {
   return (
     <Tab.Navigator>
-      {/* <Tab.Screen name="Home" component={Home} /> */}
-      <Tab.Screen name="Accueil" component={Accueil} />
+      <Tab.Screen name="Accueil" component={Home} />
       <Tab.Screen name="Categories" component={Categories} />
       <Tab.Screen name="AddProduct" component={AddProduct} />
       <Tab.Screen name="MyAccount" component={MyAccount} />
