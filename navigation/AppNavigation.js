@@ -5,48 +5,44 @@ import { Text, View } from 'react-native';
 import Connexion from "../src/screens/Connexion";
 import Inscription from "../src/screens/Inscription";
 import MdpOublie from "../src/screens/MdpOublie";
-import Home from "../src/screens/Home";
 import NouveauMdp from "../src/screens/NouveauMdp";
+import Home from "../src/screens/Home";
+import Categories from "../src/screens/Categories";
+import PublishAnnonce from "../src/screens/PublishAnnounce";
+import MyAccount from "../src/screens/MyAccount";
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
-function Accueil() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Accueil</Text>
-    </View>
-  );
-}
 
-function Categories() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Categories</Text>
-    </View>
-  );
-}
-function AddProduct() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Ajouter Produit</Text>
-    </View>
-  );
-}
-function MyAccount() {
-  return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text>Mon Compte</Text>
-    </View>
-  );
-}
+// function Categories() {
+//   return (
+//     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+//       <Text>Categories</Text>
+//     </View>
+//   );
+// }
+// function AddProduct() {
+//   return (
+//     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+//       <Text>Ajouter Produit</Text>
+//     </View>
+//   );
+// }
+// function MyAccount() {
+//   return (
+//     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+//       <Text>Mon Compte</Text>
+//     </View>
+//   );
+// }
 
 function HomeTabs() {
   return (
     <Tab.Navigator>
-      <Tab.Screen name="Accueil" component={Home} />
+      <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Categories" component={Categories} />
-      <Tab.Screen name="AddProduct" component={AddProduct} />
+      <Tab.Screen name="PublishAnnounce" component={PublishAnnonce} />
       <Tab.Screen name="MyAccount" component={MyAccount} />
     </Tab.Navigator>
   );
