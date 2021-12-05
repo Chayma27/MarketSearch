@@ -20,7 +20,7 @@ const Categories = props => {
             <FontAwesome5 name="holly-berry" size={30}/> {"\n"} Décor</Text>
 
         <Text style={styles.unboxing}>
-            <FontAwesome5 name="star" size={30}/> {"\n"}Beauté</Text>
+            <FontAwesome5 name="star" size={30}/> {"\n"}Maquillage</Text>
             
         <Text style={styles.unboxing}>
         <FontAwesome5 name="playstation" size={30}/> {"\n"}Jouets</Text>
