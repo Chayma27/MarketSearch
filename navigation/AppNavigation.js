@@ -16,28 +16,6 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 const Stack = createNativeStackNavigator();
 const Tab = createBottomTabNavigator();
 
-// function Categories() {
-//   return (
-//     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-//       <Text>Categories</Text>
-//     </View>
-//   );
-// }
-// function AddProduct() {
-//   return (
-//     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-//       <Text>Ajouter Produit</Text>
-//     </View>
-//   );
-// }
-// function MyAccount() {
-//   return (
-//     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-//       <Text>Mon Compte</Text>
-//     </View>
-//   );
-// }
-
 function HomeTabs() {
   return (
     <Tab.Navigator
@@ -62,8 +40,8 @@ function HomeTabs() {
         // You can return any component that you like here!
         return <Ionicons name={iconName} size={size} color={color} />;
       },
-      tabBarActiveTintColor: 'tomato',
-      tabBarInactiveTintColor: 'gray',
+      tabBarActiveTintColor: 'tomato',  // sa quand tu click ou la page est affiche comme maint fi home
+      tabBarInactiveTintColor: 'black', // sa grris par defaut 
     })}
     >
       <Tab.Screen name="Home" component={Home} options={{title : 'Home' }}  />
