@@ -42,6 +42,9 @@ function HomeTabs() {
       },
       tabBarActiveTintColor: 'tomato',  // sa quand tu click ou la page est affiche comme maint fi home
       tabBarInactiveTintColor: 'black', // sa grris par defaut 
+      tabBarLabelStyle : { 
+        fontSize : 13
+      }
     })}
     >
       <Tab.Screen name="Home" component={Home} options={{title : 'Home' }}  />
