@@ -1,7 +1,7 @@
 import React from "react";
 import { StyleSheet, View, ScrollView, Image } from "react-native";
 import { Text, Card, Button, Icon } from "react-native-elements";
-
+import { MaterialCommunityIcons, Ionicons, Entypo, FontAwesome } from "@expo/vector-icons";
 const MyAccount = (props) => {
   return (
     // <View>
@@ -10,70 +10,47 @@ const MyAccount = (props) => {
     <ScrollView>
       <View style={styles.container}>
         <Card>
-          <Text style={styles.cardTitle}>Mes commandes</Text>
+          <View style={{ flexDirection: "row" }}>
+            <MaterialCommunityIcons
+              name="shopping-outline"
+              size={24}
+              color="black"
+            />
+            <Text style={styles.cardTitle}> Mes commandes</Text>
+          </View>
           <Card.Divider />
-          <Text style={styles.cardTitle}>Mes favoris</Text>
+          <View style={{ flexDirection: "row" }}>
+            <Ionicons name="heart-outline" size={24} color="black" />
+            <Text style={styles.cardTitle}> Mes favoris</Text>
+          </View>
           <Card.Divider />
-          <Text style={styles.cardTitle}>Mes articles publiés</Text>
+          <View style={{ flexDirection: "row" }}>
+            <Entypo name="publish" size={23} color="black" />
+            <Text style={styles.cardTitle}> Mes articles publiés</Text>
+          </View>
         </Card>
         <Card>
-          <Text style={styles.cardTitle}>Mes informations</Text>
+          <View style={{ flexDirection: "row" }}>
+          <MaterialCommunityIcons name="card-account-details-outline" size={24} color="black" />
+            <Text style={styles.cardTitle}> Mes informations</Text>
+          </View>
         </Card>
         <Card>
-          <Text style={styles.cardTitle}>A propos de nous</Text>
+          <View style={{ flexDirection: "row" }}>
+          <Ionicons name="information-circle-outline" size={24} color="black" />
+            <Text style={styles.cardTitle}> A propos de nous</Text>
+          </View>
         </Card>
-
         <Card>
           <Button
             icon={
-              <Icon
-                name="code"
+              <FontAwesome
+                name="sign-out"
                 color="#ffffff"
                 iconStyle={{ marginRight: 10 }}
+                size={24}
               />
             }
-            buttonStyle={{
-              borderRadius: 0,
-              marginLeft: 0,
-              marginRight: 0,
-              marginBottom: 0,
-            }}
-            title="Se déconnecter"
-          />
-          </Card>
-          <Card>
-          <Button
-           icon={
-            <Icon
-              name="code"
-              color="black"
-              iconStyle={{ marginRight: 10 }}
-            />
-          }
-            title="Se déconnecter"
-            buttonStyle={{
-              backgroundColor: "rgba(244, 244, 244, 1)",
-              borderRadius: 3,
-              
-            }}
-            containerStyle={{
-              borderRadius: 0,
-              marginLeft: 0,
-              marginRight: 0,
-              marginBottom: 0,
-            }}
-            titleStyle={{ marginHorizontal: 20, color: "black" }}
-          />
-</Card>
-<Card>
-          <Button
-           icon={
-            <Icon
-              name="code"
-              color="#ffffff"
-              iconStyle={{ marginRight: 10 }}
-            />
-          }
             title="Se déconnecter"
             buttonStyle={{ backgroundColor: "rgba(214, 61, 57, 1)" }}
             containerStyle={{
