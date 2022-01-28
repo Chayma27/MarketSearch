@@ -16,7 +16,9 @@ const MyAccount = (props) => {
     <ScrollView>
       <View style={styles.container}>
         <Card>
-          <TouchableOpacity>
+          <TouchableOpacity 
+            onPress={() => props.navigation.navigate("MesCommandes")}
+            >
             <View style={{ flexDirection: "row" }}>
               <MaterialCommunityIcons
                 name="shopping-outline"
@@ -35,7 +37,9 @@ const MyAccount = (props) => {
             </View>
           </TouchableOpacity>
           <Card.Divider />
-          <TouchableOpacity>
+          <TouchableOpacity 
+                      onPress={() => props.navigation.navigate("MesFavoris")}
+                      >
             <View style={{ flexDirection: "row" }}>
               <Ionicons name="heart-outline" size={24} color="black" />
               <Text style={styles.cardTitle}> Mes favoris</Text>
@@ -50,7 +54,9 @@ const MyAccount = (props) => {
             </View>
           </TouchableOpacity>
           <Card.Divider />
-          <TouchableOpacity>
+          <TouchableOpacity 
+                      onPress={() => props.navigation.navigate("MesArticles")}
+                      >
             <View style={{ flexDirection: "row" }}>
               <Entypo name="publish" size={23} color="black" />
               <Text style={styles.cardTitle}> Mes articles publiés</Text>
@@ -66,7 +72,10 @@ const MyAccount = (props) => {
           </TouchableOpacity>
         </Card>
         <Card>
-          <TouchableOpacity>
+          <TouchableOpacity
+                      onPress={() => props.navigation.navigate("MesInfos")}
+
+          >
             <View style={{ flexDirection: "row" }}>
               <MaterialCommunityIcons
                 name="card-account-details-outline"
@@ -86,7 +95,10 @@ const MyAccount = (props) => {
           </TouchableOpacity>
         </Card>
         <Card>
-          <TouchableOpacity>
+          <TouchableOpacity
+                      onPress={() => props.navigation.navigate("Us")}
+
+          >
             <View style={{ flexDirection: "row" }}>
               <Ionicons
                 name="information-circle-outline"

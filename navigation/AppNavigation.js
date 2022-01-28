@@ -11,6 +11,11 @@ import Home from "../src/screens/Home";
 import Categories from "../src/screens/Categories";
 import PublishAnnonce from "../src/screens/PublishAnnounce";
 import MyAccount from "../src/screens/MyAccount";
+import MesCommandes from "../src/screens/MesCommandes";
+import MesArticles from "../src/screens/MesArticles";
+import Mesfavoris from "../src/screens/Mesfavoris";
+import Us from "../src/screens/Us";
+import Mesinfos from "../src/screens/MesInfos";
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 const Stack = createNativeStackNavigator();
@@ -64,6 +69,11 @@ const AppNavigation = () => {
       <Stack.Screen name="Inscription" component={Inscription} />
       <Stack.Screen name="MdpOublie" component={MdpOublie} />
       <Stack.Screen name="NouveauMdp" component={NouveauMdp} />
+      <Stack.Screen name="MesCommandes" component={MesCommandes} options={{  title : 'Mes commandes'}}/>
+      <Stack.Screen name="MesArticles" component={MesArticles} />
+      <Stack.Screen name="MesInfos" component={Mesinfos} options={{  title : 'Mes informations'}} />
+      <Stack.Screen name="MesFavoris" component={Mesfavoris} options={{  title : 'MES favoris'}} />
+      <Stack.Screen name="Us" component={Us} options={{  title : 'Qui sommes nous'}} />
     </Stack.Navigator>
   </NavigationContainer>
   );
