@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleSheet, View, ScrollView, TouchableOpacity } from "react-native";
+import { StyleSheet, View, ScrollView, TouchableOpacity , TextInput } from "react-native";
 import { Text, Card, Button, Icon } from "react-native-elements";
 import {
   MaterialCommunityIcons,
@@ -54,6 +54,25 @@ const MyAccount = (props) => {
             </View>
           </TouchableOpacity>
           <Card.Divider />
+
+          {/* test
+          
+            <View style={{ flexDirection: "column" }}>
+              <Text style={styles.cardTitle}> Email</Text>
+              <TextInput
+         name="email"
+         placeholder="Email Address"
+         style={styles.textInput}
+         onChangeText={handleChange('email')}
+         onBlur={handleBlur('email')}
+         value={values.email}
+         keyboardType="email-address"
+       />
+            </View>
+          <Card.Divider /> */}
+
+
+          {/* fin de test */}
           <TouchableOpacity 
                       onPress={() => props.navigation.navigate("MesArticles")}
                       >
