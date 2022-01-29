@@ -47,7 +47,7 @@ const Mesinfos = (props) => {
                     style={styles.textInput}
                     onChangeText={handleChange("nom")}
                     onBlur={handleBlur("nom")}
-                    value={values.Nom}
+                    value={values.nom}
                   />
                 </View>
                 {errors.nom && (
@@ -93,8 +93,10 @@ const Mesinfos = (props) => {
                   </Text>
                 )}
                 <Card.Divider />
-
-                {/* <TextInput
+{/* fourth form */}
+<View style={{ flexDirection: "column" }}>
+                  <Text style={styles.cardTitle}>Mot de passe</Text>
+                  <TextInput
          name="password"
          placeholder="Password"
          style={styles.textInput}
@@ -103,9 +105,13 @@ const Mesinfos = (props) => {
          value={values.password}
          secureTextEntry
        />
-       {errors.password &&
-         <Text style={{ fontSize: 16, color: 'red' }}>{errors.password}</Text>
-       } */}
+                </View>
+                {errors.password &&
+         <Text style={{ fontSize: 10, color: 'red' }}>{errors.password}</Text>
+       }
+                <Card.Divider />
+               
+       
               </Card>
               <Card>
                 <Button
