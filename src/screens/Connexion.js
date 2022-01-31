@@ -2,6 +2,8 @@ import { StatusBar } from "expo-status-bar";
 import React, { Fragment } from "react";
 import { FontAwesome, FontAwesome5 } from "@expo/vector-icons";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import { Formik } from "formik";
+import * as yup from "yup";
 
 import {
   StyleSheet,
@@ -12,6 +14,17 @@ import {
 } from "react-native";
 
 const Connexion = (props) => {
+  const monLoginValidationSchema = yup.object().shape({
+    email: yup
+      .string()
+      .email("Please enter valid email")
+      .required("Adresse email obligatoire"),
+    password: yup
+      .string()
+      .min(8, ({ min }) => `Password must be at least ${min} characters`)
+      .required("mot de passe obligatiore"),
+  });
+
   const {
     container,
     text,
@@ -29,56 +42,111 @@ const Connexion = (props) => {
       <View style={container}>
         <KeyboardAwareScrollView>
           <Text style={text}>Identifiez-vous </Text>
-          <StatusBar style="auto" />
-          <View style={containerInput}>
-            <FontAwesome
-              style={userIcon}
-              name="user"
-              size={30}
-              color="#3B3636"
-            />
-            <TextInput
-              autoCorrect={false}
-              placeholderTextColor="#aaaaaa"
-              placeholderStyle={{ fontWeight: "900" }}
-              autoCompleteType="off"
-              placeholder="Identifiant *"
-              style={styles.textInput}
-            />
-            <FontAwesome5
-              style={keyIcon}
-              name="key"
-              size={30}
-              color="#3B3636"
-            />
-            <TextInput
-              autoCorrect={false}
-              placeholderTextColor="#aaaaaa"
-              autoCompleteType="password"
-              textContentType="password"
-              secureTextEntry={true}
-              placeholder="Mot de passe *"
-              style={textInput}
-            />
-          </View>
-          <TouchableOpacity
-            style={VButton}
-            onPress={() => props.navigation.navigate("Home")}
+          <Formik
+            validationSchema={monLoginValidationSchema}
+            initialValues={{ email: "", password: "" }}
+            onSubmit={(values) => console.log(values)}
           >
-            <Text style={textButton}>Se connecter</Text>
-          </TouchableOpacity>
-          <View style={Vlink}>
-            <TouchableOpacity
-              onPress={() => props.navigation.navigate("Inscription")}
-            >
-              <Text style={link}>Créer un compte</Text>
-            </TouchableOpacity>
-            <TouchableOpacity
-              onPress={() => props.navigation.navigate("MdpOublie")}
-            >
-              <Text style={link}> Mot de passe oublié ? </Text>
-            </TouchableOpacity>
-          </View>
+            {({
+              handleChange,
+              handleBlur,
+              handleSubmit,
+              values,
+              errors,
+              isValid,
+            }) => (
+              <>
+                <View>
+                  <View style={styles.textInput}>
+                    <FontAwesome
+                      style={userIcon}
+                      name="user"
+                      size={30}
+                      color="#3B3636"
+                    />
+                    <View style ={{flexDirection : 'column', justifyContent : 'center', paddingTop : '5%'}}>
+
+                    <View style ={{flexDirection: "row"}}> 
+                    <TextInput
+                      name="email"
+                      style={{ fontSize: 18}}
+                      autoCorrect={false}
+                      onChangeText={handleChange("email")}
+                      onBlur={handleBlur("email")}
+                      placeholderTextColor="#aaaaaa"
+                      placeholderStyle={{ fontWeight: "900"  }}
+                      autoCompleteType="off"
+                      placeholder="Adresse e-mail *"
+                      keyboardType="email-address"
+                      onChangeText={handleChange("email")}
+                      onBlur={handleBlur("email")}
+                      value={values.email}
+                    />
+                    </View>
+                    {errors.email && (
+                      <Text style={{ fontSize: 10, color: "red" }}>
+                        {errors.email}
+                      </Text>
+                    )}
+                    </View>
+                  </View>
+                  <View style={styles.textInput}>
+                    <FontAwesome5
+                      style={keyIcon}
+                      name="key"
+                      size={30}
+                      color="#3B3636"
+                    />
+                                        <View style ={{flexDirection : 'column', justifyContent : 'center', paddingTop : '5%'}}>
+
+<View style ={{flexDirection: "row"}}> 
+
+                    <TextInput
+                      name="password"
+                      style={{ color: "black", fontSize: 18 }}
+                      autoCompleteType="off"
+                      autoCorrect={false}
+                      placeholderTextColor="#aaaaaa"
+                      autoCompleteType="password"
+                      textContentType="password"
+                      secureTextEntry={true}
+                      placeholder="Mot de passe *"
+                      onChangeText={handleChange("password")}
+                      onBlur={handleBlur("password")}
+                      value={values.password}
+                    />
+                    </View>
+                    {errors.password && (
+                      <Text style={{ fontSize: 10, color: "red" }}>
+                        {errors.password}
+                      </Text>
+                    )}
+                    </View>
+                  </View>
+                </View>
+                <TouchableOpacity
+                  style={VButton}
+                  onPress={
+                    (() => props.navigation.navigate("Home"), handleSubmit)
+                  }
+                >
+                  <Text style={textButton}>Se connecter</Text>
+                </TouchableOpacity>
+                <View style={Vlink}>
+                  <TouchableOpacity
+                    onPress={() => props.navigation.navigate("Inscription")}
+                  >
+                    <Text style={link}>Créer un compte</Text>
+                  </TouchableOpacity>
+                  <TouchableOpacity
+                    onPress={() => props.navigation.navigate("MdpOublie")}
+                  >
+                    <Text style={link}> Mot de passe oublié ? </Text>
+                  </TouchableOpacity>
+                </View>
+              </>
+            )}
+          </Formik>
         </KeyboardAwareScrollView>
       </View>
     </Fragment>
@@ -90,7 +158,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#EFF1F8",
     flexDirection: "column",
-    marginTop: '-25%',
+    marginTop: "-25%",
   },
   text: {
     fontSize: 28,
@@ -143,15 +211,15 @@ const styles = StyleSheet.create({
   },
   userIcon: {
     position: "absolute",
-    marginTop: 27,
-    marginLeft: "8%",
+    marginTop: 11,
+    marginLeft: "5%",
     fontSize: 48,
     zIndex: 2,
   },
   keyIcon: {
     position: "absolute",
-    marginTop: 135,
-    marginLeft: "8%",
+    marginTop: 11,
+    marginLeft: "5%",
     fontSize: 40,
     zIndex: 2,
   },
