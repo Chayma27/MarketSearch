@@ -3,6 +3,7 @@ import { View, StyleSheet, TextInput, ScrollView } from "react-native";
 import { Text, Card, Button } from "react-native-elements";
 import { Formik } from "formik";
 import * as yup from "yup";
+import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 const Mesinfos = (props) => {
   const loginValidationSchema = yup.object().shape({
@@ -42,6 +43,7 @@ const Mesinfos = (props) => {
 
   return (
     <ScrollView>
+      <KeyboardAwareScrollView>
       <View style={styles.container}>
         <Formik
           validationSchema={loginValidationSchema}
@@ -199,6 +201,7 @@ const Mesinfos = (props) => {
           )}
         </Formik>
       </View>
+      </KeyboardAwareScrollView>
     </ScrollView>
   );
 };
