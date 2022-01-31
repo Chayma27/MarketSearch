@@ -6,8 +6,13 @@ import * as yup from "yup";
 
 const Mesinfos = (props) => {
   const loginValidationSchema = yup.object().shape({
-    nom: yup.string().required("Nom obligatoire"),
-    prenom: yup.string().required("Prénom obligatoire"),
+    nom: yup
+    .string()
+    .matches(/^[aA-zZ\s]+$/, "Seulement des alphabets sont acceptes")
+    .required("Nom obligatoire"),
+    prenom: yup.string()
+    .matches(/^[aA-zZ\s]+$/, "Seulement des alphabets sont acceptes")
+    .required("Prénom obligatoire"),
     email: yup
       .string()
       .email("Please enter valid email")
