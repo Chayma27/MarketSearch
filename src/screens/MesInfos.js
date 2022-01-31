@@ -6,7 +6,7 @@ import * as yup from "yup";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
 
 const Mesinfos = (props) => {
-  const loginValidationSchema = yup.object().shape({
+  const monProfilValidationSchema = yup.object().shape({
     nom: yup
     .string()
     .matches(/^[aA-zZ\s]+$/, "Seulement des alphabets sont acceptes")
@@ -27,8 +27,6 @@ const Mesinfos = (props) => {
         .min(8, 'Le numéro de téléphone doit être composé de 8 chiffres')
         .matches(/^[0-9]+$/, "doit être nombre")
         .max(8, 'Le numéro de téléphone doit être composé de 8 chiffres')
-        // .min(8, ({ min }) => `Password must be at least ${min} characters`)
-        // .test('len', 'Le numéro de téléphone doit être composé de 8 chiffres.', val => val.toString().length === 8)
         .required('Numero de tel obligatoire'),
         adresse : yup 
         .string()
@@ -46,7 +44,7 @@ const Mesinfos = (props) => {
       <KeyboardAwareScrollView>
       <View style={styles.container}>
         <Formik
-          validationSchema={loginValidationSchema}
+          validationSchema={monProfilValidationSchema}
           initialValues={{ nom: "", prenom: "", email: "", password: "", tel:  "", adresse : "", codeP: "" }}
           onSubmit={(values) => console.log(values)}
         >
