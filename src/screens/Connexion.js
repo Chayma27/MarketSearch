@@ -25,6 +25,12 @@ const Connexion = (props) => {
       .required("mot de passe obligatiore"),
   });
 
+
+  const sendConnexion = (values) => { 
+    // console.log(values)
+    props.navigation.navigate("Home")
+
+  }
   const {
     container,
     text,
@@ -45,7 +51,11 @@ const Connexion = (props) => {
           <Formik
             validationSchema={monLoginValidationSchema}
             initialValues={{ email: "", password: "" }}
-            onSubmit={(values) => console.log(values)}
+            onSubmit={(values) => (console.log(values),                     props.navigation.navigate("Home")
+            )}
+            // props.navigation.navigate("Home")
+
+            // onSubmit={sendConnexion(values)}
           >
             {({
               handleChange,
@@ -64,30 +74,35 @@ const Connexion = (props) => {
                       size={30}
                       color="#3B3636"
                     />
-                    <View style ={{flexDirection : 'column', justifyContent : 'center', paddingTop : '5%'}}>
-
-                    <View style ={{flexDirection: "row"}}> 
-                    <TextInput
-                      name="email"
-                      style={{ fontSize: 18}}
-                      autoCorrect={false}
-                      onChangeText={handleChange("email")}
-                      onBlur={handleBlur("email")}
-                      placeholderTextColor="#aaaaaa"
-                      placeholderStyle={{ fontWeight: "900"  }}
-                      autoCompleteType="off"
-                      placeholder="Adresse e-mail *"
-                      keyboardType="email-address"
-                      onChangeText={handleChange("email")}
-                      onBlur={handleBlur("email")}
-                      value={values.email}
-                    />
-                    </View>
-                    {errors.email && (
-                      <Text style={{ fontSize: 10, color: "red" }}>
-                        {errors.email}
-                      </Text>
-                    )}
+                    <View
+                      style={{
+                        flexDirection: "column",
+                        justifyContent: "center",
+                        paddingTop: "5%",
+                      }}
+                    >
+                      <View style={{ flexDirection: "row" }}>
+                        <TextInput
+                          name="email"
+                          style={{ fontSize: 18 }}
+                          autoCorrect={false}
+                          onChangeText={handleChange("email")}
+                          onBlur={handleBlur("email")}
+                          placeholderTextColor="#aaaaaa"
+                          placeholderStyle={{ fontWeight: "900" }}
+                          autoCompleteType="off"
+                          placeholder="Adresse e-mail *"
+                          keyboardType="email-address"
+                          onChangeText={handleChange("email")}
+                          onBlur={handleBlur("email")}
+                          value={values.email}
+                        />
+                      </View>
+                      {errors.email && (
+                        <Text style={{ fontSize: 10, color: "red" }}>
+                          {errors.email}
+                        </Text>
+                      )}
                     </View>
                   </View>
                   <View style={styles.textInput}>
@@ -97,37 +112,41 @@ const Connexion = (props) => {
                       size={30}
                       color="#3B3636"
                     />
-                                        <View style ={{flexDirection : 'column', justifyContent : 'center', paddingTop : '5%'}}>
-
-<View style ={{flexDirection: "row"}}> 
-
-                    <TextInput
-                      name="password"
-                      style={{ color: "black", fontSize: 18 }}
-                      autoCompleteType="off"
-                      autoCorrect={false}
-                      placeholderTextColor="#aaaaaa"
-                      autoCompleteType="password"
-                      textContentType="password"
-                      secureTextEntry={true}
-                      placeholder="Mot de passe *"
-                      onChangeText={handleChange("password")}
-                      onBlur={handleBlur("password")}
-                      value={values.password}
-                    />
-                    </View>
-                    {errors.password && (
-                      <Text style={{ fontSize: 10, color: "red" }}>
-                        {errors.password}
-                      </Text>
-                    )}
+                    <View
+                      style={{
+                        flexDirection: "column",
+                        justifyContent: "center",
+                        paddingTop: "5%",
+                      }}
+                    >
+                      <View style={{ flexDirection: "row" }}>
+                        <TextInput
+                          name="password"
+                          style={{ color: "black", fontSize: 18 }}
+                          autoCompleteType="off"
+                          autoCorrect={false}
+                          placeholderTextColor="#aaaaaa"
+                          autoCompleteType="password"
+                          textContentType="password"
+                          secureTextEntry={true}
+                          placeholder="Mot de passe *"
+                          onChangeText={handleChange("password")}
+                          onBlur={handleBlur("password")}
+                          value={values.password}
+                        />
+                      </View>
+                      {errors.password && (
+                        <Text style={{ fontSize: 10, color: "red" }}>
+                          {errors.password}
+                        </Text>
+                      )}
                     </View>
                   </View>
                 </View>
                 <TouchableOpacity
                   style={VButton}
                   onPress={
-                    (() => props.navigation.navigate("Home"), handleSubmit)
+                  handleSubmit
                   }
                 >
                   <Text style={textButton}>Se connecter</Text>
