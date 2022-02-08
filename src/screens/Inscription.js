@@ -49,7 +49,7 @@ const Inscription = (props) => {
               style={textInput}
               autoCorrect={false}
               placeholderTextColor="#aaaaaa"
-              placeholderStyle={{ fontWeight: "500" }}
+              placeholderStyle={{fontSize : 12 }}
               autoCompleteType="off"
               placeholder="Nom de famille"
             />
@@ -70,7 +70,7 @@ const Inscription = (props) => {
               placeholderTextColor="#aaaaaa"
               placeholderStyle={{ fontWeight: "500" }}
               autoCompleteType="off"
-              placeholder="Prenom_nom@gmail.com"
+              placeholder="Prénom_nom@gmail.com"
             />
           </View>
           <View style={boxInputC}>
@@ -88,15 +88,10 @@ const Inscription = (props) => {
             <Text style={labelTel}> Numéro de téléphone </Text>
           </View>
           <View style={boxInputR}>
+           
             <TextInput
-              style={textInput216}
-              autoCorrect={false}
-              placeholderTextColor="#aaaaaa"
-              placeholderStyle={{ fontWeight: "500" }}
-              autoCompleteType="off"
-              placeholder="+216"
-            />
-            <TextInput
+                          keyboardType="numeric"
+
               style={textInput216Right}
               autoCorrect={false}
               placeholderTextColor="#aaaaaa"
@@ -108,7 +103,6 @@ const Inscription = (props) => {
           <View style={radioButton}>
             <RadioButton
               value="option 1"
-              containerStyle={{ marginBottom: 10 }}
               selected={current}
               onSelected={(value) => setCurrent(value)}
               radioBackground="green"
@@ -198,8 +192,8 @@ const styles = StyleSheet.create({
     width: "55%",
     paddingLeft: "5%",
     backgroundColor: "white",
-    fontSize: 18,
-    color: "black",
+    fontSize: 13.5,
+    color: "#41474a",
     fontWeight: "bold",
     marginRight: "15%",
     borderRadius: 10,
@@ -212,8 +206,8 @@ const styles = StyleSheet.create({
     width: "125%",
     paddingLeft: "5%",
     backgroundColor: "white",
-    fontSize: 18,
-    color: "black",
+    fontSize: 13.5,
+    color: "#41474a",
     fontWeight: "bold",
     borderRadius: 10,
     marginTop: 5,
@@ -226,7 +220,7 @@ const styles = StyleSheet.create({
     paddingLeft: "5%",
     backgroundColor: "white",
     fontSize: 18,
-    color: "black",
+    color: "#41474a",
     fontWeight: "bold",
     marginRight: "6%",
     borderRadius: 10,
@@ -240,7 +234,7 @@ const styles = StyleSheet.create({
     paddingLeft: "5%",
     backgroundColor: "white",
     fontSize: 18,
-    color: "black",
+    color: "#41474a",
     fontWeight: "bold",
     marginRight: "6%",
     borderRadius: 10,
@@ -250,17 +244,18 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "flex-start",
     marginHorizontal: "45%",
-    marginTop: "5%",
+    marginTop: "6%",
     marginLeft: "9%",
   },
   VButton: {
     backgroundColor: "#3f9d2f",
     width: "50%",
     marginHorizontal: "25%",
-    marginVertical: "1%",
+    marginVertical: "4%",
     height: 55,
     fontSize: 30,
     borderRadius: 30,
+    
   },
   textButton: {
     color: "white",
