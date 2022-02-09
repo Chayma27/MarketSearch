@@ -49,7 +49,7 @@ const Inscription = (props) => {
               style={textInput}
               autoCorrect={false}
               placeholderTextColor="#aaaaaa"
-              placeholderStyle={{fontSize : 12 }}
+              placeholderStyle={{ fontSize: 12 }}
               autoCompleteType="off"
               placeholder="Nom de famille"
             />
@@ -88,10 +88,8 @@ const Inscription = (props) => {
             <Text style={labelTel}> Numéro de téléphone </Text>
           </View>
           <View style={boxInputR}>
-           
             <TextInput
-                          keyboardType="numeric"
-
+              keyboardType="numeric"
               style={textInput216Right}
               autoCorrect={false}
               placeholderTextColor="#aaaaaa"
@@ -120,8 +118,8 @@ const Inscription = (props) => {
             </RadioButton>
           </View>
           <TouchableOpacity
-          style={VButton}
-          onPress={() => props.navigation.navigate("Connexion")}
+            style={VButton}
+            onPress={() => props.navigation.navigate("Connexion")}
           >
             <Text style={textButton}>S'inscrire</Text>
           </TouchableOpacity>
@@ -192,9 +190,8 @@ const styles = StyleSheet.create({
     width: "55%",
     paddingLeft: "5%",
     backgroundColor: "white",
-    fontSize: 13.5,
-    color: "#41474a",
-    fontWeight: "bold",
+    fontSize: 15,
+    color: "black",
     marginRight: "15%",
     borderRadius: 10,
     marginTop: -13,
@@ -202,29 +199,14 @@ const styles = StyleSheet.create({
   textInputC: {
     borderWidth: 2,
     height: 50,
-    borderColor: "#c6c6c6",
+    borderColor: "#c6c6c6", 
     width: "125%",
     paddingLeft: "5%",
     backgroundColor: "white",
-    fontSize: 13.5,
-    color: "#41474a",
-    fontWeight: "bold",
+    fontSize: 15,
+    color: "black", // 41474a
     borderRadius: 10,
     marginTop: 5,
-  },
-  textInput216: {
-    borderWidth: 2,
-    height: 50,
-    borderColor: "#c6c6c6",
-    width: "32%",
-    paddingLeft: "5%",
-    backgroundColor: "white",
-    fontSize: 18,
-    color: "#41474a",
-    fontWeight: "bold",
-    marginRight: "6%",
-    borderRadius: 10,
-    marginTop: -10,
   },
   textInput216Right: {
     borderWidth: 2,
@@ -233,9 +215,8 @@ const styles = StyleSheet.create({
     width: "87%",
     paddingLeft: "5%",
     backgroundColor: "white",
-    fontSize: 18,
-    color: "#41474a",
-    fontWeight: "bold",
+    fontSize: 15,
+    color: "black",
     marginRight: "6%",
     borderRadius: 10,
     marginTop: -10,
@@ -255,7 +236,6 @@ const styles = StyleSheet.create({
     height: 55,
     fontSize: 30,
     borderRadius: 30,
-    
   },
   textButton: {
     color: "white",
