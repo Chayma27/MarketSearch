@@ -17,7 +17,7 @@ const Connexion = (props) => {
   const monLoginValidationSchema = yup.object().shape({
     email: yup
       .string()
-      .email("Please enter valid email")
+      .email("Veuillez entrer une adresse e-mail valide")
       .required("Adresse email obligatoire"),
     password: yup
       .string()

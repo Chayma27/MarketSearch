@@ -5,12 +5,40 @@ import {
   StyleSheet,
   TextInput,
   TouchableOpacity,
+  Button,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import RadioButton from "expo-radio-button";
 import { KeyboardAwareScrollView } from "react-native-keyboard-aware-scroll-view";
+import { Formik } from "formik";
+import * as yup from "yup";
 
 const Inscription = (props) => {
+  const InscriptionValidationSchema = yup.object().shape({
+    nom: yup
+      .string()
+      .matches(/^[aA-zZ\s]+$/, "Seulement des alphabets\n sont acceptes")
+      .required("Veuillez saisir votre nom"),
+    prenom: yup
+      .string()
+      .matches(/^[aA-zZ\s]+$/, "Seulement des alphabets\n sont acceptes")
+      .required("Veuillez saisir votre prénom"),
+      email: yup
+      .string()
+      .email("Veuillez entrer une adresse e-mail valide")
+      .required("Adresse email obligatoire"),
+      password: yup
+      .string()
+      .min(8, ({ min }) => `Le mot de passe doit comporter au moins ${min} caractères.`)
+      .required("Mot de passe obligatiore"),
+      tel : yup 
+        .string()
+        .min(8, 'Le numéro de téléphone doit être composé de 8 chiffres')
+        .matches(/^[0-9]+$/, "doit être nombre")
+        .max(8, 'Le numéro de téléphone doit être composé de 8 chiffres')
+        .required('Numero de tel obligatoire'),
+  });
+
   const [current, setCurrent] = useState("");
 
   const {
@@ -36,101 +64,171 @@ const Inscription = (props) => {
     <Fragment>
       <View style={container}>
         <KeyboardAwareScrollView>
-          <View style={logoUser}>
-            <Ionicons name="person-circle" size={90} color="green" />
-          </View>
-          <Text style={text}>Créer un nouveau compte client</Text>
-          <View style={boxInputR}>
-            <Text style={label}> Nom </Text>
-            <Text style={label}> Prénom </Text>
-          </View>
-          <View style={boxInputR}>
-            <TextInput
-              style={textInput}
-              autoCorrect={false}
-              placeholderTextColor="#aaaaaa"
-              placeholderStyle={{ fontSize: 12 }}
-              autoCompleteType="off"
-              placeholder="Nom de famille"
-            />
-            <TextInput
-              style={textInput}
-              autoCorrect={false}
-              placeholderTextColor="#aaaaaa"
-              placeholderStyle={{ fontWeight: "500" }}
-              autoCompleteType="off"
-              placeholder="Votre prénom"
-            />
-          </View>
-          <View style={boxInputC}>
-            <Text style={labelMail}>Adresse e-mail</Text>
-            <TextInput
-              style={textInputC}
-              autoCorrect={false}
-              placeholderTextColor="#aaaaaa"
-              placeholderStyle={{ fontWeight: "500" }}
-              autoCompleteType="off"
-              placeholder="Prénom_nom@gmail.com"
-            />
-          </View>
-          <View style={boxInputC}>
-            <Text style={label}>Mot de passe</Text>
-            <TextInput
-              style={textInputC}
-              autoCorrect={false}
-              placeholderTextColor="#aaaaaa"
-              placeholderStyle={{ fontWeight: "500" }}
-              autoCompleteType="off"
-              placeholder="Au moins 6 caractères"
-            />
-          </View>
-          <View style={boxInputR}>
-            <Text style={labelTel}> Numéro de téléphone </Text>
-          </View>
-          <View style={boxInputR}>
-            <TextInput
-              keyboardType="numeric"
-              style={textInput216Right}
-              autoCorrect={false}
-              placeholderTextColor="#aaaaaa"
-              placeholderStyle={{ fontWeight: "500" }}
-              autoCompleteType="off"
-              placeholder="12345678"
-            />
-          </View>
-          <View style={radioButton}>
-            <RadioButton
-              value="option 1"
-              selected={current}
-              onSelected={(value) => setCurrent(value)}
-              radioBackground="green"
-            >
-              <Text style={label}> Femme </Text>
-            </RadioButton>
-
-            <RadioButton
-              value="option 2"
-              selected={current}
-              onSelected={(value) => setCurrent(value)}
-              radioBackground="green"
-            >
-              <Text style={label}> Homme </Text>
-            </RadioButton>
-          </View>
-          <TouchableOpacity
-            style={VButton}
-            onPress={() => props.navigation.navigate("Connexion")}
+          <Formik
+            validationSchema={InscriptionValidationSchema}
+            initialValues={{ nom: "", prenom: "" , email : "" , password : "" , tel : "" }}
+            onSubmit={(values) => (
+              props.navigation.navigate("Connexion"), console.log(values)
+            )}
           >
-            <Text style={textButton}>S'inscrire</Text>
-          </TouchableOpacity>
+            {({ handleChange, handleBlur, handleSubmit, values, errors }) => (
+              <>
+                <View style={logoUser}>
+                  <Ionicons name="person-circle" size={90} color="green" />
+                </View>
+                <Text style={text}>Créer un nouveau compte client</Text>
 
-          <View style={Vlink}>
-            <TouchableOpacity
-              onPress={() => props.navigation.navigate("Connexion")}
-            >
-              <Text style={link}>Vous-avez déja un compte ? Connexion</Text>
-            </TouchableOpacity>
-          </View>
+                <View style={boxInputR}>
+                  <Text style={label}> Nom </Text>
+                  <Text style={label}> Prénom </Text>
+                </View>
+                <View style={boxInputR}>
+                  <View style={{ flexDirection: "column" }}>
+                    <TextInput
+                      name="nom"
+                      style={textInput}
+                      autoCorrect={false}
+                      placeholderTextColor="#aaaaaa"
+                      placeholderStyle={{ fontSize: 12 }}
+                      autoCompleteType="off"
+                      placeholder="Nom de famille"
+                      onChangeText={handleChange("nom")}
+                      onBlur={handleBlur("nom")}
+                      value={values.nom}
+                    />
+                    {errors.nom && (
+                      <Text style={{ fontSize: 10, color: "red" }}>
+                        {errors.nom}
+                      </Text>
+                    )}
+                  </View>
+                  <View style={{ flexDirection: "column",marginLeft: '7%' }}>
+                    <TextInput
+                      name="prenom"
+                      style={textInput}
+                      autoCorrect={false}
+                      placeholderTextColor="#aaaaaa"
+                      placeholderStyle={{ fontWeight: "500" }}
+                      autoCompleteType="off"
+                      placeholder="Votre prénom"
+                      onChangeText={handleChange("prenom")}
+                      onBlur={handleBlur("prenom")}
+                      value={values.prenom}
+                    />
+                    {errors.prenom && (
+                      <Text style={{ fontSize: 10, color: "red" }}>
+                        {errors.prenom}
+                      </Text>
+                    )}
+                  </View>
+                </View>
+                <View style={boxInputC}>
+                  <Text style={labelMail}>Adresse e-mail</Text>
+                  <TextInput
+                    name="email"
+                    style={textInputC}
+                    autoCorrect={false}
+                    placeholderTextColor="#aaaaaa"
+                    placeholderStyle={{ fontWeight: "500" }}
+                    autoCompleteType="off"
+                    placeholder="Prénom_nom@gmail.com"
+                    onChangeText={handleChange("email")}
+                    onBlur={handleBlur("email")}
+                    value={values.email}
+                    keyboardType="email-address"
+
+                  />
+                     {errors.email && (
+                  <Text style={{ fontSize: 10, color: "red" }}>
+                    {errors.email}
+                  </Text>
+                )}
+                </View>
+                <View style={boxInputC}>
+                  <Text style={label}>Mot de passe</Text>
+                  <TextInput
+                    name="password"
+                    style={textInputC}
+                    autoCorrect={false}
+                    placeholderTextColor="#aaaaaa"
+                    placeholderStyle={{ fontWeight: "500" }}
+                    autoCompleteType="off"
+                    placeholder="Au moins 8 caractères"
+                    onChangeText={handleChange("password")}
+                    onBlur={handleBlur("password")}
+                    value={values.password}
+                    secureTextEntry
+                  />
+                   {errors.password && (
+                  <Text style={{ fontSize: 10, color: "red" }}>
+                    {errors.password}
+                  </Text>
+                )}
+                </View>
+                <View style={boxInputR}>
+                  <Text style={labelTel}> Numéro de téléphone </Text>
+                </View>
+                <View style={{ flexDirection: "column" }}>
+
+                <View style={boxInputR}>
+
+                  <TextInput
+                    name="tel"
+                    keyboardType="numeric"
+                    style={textInput216Right}
+                    autoCorrect={false}
+                    placeholderTextColor="#aaaaaa"
+                    placeholderStyle={{ fontWeight: "500" }}
+                    autoCompleteType="off"
+                    placeholder="12345678"
+                    onChangeText={handleChange("tel")}
+                    onBlur={handleBlur("tel")}
+                    value={values.tel}
+                  />
+
+</View>
+
+                  {errors.tel && (
+                  <Text style={{ fontSize: 10, color: "red", marginLeft : '8%' }}>
+                    {errors.tel}
+                  </Text>
+                )}
+                </View>
+                <View style={radioButton}>
+                  <RadioButton
+                    value="option 1"
+                    selected={current}
+                    onSelected={(value) => setCurrent(value)}
+                    radioBackground="green"
+                  >
+                    <Text style={label}> Femme </Text>
+                  </RadioButton>
+
+                  <RadioButton
+                    value="option 2"
+                    selected={current}
+                    onSelected={(value) => setCurrent(value)}
+                    radioBackground="green"
+                  >
+                    <Text style={label}> Homme </Text>
+                  </RadioButton>
+                </View>
+                <TouchableOpacity style={VButton} onPress={handleSubmit}>
+                  <Text style={textButton}>S'inscrire</Text>
+                </TouchableOpacity>
+
+                <View style={Vlink}>
+                  <TouchableOpacity
+                    onPress={() => props.navigation.navigate("Connexion")}
+                  >
+                    <Text style={link}>
+                      Vous-avez déja un compte ? Connexion
+                    </Text>
+                  </TouchableOpacity>
+                </View>
+              </>
+            )}
+          </Formik>
         </KeyboardAwareScrollView>
       </View>
     </Fragment>
@@ -187,7 +285,7 @@ const styles = StyleSheet.create({
     borderWidth: 2,
     height: 50,
     borderColor: "#c6c6c6",
-    width: "55%",
+    width: "80%",
     paddingLeft: "5%",
     backgroundColor: "white",
     fontSize: 15,
@@ -199,7 +297,7 @@ const styles = StyleSheet.create({
   textInputC: {
     borderWidth: 2,
     height: 50,
-    borderColor: "#c6c6c6", 
+    borderColor: "#c6c6c6",
     width: "125%",
     paddingLeft: "5%",
     backgroundColor: "white",
