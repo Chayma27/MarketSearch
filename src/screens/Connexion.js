@@ -17,7 +17,7 @@ const Connexion = (props) => {
   const monLoginValidationSchema = yup.object().shape({
     email: yup
       .string()
-      .email("Please enter valid email")
+      .email("Veuillez entrer une adresse e-mail valide")
       .required("Adresse email obligatoire"),
     password: yup
       .string()
@@ -25,12 +25,10 @@ const Connexion = (props) => {
       .required("mot de passe obligatiore"),
   });
 
-
-  const sendConnexion = (values) => { 
+  const sendConnexion = (values) => {
     // console.log(values)
-    props.navigation.navigate("Home")
-
-  }
+    props.navigation.navigate("Home");
+  };
   const {
     container,
     text,
@@ -51,11 +49,9 @@ const Connexion = (props) => {
           <Formik
             validationSchema={monLoginValidationSchema}
             initialValues={{ email: "", password: "" }}
-            onSubmit={(values) => (console.log(values),                     props.navigation.navigate("Home")
+            onSubmit={(values) => (
+              console.log(values), props.navigation.navigate("Home")
             )}
-            // props.navigation.navigate("Home")
-
-            // onSubmit={sendConnexion(values)}
           >
             {({
               handleChange,
@@ -143,12 +139,7 @@ const Connexion = (props) => {
                     </View>
                   </View>
                 </View>
-                <TouchableOpacity
-                  style={VButton}
-                  onPress={
-                  handleSubmit
-                  }
-                >
+                <TouchableOpacity style={VButton} onPress={handleSubmit}>
                   <Text style={textButton}>Se connecter</Text>
                 </TouchableOpacity>
                 <View style={Vlink}>

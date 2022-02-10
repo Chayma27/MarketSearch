@@ -16,12 +16,12 @@ const Mesinfos = (props) => {
     .required("Prénom obligatoire"),
     email: yup
       .string()
-      .email("Please enter valid email")
+      .email("Veuillez entrer une adresse e-mail valide")
       .required("Adresse email obligatoire"),
     password: yup
       .string()
-      .min(8, ({ min }) => `Password must be at least ${min} characters`)
-      .required("mot de passe obligatiore"),
+      .min(8, ({ min }) => `Le mot de passe doit comporter au moins ${min} caractères.`)
+      .required("Mot de passe obligatiore"),
       tel : yup 
         .string()
         .min(8, 'Le numéro de téléphone doit être composé de 8 chiffres')
