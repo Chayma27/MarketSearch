@@ -29,7 +29,7 @@ const Inscription = (props) => {
       .required("Adresse e-mail obligatoire"),
       password: yup
       .string()
-      .min(8, ({ min }) => `Le mot de passe doit comporter au moins ${min} caractères.`)
+      .min(8, ({ min }) => `Le mot de passe doit comporter au moins ${min} caractères`)
       .required("Mot de passe obligatiore"),
       tel : yup 
         .string()

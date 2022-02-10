@@ -18,10 +18,10 @@ const Connexion = (props) => {
     email: yup
       .string()
       .email("Veuillez entrer une adresse e-mail valide")
-      .required("Adresse email obligatoire"),
+      .required("Adresse e-mail obligatoire"),
     password: yup
       .string()
-      .min(8, ({ min }) => `Password must be at least ${min} characters`)
+      .min(8, ({ min }) => `Le mot de passe doit comporter au moins ${min} caractères`)
       .required("mot de passe obligatiore"),
   });
 
