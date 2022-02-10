@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import {
   Text,
   View,
@@ -6,6 +6,7 @@ import {
   TextInput,
   TouchableOpacity,
   Button,
+  Alert
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import RadioButton from "expo-radio-button";
@@ -23,24 +24,40 @@ const Inscription = (props) => {
       .string()
       .matches(/^[aA-zZ\s]+$/, "Seulement des alphabets\n sont acceptes")
       .required("Veuillez saisir votre prénom"),
-      email: yup
+    email: yup
       .string()
       .email("Veuillez entrer une adresse e-mail valide")
       .required("Adresse email obligatoire"),
-      password: yup
+    password: yup
       .string()
-      .min(8, ({ min }) => `Le mot de passe doit comporter au moins ${min} caractères.`)
+      .min(
+        8,
+        ({ min }) =>
+          `Le mot de passe doit comporter au moins ${min} caractères.`
+      )
       .required("Mot de passe obligatiore"),
-      tel : yup 
-        .string()
-        .min(8, 'Le numéro de téléphone doit être composé de 8 chiffres')
-        .matches(/^[0-9]+$/, "doit être nombre")
-        .max(8, 'Le numéro de téléphone doit être composé de 8 chiffres')
-        .required('Numero de tel obligatoire'),
+    tel: yup
+      .string()
+      .min(8, "Le numéro de téléphone doit être composé de 8 chiffres")
+      .matches(/^[0-9]+$/, "doit être nombre")
+      .max(8, "Le numéro de téléphone doit être composé de 8 chiffres")
+      .required("Numero de tel obligatoire")
   });
 
-  const [current, setCurrent] = useState("");
-
+      const [current, setCurrent] = useState("");
+      const [isSelected, setIsSelected] = useState(false)
+      const [date, setDate] = useState()
+      let verif = false
+      const handleCheckRadio=() => { 
+        if (current == "") {
+         Alert.alert("Merci de selectionner un gender ! ")
+        } else 
+        {
+          verif = true
+          setIsSelected(true)
+          console.log('direction connexion !!! ')
+        }
+      }
   const {
     container,
     text,
@@ -66,9 +83,28 @@ const Inscription = (props) => {
         <KeyboardAwareScrollView>
           <Formik
             validationSchema={InscriptionValidationSchema}
-            initialValues={{ nom: "", prenom: "" , email : "" , password : "" , tel : "" }}
+            initialValues={{
+              nom: "",
+              prenom: "",
+              email: "",
+              password: "",
+              tel: "",
+              gender : ""
+            }}
             onSubmit={(values) => (
-              props.navigation.navigate("Connexion"), console.log(values)
+              // props.navigation.navigate("Connexion"),
+              handleCheckRadio(),
+
+              (() => {
+                  if (verif == true){
+                    setDate(values)
+                    console.log(values) 
+                    date["gender"] = current 
+                    console.log('data : ', date)                
+                  } 
+               
+              
+              })()
             )}
           >
             {({ handleChange, handleBlur, handleSubmit, values, errors }) => (
@@ -102,7 +138,7 @@ const Inscription = (props) => {
                       </Text>
                     )}
                   </View>
-                  <View style={{ flexDirection: "column",marginLeft: '7%' }}>
+                  <View style={{ flexDirection: "column", marginLeft: "7%" }}>
                     <TextInput
                       name="prenom"
                       style={textInput}
@@ -136,13 +172,12 @@ const Inscription = (props) => {
                     onBlur={handleBlur("email")}
                     value={values.email}
                     keyboardType="email-address"
-
                   />
-                     {errors.email && (
-                  <Text style={{ fontSize: 10, color: "red" }}>
-                    {errors.email}
-                  </Text>
-                )}
+                  {errors.email && (
+                    <Text style={{ fontSize: 10, color: "red" }}>
+                      {errors.email}
+                    </Text>
+                  )}
                 </View>
                 <View style={boxInputC}>
                   <Text style={label}>Mot de passe</Text>
@@ -159,40 +194,39 @@ const Inscription = (props) => {
                     value={values.password}
                     secureTextEntry
                   />
-                   {errors.password && (
-                  <Text style={{ fontSize: 10, color: "red" }}>
-                    {errors.password}
-                  </Text>
-                )}
+                  {errors.password && (
+                    <Text style={{ fontSize: 10, color: "red" }}>
+                      {errors.password}
+                    </Text>
+                  )}
                 </View>
                 <View style={boxInputR}>
                   <Text style={labelTel}> Numéro de téléphone </Text>
                 </View>
                 <View style={{ flexDirection: "column" }}>
-
-                <View style={boxInputR}>
-
-                  <TextInput
-                    name="tel"
-                    keyboardType="numeric"
-                    style={textInput216Right}
-                    autoCorrect={false}
-                    placeholderTextColor="#aaaaaa"
-                    placeholderStyle={{ fontWeight: "500" }}
-                    autoCompleteType="off"
-                    placeholder="12345678"
-                    onChangeText={handleChange("tel")}
-                    onBlur={handleBlur("tel")}
-                    value={values.tel}
-                  />
-
-</View>
+                  <View style={boxInputR}>
+                    <TextInput
+                      name="tel"
+                      keyboardType="numeric"
+                      style={textInput216Right}
+                      autoCorrect={false}
+                      placeholderTextColor="#aaaaaa"
+                      placeholderStyle={{ fontWeight: "500" }}
+                      autoCompleteType="off"
+                      placeholder="12345678"
+                      onChangeText={handleChange("tel")}
+                      onBlur={handleBlur("tel")}
+                      value={values.tel}
+                    />
+                  </View>
 
                   {errors.tel && (
-                  <Text style={{ fontSize: 10, color: "red", marginLeft : '8%' }}>
-                    {errors.tel}
-                  </Text>
-                )}
+                    <Text
+                      style={{ fontSize: 10, color: "red", marginLeft: "8%" }}
+                    >
+                      {errors.tel}
+                    </Text>
+                  )}
                 </View>
                 <View style={radioButton}>
                   <RadioButton
