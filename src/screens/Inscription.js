@@ -123,7 +123,7 @@ const Inscription = (props) => {
                       "Inscription effectuée avec succées !",
                       [
                         
-                        { text: "Oui", onPress: () =>  props.navigation.navigate("Connexion")
+                        { text: "Ok", onPress: () =>  props.navigation.navigate("Connexion")
                       },
                       ],
                       { cancelable: false }
