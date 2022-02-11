@@ -15,6 +15,8 @@ import { Formik } from "formik";
 import * as yup from "yup";
 
 const Inscription = (props) => {
+ 
+
   const InscriptionValidationSchema = yup.object().shape({
     nom: yup
       .string()
@@ -43,21 +45,27 @@ const Inscription = (props) => {
       .max(8, "Le numéro de téléphone doit être composé de 8 chiffres")
       .required("Numero de tel obligatoire")
   });
-
+      const [effect, setEffect] = useState(0)
       const [current, setCurrent] = useState("");
       const [isSelected, setIsSelected] = useState(false)
       const [date, setDate] = useState()
+      var tableInscription = []
       let verif = false
+     
+     
       const handleCheckRadio=() => { 
         if (current == "") {
-         Alert.alert("Merci de selectionner un gender ! ")
+         Alert.alert("Merci de selectionner votre sexe ! ")
         } else 
         {
           verif = true
           setIsSelected(true)
-          console.log('direction connexion !!! ')
+
         }
       }
+      console.log(effect)
+      // const JsonInscription = JSON.stringify(effect[0])
+
   const {
     container,
     text,
@@ -89,23 +97,43 @@ const Inscription = (props) => {
               email: "",
               password: "",
               tel: "",
-              gender : ""
             }}
             onSubmit={(values) => (
               // props.navigation.navigate("Connexion"),
               handleCheckRadio(),
-
+            
               (() => {
                   if (verif == true){
-                    setDate(values)
-                    console.log(values) 
-                    date["gender"] = current 
-                    console.log('data : ', date)                
+                    // setDate(values)
+                    // console.log(values) 
+                    if (current == "option 1"){
+                      values["sexe"] = "Femme" 
+                    } else if (current == "option 2") { 
+                      values["sexe"] = "Homme" 
+
+                    }
+                   
+                    tableInscription.push(values)
+                    setEffect(tableInscription)
+                    // setTimeout(() => {
+                    //   Alert.alert("Inscription effectuée avec succées ! ")
+                    // }, 40);
+                    Alert.alert(
+                      "Inscription",
+                      "Inscription effectuée avec succées !",
+                      [
+                        
+                        { text: "Oui", onPress: () =>  props.navigation.navigate("Connexion")
+                      },
+                      ],
+                      { cancelable: false }
+                    );
                   } 
-               
+                
+              }) ()
               
-              })()
             )}
+            
           >
             {({ handleChange, handleBlur, handleSubmit, values, errors }) => (
               <>
