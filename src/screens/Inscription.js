@@ -20,30 +20,26 @@ const Inscription = (props) => {
   const InscriptionValidationSchema = yup.object().shape({
     nom: yup
       .string()
-      .matches(/^[aA-zZ\s]+$/, "Seulement des alphabets\n sont acceptes")
+      .matches(/^[aA-zZ\s]+$/, "Seulement des alphabets\n sont acceptés")
       .required("Veuillez saisir votre nom"),
     prenom: yup
       .string()
-      .matches(/^[aA-zZ\s]+$/, "Seulement des alphabets\n sont acceptes")
+      .matches(/^[aA-zZ\s]+$/, "Seulement des alphabets\n sont acceptés")
       .required("Veuillez saisir votre prénom"),
     email: yup
       .string()
       .email("Veuillez entrer une adresse e-mail valide")
-      .required("Adresse email obligatoire"),
-    password: yup
+      .required("Adresse e-mail obligatoire"),
+      password: yup
       .string()
-      .min(
-        8,
-        ({ min }) =>
-          `Le mot de passe doit comporter au moins ${min} caractères.`
-      )
+      .min(8, ({ min }) => `Le mot de passe doit comporter au moins ${min} caractères`)
       .required("Mot de passe obligatiore"),
-    tel: yup
-      .string()
-      .min(8, "Le numéro de téléphone doit être composé de 8 chiffres")
-      .matches(/^[0-9]+$/, "doit être nombre")
-      .max(8, "Le numéro de téléphone doit être composé de 8 chiffres")
-      .required("Numero de tel obligatoire")
+      tel : yup 
+        .string()
+        .min(8, 'Le numéro de téléphone doit être composé de 8 chiffres')
+        .matches(/^[0-9]+$/, "doit être nombre")
+        .max(8, 'Le numéro de téléphone doit être composé de 8 chiffres')
+        .required('Numero de téléphone obligatoire'),
   });
       const [effect, setEffect] = useState(0)
       const [current, setCurrent] = useState("");

@@ -63,8 +63,8 @@ const Home = (props) => {
         </View>
         <ScrollView horizontal={true}>
         <View style={styles.product}>
-        <Card Titre = "Mon tresors diamant" prix= "1650 DT" description="test avec chayma pourr comprendre  ."
-        path={require('../../assets/MonTresor.jpg')}/>
+        <Card Titre = "Jean HM" prix= "100 DT" description="Jean 5 poches en denim de coton lavé. Modèle taille haute avec braguette zippée surmontée d’un bouton. Jambes droites et amples."
+        path={require('../../assets/jean.jpg')}/>
         <Card Titre = "Mercedes GLA" prix= "149.000 DT" description="Mercedes GLA excellant état, première main, toujours garée dans un garage fermé, édition limitée en finition avec toit ouvrant ."
         path={require('../../assets/gla.jpeg')}/>
         <Card Titre = "Thermomix TM5" prix= "2.475 DT" description="Thermomix connecté en très bon état, il vient d'être révisé et a donc un an de garantie confort.Pas sérieux s'abstenir"
@@ -103,8 +103,8 @@ const Home = (props) => {
         </View>
         <ScrollView horizontal={true}>
         <View style={styles.product}>
-        <Promo Titre = "Mon tresors diamant" prix= "1650 DT" description="test avec chayma pourr comprendre  ."
-        path={require('../../assets/MonTresor.jpg')} soldeRemise= "SOLDE - 20%" newPrice ="1320 DT" />
+        <Promo Titre = "Jean HM" prix= "100 DT" description="Jean 5 poches en denim de coton lavé. Modèle taille haute avec braguette zippée surmontée d’un bouton. Jambes droites et amples."
+        path={require('../../assets/jean.jpg')} soldeRemise= "SOLDE - 20%" newPrice ="80 DT" />
         <Promo Titre = "Mercedes GLA" prix= "149.000 DT" description="Mercedes GLA excellant état, première main, toujours garée dans un garage fermé, édition limitée en finition avec toit ouvrant ."
         path={require('../../assets/gla.jpeg')} soldeRemise= "SOLDE - 10%" newPrice ="134.100 DT" />
          <Promo Titre = "Eau de parfum mon Guerlain" prix= "352 DT" description="Mon Guerlain est le nouveau parfum de la Maison, un hommage à la féminité d’aujourd’hui : une féminité forte, libre et sensuelle, inspirée par Angelina Jolie."
