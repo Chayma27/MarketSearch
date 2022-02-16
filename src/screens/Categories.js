@@ -17,16 +17,40 @@ const Categories = (props) => {
     <View style={styles.container}>
         <CardView
           cardElevation={1}
-          cardMaxElevation={1}
+          // cardMaxElevation={1}
           cornerRadius={5}
           style={styles.card}
         >
           <Image
-            source={{ uri: "https://reactjs.org/logo-og.png" }}
-            style={{ width: "100%", height: "25%" }}
+            source={require('../../assets/iconCategories/clothes.png')}
+            style={{ width: "100%", height: "25%",    resizeMode: 'contain' }}
           />
 
-          <Text style={styles.text}>Elevation 0</Text>
+          <Text style={styles.text}>Vêtements</Text>
+        </CardView>
+        <CardView
+          cardElevation={1}
+          // cardMaxElevation={1}
+          cornerRadius={5}
+          style={styles.card}
+        >
+          <Image
+            source={require('../../assets/iconCategories/car.png')}
+            style={{ width: "100%", height: "25%",resizeMode: 'contain' }}
+          />
+          <Text style={styles.text}>Véhicules</Text>
+        </CardView>
+        <CardView
+          cardElevation={1}
+          // cardMaxElevation={1}
+          cornerRadius={5}
+          style={styles.card}
+        >
+          <Image
+            source={require('../../assets/iconCategories/house-decoration.png')}
+            style={{ width: "100%", height: "25%" , resizeMode : "contain" }}
+          />
+          <Text style={styles.text}>Décor</Text>
         </CardView>
         <CardView
           cardElevation={1}
@@ -35,59 +59,60 @@ const Categories = (props) => {
           style={styles.card}
         >
           <Image
-            source={{ uri: "https://reactjs.org/logo-og.png" }}
-            style={{ width: "100%", height: "25%" }}
+            source={require('../../assets/iconCategories/produits-de-beaute.png')}
+            style={{ width: "100%", height: "25%" , resizeMode : 'contain' }}
           />
-          <Text style={styles.text}>Elevation 1</Text>
+          <Text style={styles.text}>Santé et Beauté</Text>
         </CardView>
         <CardView
           cardElevation={1}
-          cardMaxElevation={1}
+          // cardMaxElevation={1}
           cornerRadius={5}
           style={styles.card}
         >
           <Image
-            source={{ uri: "https://reactjs.org/logo-og.png" }}
-            style={{ width: "100%", height: "25%" }}
+            source={require('../../assets/iconCategories/sac-a-main.png')}
+            style={{ width: "100%", height: "25%", resizeMode : "contain" }}
           />
-          <Text style={styles.text}>Elevation 2</Text>
+          <Text style={styles.text}>Bagages et sacs</Text>
         </CardView>
         <CardView
           cardElevation={1}
-          cardMaxElevation={1}
+          // cardMaxElevation={1}
           cornerRadius={5}
           style={styles.card}
         >
           <Image
-            source={{ uri: "https://reactjs.org/logo-og.png" }}
-            style={{ width: "100%", height: "25%" }}
+            source={require('../../assets/iconCategories/sport.png')}
+            style={{ width: "100%", height: "25%" , resizeMode : "contain" }}
           />
-          <Text style={styles.text}>Elevation 3</Text>
+          <Text style={styles.text}>Sport</Text>
         </CardView>
         <CardView
           cardElevation={1}
-          cardMaxElevation={1}
+          // cardMaxElevation={1}
           cornerRadius={5}
           style={styles.card}
         >
           <Image
-            source={{ uri: "https://reactjs.org/logo-og.png" }}
-            style={{ width: "100%", height: "25%" }}
+            source={require('../../assets/iconCategories/settings.png')}
+            style={{ width: "100%", height: "25%" , resizeMode : "contain" }}
           />
-          <Text style={styles.text}>Elevation 4</Text>
+          <Text style={styles.text}>Pièces et outils</Text>
         </CardView>
         <CardView
           cardElevation={1}
-          cardMaxElevation={1}
+          // cardMaxElevation={1}
           cornerRadius={5}
           style={styles.card}
         >
           <Image
-            source={{ uri: "https://reactjs.org/logo-og.png" }}
-            style={{ width: "100%", height: "25%" }}
+            source={require('../../assets/iconCategories/animal-track.png')}
+            style={{ width: "100%", height: "25%" , resizeMode : "contain" }}
           />
-          <Text style={styles.text}>Elevation 5</Text>
+          <Text style={styles.text}>Animaux</Text>
         </CardView>
+        
         
     </View>
     </ScrollView>
@@ -97,7 +122,7 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     flexWrap : 'wrap',
-    paddingTop: 30, 
+    paddingTop: -20, 
     justifyContent: "space-around",
 
     // backgroundColor: '#EEEEEE',
@@ -107,13 +132,14 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     alignItems: "center",
     alignSelf: "center",
-    margin: 10,
-    width : '40%'
+    margin: 5,
+    width : '43%'
   },
   text: {
     textAlign: "center",
     // height: 75,
-    marginVertical : "15%"
+    marginVertical : "15%",
+    fontWeight : "bold"
   },
   instructions: {
     textAlign: "center",
