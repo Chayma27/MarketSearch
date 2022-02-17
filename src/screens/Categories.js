@@ -26,7 +26,7 @@ const Categories = (props) => {
             style={{ width: "100%", height: "25%",    resizeMode: 'contain' }}
           />
 
-          <Text style={styles.text}>Vêtements</Text>
+          <Text style={styles.text}>Mode</Text>
         </CardView>
         <CardView
           cardElevation={1}
@@ -50,7 +50,7 @@ const Categories = (props) => {
             source={require('../../assets/iconCategories/house-decoration.png')}
             style={{ width: "100%", height: "25%" , resizeMode : "contain" }}
           />
-          <Text style={styles.text}>Décor</Text>
+          <Text style={styles.text}>Maison & cuisine</Text>
         </CardView>
         <CardView
           cardElevation={1}
@@ -62,7 +62,7 @@ const Categories = (props) => {
             source={require('../../assets/iconCategories/produits-de-beaute.png')}
             style={{ width: "100%", height: "25%" , resizeMode : 'contain' }}
           />
-          <Text style={styles.text}>Santé et Beauté</Text>
+          <Text style={styles.text}>Visage et Beauté</Text>
         </CardView>
         <CardView
           cardElevation={1}
@@ -95,10 +95,10 @@ const Categories = (props) => {
           style={styles.card}
         >
           <Image
-            source={require('../../assets/iconCategories/settings.png')}
-            style={{ width: "100%", height: "25%" , resizeMode : "contain" }}
+            source={require('../../assets/iconCategories/electronic-device.png')}
+            style={{ width: "100%", height: "35%" , resizeMode : "contain" }}
           />
-          <Text style={styles.text}>Pièces et outils</Text>
+          <Text style={styles.text}>Multimédia</Text>
         </CardView>
         <CardView
           cardElevation={1}
@@ -108,7 +108,7 @@ const Categories = (props) => {
         >
           <Image
             source={require('../../assets/iconCategories/animal-track.png')}
-            style={{ width: "100%", height: "25%" , resizeMode : "contain" }}
+            style={{ width: "100%", height: "35%" , resizeMode : "contain" }}
           />
           <Text style={styles.text}>Animaux</Text>
         </CardView>
@@ -124,27 +124,26 @@ const styles = StyleSheet.create({
     flexWrap : 'wrap',
     paddingTop: -20, 
     justifyContent: "space-around",
-
-    // backgroundColor: '#EEEEEE',
   },
   
   card: {
     backgroundColor: "white",
     alignItems: "center",
-    alignSelf: "center",
-    margin: 5,
+    justifyContent : "center",
+    margin: 8,
     width : '43%'
   },
   text: {
     textAlign: "center",
-    // height: 75,
-    marginVertical : "15%",
-    fontWeight : "bold"
+    justifyContent : "flex-end",
+    marginVertical : "10%",
+    fontWeight : "bold",
+    fontSize : 17
   },
   instructions: {
     textAlign: "center",
     color: "#333333",
-    marginBottom: 5,
+    marginBottom: 10,
   },
 });
 export default Categories;
