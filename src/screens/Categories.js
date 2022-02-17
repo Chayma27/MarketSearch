@@ -23,7 +23,7 @@ const Categories = (props) => {
         >
           <Image
             source={require('../../assets/iconCategories/clothes.png')}
-            style={{ width: "100%", height: "25%",    resizeMode: 'contain' }}
+            style={{ width: "100%", height: "35%",    resizeMode: 'contain' }}
           />
 
           <Text style={styles.text}>Mode</Text>
@@ -36,7 +36,7 @@ const Categories = (props) => {
         >
           <Image
             source={require('../../assets/iconCategories/car.png')}
-            style={{ width: "100%", height: "25%",resizeMode: 'contain' }}
+            style={{ width: "100%", height: "35%",resizeMode: 'contain' }}
           />
           <Text style={styles.text}>Véhicules</Text>
         </CardView>
@@ -48,7 +48,7 @@ const Categories = (props) => {
         >
           <Image
             source={require('../../assets/iconCategories/house-decoration.png')}
-            style={{ width: "100%", height: "25%" , resizeMode : "contain" }}
+            style={{ width: "100%", height: "35%" , resizeMode : "contain" }}
           />
           <Text style={styles.text}>Maison & cuisine</Text>
         </CardView>
@@ -60,7 +60,7 @@ const Categories = (props) => {
         >
           <Image
             source={require('../../assets/iconCategories/produits-de-beaute.png')}
-            style={{ width: "100%", height: "25%" , resizeMode : 'contain' }}
+            style={{ width: "100%", height: "35%" , resizeMode : 'contain' }}
           />
           <Text style={styles.text}>Visage et Beauté</Text>
         </CardView>
@@ -72,7 +72,7 @@ const Categories = (props) => {
         >
           <Image
             source={require('../../assets/iconCategories/sac-a-main.png')}
-            style={{ width: "100%", height: "25%", resizeMode : "contain" }}
+            style={{ width: "100%", height: "35%", resizeMode : "contain" }}
           />
           <Text style={styles.text}>Bagages et sacs</Text>
         </CardView>
@@ -84,7 +84,7 @@ const Categories = (props) => {
         >
           <Image
             source={require('../../assets/iconCategories/sport.png')}
-            style={{ width: "100%", height: "25%" , resizeMode : "contain" }}
+            style={{ width: "100%", height: "35%" , resizeMode : "contain" }}
           />
           <Text style={styles.text}>Sport</Text>
         </CardView>
@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
   text: {
     textAlign: "center",
     justifyContent : "flex-end",
-    marginVertical : "10%",
+    marginVertical : "5%",
     fontWeight : "bold",
     fontSize : 17
   },
