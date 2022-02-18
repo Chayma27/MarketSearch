@@ -5,110 +5,74 @@ import {
   View,
   ScrollView,
   Image,
-TouchableOpacity
+  TouchableOpacity,
 } from "react-native";
 import { Text, Card, Button, Icon } from "react-native-elements";
-import CardView from "react-native-cardview";
 const Categories = (props) => {
-
   return (
     <ScrollView>
-    <View style={styles.container}>
-        <CardView
-          cardElevation={1}
-          cornerRadius={5}
-          style={styles.card}
-        >
-          <Image
-            source={require('../../assets/iconCategories/clothes.png')}
-            style={{ width: "100%", height: "35%",    resizeMode: 'contain' }}
-          />
+      <View style={styles.container}>
 
+        <Card containerStyle={styles.card} elevation={1} Button={true}>
+          <Image
+            source={require("../../assets/iconCategories/clothes.png")}
+            style={{  height: "67%", resizeMode: "contain" }}
+          />
           <Text style={styles.text}>Mode</Text>
-        </CardView>
-        <CardView
-          cardElevation={1}
-          cornerRadius={5}
-          style={styles.card}
-        >
+        </Card>
+
+        <Card containerStyle={styles.card} elevation={1}>
           <Image
-            source={require('../../assets/iconCategories/house-decoration.png')}
-            style={{ width: "100%", height: "35%" , resizeMode : "contain" }}
+            source={require("../../assets/iconCategories/house-decoration.png")}
+            style={{ height: "67%", resizeMode: "contain" }}
           />
-          <Text style={styles.text}>Maison & cuisine</Text>
-        </CardView>
-        <CardView
-          cardElevation={1}
-          cornerRadius={5}
-          style={styles.card}
-        >
+          <Text style={styles.text}>Maison % cuisine</Text>
+        </Card>
+        <Card containerStyle={styles.card} elevation={1}>
           <Image
-            source={require('../../assets/iconCategories/car.png')}
-            style={{ width: "100%", height: "35%",resizeMode: 'contain' }}
+            source={require("../../assets/iconCategories/car.png")}
+            style={{  height: "65%", resizeMode: "contain" }}
           />
-          <Text style={styles.text}>Véhicules</Text>
-        </CardView>
-        <CardView
-          cardElevation={1}
-          cornerRadius={5}
-          style={styles.card}
-        >
+          <Text style={styles.text}>Véhicule</Text>
+        </Card>
+        <Card containerStyle={styles.card} elevation={1}>
           <Image
-            source={require('../../assets/iconCategories/electronic-device.png')}
-            style={{ width: "100%", height: "35%" , resizeMode : "contain" }}
+            source={require("../../assets/iconCategories/electronic-device.png")}
+            style={{ height: "65%", resizeMode: "contain" }}
           />
           <Text style={styles.text}>Multimédia</Text>
-        </CardView>
-        
-        <CardView
-          cardElevation={1}
-          cornerRadius={5}
-          style={styles.card}
-        >
+        </Card>
+        <Card containerStyle={styles.card} elevation={1}>
           <Image
-            source={require('../../assets/iconCategories/loisir.png')}
-            style={{ width: "100%", height: "35%", resizeMode : "contain" }}
+            source={require("../../assets/iconCategories/loisir.png")}
+            style={{ height: "70%", resizeMode: "contain" }}
           />
           <Text style={styles.text}>Loisir</Text>
-        </CardView>
-        <CardView
-          cardElevation={1}
-          cornerRadius={5}
-          style={styles.card}
-        >
+        </Card>
+        <Card containerStyle={styles.card} elevation={1}>
           <Image
-            source={require('../../assets/iconCategories/sport.png')}
-            style={{ width: "100%", height: "35%" , resizeMode : "contain" }}
+            source={require("../../assets/iconCategories/sport.png")}
+            style={{  height: "65%", resizeMode: "contain" }}
           />
-          <Text style={styles.text}>Sport</Text>
-        </CardView>
-      
-        <CardView
-          cardElevation={1}
-          cardMaxElevation={1}
-          cornerRadius={5}
-          style={styles.card}
-        >
+                    <Text style={styles.text}>Sport</Text>
+
+        </Card>
+        <Card containerStyle={styles.card} elevation={1}>
+
           <Image
-            source={require('../../assets/iconCategories/produits-de-beautee.png')}
-            style={{ width: "100%", height: "35%" , resizeMode : 'contain' }}
+            source={require("../../assets/iconCategories/produits-de-beautee.png")}
+            style={{  height: "55%", resizeMode: "contain" }}
           />
           <Text style={styles.text}>Visage et Beauté</Text>
-        </CardView>
-        <CardView
-          cardElevation={1}
-          cornerRadius={5}
-          style={styles.card}
-        >
+        </Card>
+        <Card containerStyle={styles.card} elevation={1}>
           <Image
-            source={require('../../assets/iconCategories/animal-track.png')}
-            style={{ width: "100%", height: "35%" , resizeMode : "contain" }}
+            source={require("../../assets/iconCategories/animal-track.png")}
+            style={{ height: "55%", resizeMode: "contain" }}
           />
           <Text style={styles.text}>Animaux</Text>
-        </CardView>
-        
-        
-    </View>
+        </Card>
+      </View>
     </ScrollView>
   );
 };
@@ -116,22 +80,20 @@ const styles = StyleSheet.create({
   container: {
     flexDirection: 'row',
     flexWrap : 'wrap',
-    paddingTop: -20, 
     justifyContent: "space-around",
-    marginTop: "3.5%"
+    marginTop: "5.5%"
   },
-  
   card: {
     backgroundColor: "white",
     alignItems: "center",
     justifyContent : "center",
-    margin: 8,
-    width : '43%'
+    margin: 10,
+    width : '45%',
+    height : '38%'
   },
   text: {
     textAlign: "center",
     justifyContent : "flex-end",
-    marginVertical : "5%",
     fontWeight : "bold",
     fontSize : 17
   },
@@ -140,5 +102,6 @@ const styles = StyleSheet.create({
     color: "#333333",
     marginBottom: 10,
   },
+ 
 });
 export default Categories;
