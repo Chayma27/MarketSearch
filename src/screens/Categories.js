@@ -6,12 +6,14 @@ import {
   ScrollView,
   Image,
   TouchableOpacity,
+  
 } from "react-native";
+import {Platform} from 'react-native';
+
 import { Text, Card, Button, Icon } from "react-native-elements";
 const Categories = (props) => {
   //
   return (
-    <ScrollView>
       <View style={styles.container}>
 
         <Card containerStyle={styles.card} elevation={1} Button={true}>
@@ -74,7 +76,6 @@ const Categories = (props) => {
           <Text style={styles.text}>Animaux</Text>
         </Card>
       </View>
-    </ScrollView>
   );
 };
 const styles = StyleSheet.create({
@@ -89,8 +90,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent : "center",
     margin: 10,
-    width : '40%',
-    height : '25%'
+    width : Platform.OS ==="android" ? "40%" : "43%", // android 40  / ios 45 
+    height : Platform.OS === "android" ? "23%" : "23%" // android 23 / ios 38
   },
   text: {
     textAlign: "center",
