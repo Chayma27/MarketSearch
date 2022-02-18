@@ -16,6 +16,14 @@ import MesArticles from "../src/screens/MesArticles";
 import Mesfavoris from "../src/screens/Mesfavoris";
 import Us from "../src/screens/Us";
 import Mesinfos from "../src/screens/MesInfos";
+import Scmode from "../src/screens/S_catg/Scmode";
+import Scanimaux from "../src/screens/S_catg/Scanimaux";
+import Scloisir from "../src/screens/S_catg/ScLoisir";
+import Scmaison from "../src/screens/S_catg/Scmaison";
+import Scmultimedia from "../src/screens/S_catg/Scmultimedia";
+import Scsport from "../src/screens/S_catg/Scsport";
+import Scvisage from "../src/screens/S_catg/Scvisage";
+import Scvehicule from "../src/screens/S_catg/Scvehicule";
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 const Stack = createNativeStackNavigator();
@@ -74,6 +82,14 @@ const AppNavigation = () => {
       <Stack.Screen name="MesInfos" component={Mesinfos} options={{  title : 'Mes informations'}} />
       <Stack.Screen name="MesFavoris" component={Mesfavoris} options={{  title : 'Mes favoris'}} />
       <Stack.Screen name="Us" component={Us} options={{  title : 'Qui sommes nous'}} />
+      <Stack.Screen name="Scmode" component={Scmode} options={{  title : 'Mode'}} />
+      <Stack.Screen name="Scmaison" component={Scmaison} options={{  title : 'Maison et cuisine'}} />
+      <Stack.Screen name="Scvehicule" component={Scvehicule} options={{  title : 'Véhicule'}} />
+      <Stack.Screen name="Scmultimedia" component={Scmultimedia} options={{  title : 'Multimedia'}} />
+      <Stack.Screen name="Scloisir" component={Scloisir} options={{  title : 'Loisir'}} />
+      <Stack.Screen name="Scsport" component={Scsport} options={{  title : 'Sport'}} />
+      <Stack.Screen name="Scvisage" component={Scvisage} options={{  title : 'Visage et Beauté'}} />
+      <Stack.Screen name="Scanimaux" component={Scanimaux} options={{  title : 'Animaux'}} />
     </Stack.Navigator>
   </NavigationContainer>
   );

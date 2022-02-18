@@ -15,7 +15,7 @@ const Categories = (props) => {
     <View style={styles.container}>
       <TouchableOpacity
         style={styles.card}
-        onPress={() => console.log("clicked")}
+        onPress={() => props.navigation.navigate("Scmode")}
       >
         <Image
           source={require("../../assets/iconCategories/clothes.png")}
@@ -25,7 +25,7 @@ const Categories = (props) => {
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.card}
-        onPress={() => console.log("clicked")}
+        onPress={() => props.navigation.navigate("Scmaison")}
       >
         <Image
           source={require("../../assets/iconCategories/house-decoration.png")}
@@ -35,7 +35,7 @@ const Categories = (props) => {
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.card}
-        onPress={() => console.log("clicked")}
+        onPress={() => props.navigation.navigate("Scvehicule")}
       >
         <Image
           source={require("../../assets/iconCategories/car.png")}
@@ -45,7 +45,7 @@ const Categories = (props) => {
       </TouchableOpacity>
            <TouchableOpacity
         style={styles.card}
-        onPress={() => console.log("clicked")}
+        onPress={() => props.navigation.navigate("Scmultimedia")}
       >
         <Image
           source={require("../../assets/iconCategories/electronic-device.png")}
@@ -55,7 +55,7 @@ const Categories = (props) => {
       </TouchableOpacity>
            <TouchableOpacity
         style={styles.card}
-        onPress={() => console.log("clicked")}
+        onPress={() => props.navigation.navigate("Scloisir")}
       >
         <Image
           source={require("../../assets/iconCategories/loisir.png")}
@@ -65,7 +65,7 @@ const Categories = (props) => {
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.card}
-        onPress={() => console.log("clicked")}
+        onPress={() => props.navigation.navigate("Scsport")}
       >
         <Image
           source={require("../../assets/iconCategories/sport.png")}
@@ -75,7 +75,7 @@ const Categories = (props) => {
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.card}
-        onPress={() => console.log("clicked")}
+        onPress={() => props.navigation.navigate("Scvisage")}
       >
         <Image
           source={require("../../assets/iconCategories/produits-de-beautee.png")}
@@ -86,7 +86,7 @@ const Categories = (props) => {
       {/* //  */}
       <TouchableOpacity
         style={styles.card}
-        onPress={() => console.log("clicked")}
+        onPress={() => props.navigation.navigate("Scanimaux")}
       >
         <Image
           source={require("../../assets/iconCategories/animal-track.png")}
