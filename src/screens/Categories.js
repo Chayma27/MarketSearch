@@ -90,7 +90,7 @@ const Categories = (props) => {
           style={styles.card}
         >
           <Image
-            source={require('../../assets/iconCategories/produits-de-beaute.png')}
+            source={require('../../assets/iconCategories/produits-de-beautee.png')}
             style={{ width: "100%", height: "35%" , resizeMode : 'contain' }}
           />
           <Text style={styles.text}>Visage et Beauté</Text>
@@ -118,6 +118,7 @@ const styles = StyleSheet.create({
     flexWrap : 'wrap',
     paddingTop: -20, 
     justifyContent: "space-around",
+    marginTop: "3.5%"
   },
   
   card: {
