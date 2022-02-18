@@ -128,7 +128,9 @@ const styles = StyleSheet.create({
     flex: 1, // remplis toute la page
   },
   headerStyle1: {
-    backgroundColor: "#cce4ff",
+    backgroundColor: "#cce4ff", // cce4ff
+    borderBottomLeftRadius : 35,
+    borderBottomRightRadius : 35
   },
   header: {
     flexDirection: "row",
@@ -138,6 +140,7 @@ const styles = StyleSheet.create({
     marginRight: "3%",
   },
   appName: {
+    marginTop : '4%',
     fontSize: 28,
     fontWeight: "bold",
     textAlign: "center",

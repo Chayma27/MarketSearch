@@ -111,7 +111,7 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     margin: 10,
     width: Platform.OS === "android" ? "42%" : "43%", // android 40  / ios 45
-    height: Platform.OS === "android" ? "22%" : "23%", // android 23 / ios 38
+    height: Platform.OS === "android" ? "22%" : "22.5%", // android 23 / ios 38
   },
   text: {
     textAlign: "center",
