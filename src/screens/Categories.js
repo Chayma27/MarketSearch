@@ -26,7 +26,7 @@ const Categories = (props) => {
             source={require("../../assets/iconCategories/house-decoration.png")}
             style={{ height: "67%", resizeMode: "contain" }}
           />
-          <Text style={styles.text}>Maison % cuisine</Text>
+          <Text style={styles.text}>Maison & cuisine</Text>
         </Card>
         <Card containerStyle={styles.card} elevation={1}>
           <Image
