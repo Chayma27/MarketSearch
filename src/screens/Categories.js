@@ -5,8 +5,7 @@ import {
   View,
   ScrollView,
   Image,
-  SafeAreaView,
-  Slider,
+TouchableOpacity
 } from "react-native";
 import { Text, Card, Button, Icon } from "react-native-elements";
 import CardView from "react-native-cardview";
@@ -17,7 +16,6 @@ const Categories = (props) => {
     <View style={styles.container}>
         <CardView
           cardElevation={1}
-          // cardMaxElevation={1}
           cornerRadius={5}
           style={styles.card}
         >
@@ -30,7 +28,6 @@ const Categories = (props) => {
         </CardView>
         <CardView
           cardElevation={1}
-          // cardMaxElevation={1}
           cornerRadius={5}
           style={styles.card}
         >
@@ -42,7 +39,6 @@ const Categories = (props) => {
         </CardView>
         <CardView
           cardElevation={1}
-          // cardMaxElevation={1}
           cornerRadius={5}
           style={styles.card}
         >
@@ -66,19 +62,17 @@ const Categories = (props) => {
         </CardView>
         <CardView
           cardElevation={1}
-          // cardMaxElevation={1}
           cornerRadius={5}
           style={styles.card}
         >
           <Image
-            source={require('../../assets/iconCategories/sac-a-main.png')}
+            source={require('../../assets/iconCategories/loisir.png')}
             style={{ width: "100%", height: "35%", resizeMode : "contain" }}
           />
-          <Text style={styles.text}>Bagages et sacs</Text>
+          <Text style={styles.text}>Loisir</Text>
         </CardView>
         <CardView
           cardElevation={1}
-          // cardMaxElevation={1}
           cornerRadius={5}
           style={styles.card}
         >
@@ -90,7 +84,6 @@ const Categories = (props) => {
         </CardView>
         <CardView
           cardElevation={1}
-          // cardMaxElevation={1}
           cornerRadius={5}
           style={styles.card}
         >
@@ -102,7 +95,6 @@ const Categories = (props) => {
         </CardView>
         <CardView
           cardElevation={1}
-          // cardMaxElevation={1}
           cornerRadius={5}
           style={styles.card}
         >
