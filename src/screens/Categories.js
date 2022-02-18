@@ -32,6 +32,17 @@ const Categories = (props) => {
           style={styles.card}
         >
           <Image
+            source={require('../../assets/iconCategories/house-decoration.png')}
+            style={{ width: "100%", height: "35%" , resizeMode : "contain" }}
+          />
+          <Text style={styles.text}>Maison & cuisine</Text>
+        </CardView>
+        <CardView
+          cardElevation={1}
+          cornerRadius={5}
+          style={styles.card}
+        >
+          <Image
             source={require('../../assets/iconCategories/car.png')}
             style={{ width: "100%", height: "35%",resizeMode: 'contain' }}
           />
@@ -43,23 +54,12 @@ const Categories = (props) => {
           style={styles.card}
         >
           <Image
-            source={require('../../assets/iconCategories/house-decoration.png')}
+            source={require('../../assets/iconCategories/electronic-device.png')}
             style={{ width: "100%", height: "35%" , resizeMode : "contain" }}
           />
-          <Text style={styles.text}>Maison & cuisine</Text>
+          <Text style={styles.text}>Multimédia</Text>
         </CardView>
-        <CardView
-          cardElevation={1}
-          cardMaxElevation={1}
-          cornerRadius={5}
-          style={styles.card}
-        >
-          <Image
-            source={require('../../assets/iconCategories/produits-de-beaute.png')}
-            style={{ width: "100%", height: "35%" , resizeMode : 'contain' }}
-          />
-          <Text style={styles.text}>Visage et Beauté</Text>
-        </CardView>
+        
         <CardView
           cardElevation={1}
           cornerRadius={5}
@@ -82,16 +82,18 @@ const Categories = (props) => {
           />
           <Text style={styles.text}>Sport</Text>
         </CardView>
+      
         <CardView
           cardElevation={1}
+          cardMaxElevation={1}
           cornerRadius={5}
           style={styles.card}
         >
           <Image
-            source={require('../../assets/iconCategories/electronic-device.png')}
-            style={{ width: "100%", height: "35%" , resizeMode : "contain" }}
+            source={require('../../assets/iconCategories/produits-de-beaute.png')}
+            style={{ width: "100%", height: "35%" , resizeMode : 'contain' }}
           />
-          <Text style={styles.text}>Multimédia</Text>
+          <Text style={styles.text}>Visage et Beauté</Text>
         </CardView>
         <CardView
           cardElevation={1}
