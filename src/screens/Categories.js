@@ -9,6 +9,7 @@ import {
 } from "react-native";
 import { Text, Card, Button, Icon } from "react-native-elements";
 const Categories = (props) => {
+  //
   return (
     <ScrollView>
       <View style={styles.container}>
@@ -88,8 +89,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent : "center",
     margin: 10,
-    width : '45%',
-    height : '38%'
+    width : '40%',
+    height : '25%'
   },
   text: {
     textAlign: "center",
