@@ -13,7 +13,7 @@ const Scvisage = (props) => {
 
 const styles = StyleSheet.create({
     container : { 
-        flex: 1 
+        flex: 1 ,
     }, 
     titleHeader: { 
         fontSize : 17, 

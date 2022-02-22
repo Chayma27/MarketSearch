@@ -111,9 +111,7 @@ const Inscription = (props) => {
                    
                     tableInscription.push(values)
                     setEffect(tableInscription)
-                    // setTimeout(() => {
-                    //   Alert.alert("Inscription effectuée avec succées ! ")
-                    // }, 40);
+                  
                     Alert.alert(
                       "Inscription",
                       "Inscription effectuée avec succées !",

@@ -22,7 +22,7 @@ const Connexion = (props) => {
     password: yup
       .string()
       .min(8, ({ min }) => `Le mot de passe doit comporter au moins ${min} caractères`)
-      .required("mot de passe obligatiore"),
+      .required("Mot de passe obligatiore"),
   });
 
   const sendConnexion = (values) => {
