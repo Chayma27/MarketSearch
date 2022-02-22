@@ -42,7 +42,7 @@ const Cardsctg = (props) => {
                       fontWeight: "600",
                     }}
                   >
-                    {props.count}
+                    {props.count} 
                   </Badge>
                   <AntDesign
                     name="rightcircleo"

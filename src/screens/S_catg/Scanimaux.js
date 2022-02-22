@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet } from "react-native";
+import { View, Text, StyleSheet, ScrollView } from "react-native";
 import { Avatar, Card, Title, Paragraph, Badge } from "react-native-paper";
 import { AntDesign } from "@expo/vector-icons";
 import Cardsctg from "../../components/sousCtg/Cardsctg";
@@ -9,7 +9,7 @@ const Scanimaux = (props) => {
       <View style={styles.container}>
         <Card style={styles.cardStyle}>
           <Cardsctg
-            count="400"
+            count="100"
             path={require("../../../assets/iconCategories/dog-avatar.png")}
             title="Chien"
           />
@@ -35,13 +35,7 @@ const Scanimaux = (props) => {
             title="Lapin"
           />
         </Card>
-        <Card style={styles.cardStyle}>
-          <Cardsctg
-            count="0"
-            path={require("../../../assets/iconCategories/avatar-papillon.png")}
-            title="Papillon"
-          />
-        </Card>
+        
         <Card style={styles.cardStyle}>
           <Cardsctg
             count="1"
@@ -58,6 +52,7 @@ const Scanimaux = (props) => {
         </Card>
       </View>
     </View>
+
   );
 };
 
