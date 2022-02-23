@@ -38,13 +38,6 @@ const Scanimaux = (props) => {
         
         <Card style={styles.cardStyle}>
           <Cardsctg
-            count="1"
-            path={require("../../../assets/iconCategories/cheval.png")}
-            title="Cheval"
-          />
-        </Card>
-        <Card style={styles.cardStyle}>
-          <Cardsctg
             count="300"
             path={require("../../../assets/iconCategories/otherr.png")}
             title="Autres"

@@ -12,21 +12,21 @@ const Scvehicule = (props) => {
               <Cardsctg
                 count="302"
                 path={require("../../../assets/iconCategories/voiture.png")}
-                title="Voiture"
+                title="Voitures"
               />
             </Card>
             <Card style={styles.cardStyle}>
               <Cardsctg
                 count="27"
                 path={require("../../../assets/iconCategories/moto.png")}
-                title="Moto"
+                title="Motos"
               />
             </Card>
             <Card style={styles.cardStyle}>
               <Cardsctg
                 count="0"
                 path={require("../../../assets/iconCategories/camion.png")}
-                title="Camion"
+                title="Camions"
               />
             </Card>
             

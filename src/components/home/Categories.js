@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
         width: 120,
         paddingVertical: '5%',
         fontWeight: 'bold',
-        // borderWidth: 0.5,
+        //borderWidth: 0.5,
         borderColor: "tomato",
         fontFamily:'Times New Roman',
         paddingBottom : 22,
