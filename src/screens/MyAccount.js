@@ -10,9 +10,7 @@ import {
 } from "@expo/vector-icons";
 const MyAccount = (props) => {
   return (
-    // <View>
-    //   <Text> Mon Compte </Text>
-    // </View>
+   
     <ScrollView>
       <View style={styles.container}>
         <Card>
@@ -55,24 +53,7 @@ const MyAccount = (props) => {
           </TouchableOpacity>
           <Card.Divider />
 
-          {/* test
           
-            <View style={{ flexDirection: "column" }}>
-              <Text style={styles.cardTitle}> Email</Text>
-              <TextInput
-         name="email"
-         placeholder="Email Address"
-         style={styles.textInput}
-         onChangeText={handleChange('email')}
-         onBlur={handleBlur('email')}
-         value={values.email}
-         keyboardType="email-address"
-       />
-            </View>
-          <Card.Divider /> */}
-
-
-          {/* fin de test */}
           <TouchableOpacity 
                       onPress={() => props.navigation.navigate("MesArticles")}
                       >
