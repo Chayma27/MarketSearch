@@ -27,7 +27,7 @@ const Scmode = (props) => {
           <Cardsctg
             count="295"
             path={require("../../../assets/iconCategories/VetBb.png")}
-            title="Vêtements bébé"
+            title="Vêtements enfant"
           />
         </Card>
         <Card style={styles.cardStyle}>

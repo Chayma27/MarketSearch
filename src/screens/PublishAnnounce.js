@@ -16,9 +16,16 @@ const PublishAnnonce = (props) => {
   const [number, onChangeNumber] = React.useState(null);
   const [text, onChangeText] = React.useState("0");
   const [selectedCtg, setSelectedCtg] = useState("");
-  const [selectedSCtg , setSelectedSCtg] = useState("")
+  const [selectedSCtg, setSelectedSCtg] = useState("")
   const ctg = ref_Annonce.ctg
-  
+  const Mode = ref_Annonce.Mode
+  const Maison_Cuisine = ref_Annonce.Maison_Cuisine
+  const Vehicule = ref_Annonce.Vehicule
+  const Multimedia = ref_Annonce.Multimedia
+  const Loisir = ref_Annonce.Loisir
+  const Sport = ref_Annonce.Sport
+  const Visage_Beaute = ref_Annonce.Visage_Beaute
+  const Animaux = ref_Annonce.Animaux
   let Sctg = [
     {
       value: "Mode",
@@ -26,36 +33,37 @@ const PublishAnnonce = (props) => {
     {
       value: "Maison & cuisine",
     },
-    
+
   ];
 
-  let Mode = [
-    {
-      value: "Vetement",
-    },
-    {
-      value: "chaussures",
-    },
-    
-  ];
-  let Véhicule = [
-    {
-      value: "Moto",
-    },
-    {
-      value: "Voiture",
-    },
-    {
-      value: "Camion",
-    },
-    
-  ];
-
-  const SctgCallBack = () => { 
-    if (selectedCtg == "Mode") {
-      return Mode
-    } else { 
-      return Véhicule
+  const SctgCallBack = () => {
+    switch (selectedCtg) {
+      case "Mode":
+        return Mode
+        break;
+      case "Maison & Cuisine":
+        return Maison_Cuisine
+        break;
+      case "Véhicule":
+        return Vehicule
+        break;
+      case "Multimédia":
+        return Multimedia
+        break;
+      case "Loisir":
+        return Loisir
+        break;
+      case "Sport":
+        return Sport
+        break;
+      case "Visage et Beauté":
+        return Visage_Beaute
+        break;
+      case "Animaux":
+        return Animaux
+        break;
+      default:
+        break;
     }
   }
   return (
@@ -74,7 +82,7 @@ const PublishAnnonce = (props) => {
             iconColor="#E1E1E1"
             label="Catégories"
             data={ctg}
-            onChangeText= {(value)=> setSelectedCtg(value)}
+            onChangeText={(value) => setSelectedCtg(value)}
 
           />
 
@@ -83,7 +91,7 @@ const PublishAnnonce = (props) => {
             iconColor="#E1E1E1"
             label="Sous catégories"
             data={SctgCallBack()}
-            onChangeText= {(value)=> setSelectedSCtg(value)}
+            onChangeText={(value) => setSelectedSCtg(value)}
 
           />
           <Text>la valeur est = {selectedSCtg}</Text>
@@ -93,7 +101,7 @@ const PublishAnnonce = (props) => {
             style={{ fontSize: 22, fontWeight: "bold", textAlign: "center" }}
           >
             {" "}
-            Dites-nous en plus ! {" "}   
+            Dites-nous en plus ! {" "}
 
           </Text>
 
@@ -148,7 +156,7 @@ const PublishAnnonce = (props) => {
           >
             Prix
           </Text>
-          <View style={{ flexDirection: "row", justifyContent: "center" , marginVertical : '5%'}}>
+          <View style={{ flexDirection: "row", justifyContent: "center", marginVertical: '5%' }}>
             <TextInput
               style={styles.input}
               onChangeText={onChangeText}
@@ -162,7 +170,7 @@ const PublishAnnonce = (props) => {
           />
         </Card>
       </View>
-      
+
     </ScrollView>
   );
 };

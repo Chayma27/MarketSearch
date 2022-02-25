@@ -31,7 +31,7 @@ const Categories = (props) => {
           source={require("../../assets/iconCategories/house-decoration.png")}
           style={{ width: "100%", height: "80%", resizeMode: "contain" }}
         />
-        <Text style={styles.text}>Maison & cuisine</Text>
+        <Text style={styles.text}>Maison & Cuisine</Text>
       </TouchableOpacity>
       <TouchableOpacity
         style={styles.card}
