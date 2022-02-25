@@ -4,7 +4,7 @@ import { StyleSheet, View, ScrollView, TextInput } from "react-native";
 import { Text, Card, Icon, Input, Button } from "react-native-elements";
 import { Dropdown } from "react-native-material-dropdown-v2-fixed";
 import { PricingCard } from "react-native-elements";
-
+import * as ref_Annonce from "../utilitaires/Ref_Annonce"
 import {
   MaterialCommunityIcons,
   Ionicons,
@@ -13,48 +13,51 @@ import {
   AntDesign,
 } from "@expo/vector-icons";
 const PublishAnnonce = (props) => {
-  const [selectedValue, setSelectedValue] = useState("");
   const [number, onChangeNumber] = React.useState(null);
   const [text, onChangeText] = React.useState("0");
-
-  let ctg = [
+  const [selectedCtg, setSelectedCtg] = useState("");
+  const [selectedSCtg , setSelectedSCtg] = useState("")
+  const ctg = ref_Annonce.ctg
+  
+  let Sctg = [
     {
       value: "Mode",
     },
     {
       value: "Maison & cuisine",
     },
-    {
-      value: "Véhicule",
-    },
-    {
-      value: "Multimédia",
-    },
-    {
-      value: "Loisir",
-    },
-    {
-      value: "Sport",
-    },
-    {
-      value: "Visage et beauté",
-    },
-    {
-      value: "Animaux",
-    },
-  ];
-  let Sctg = [
-    {
-      value: "Mercedes",
-    },
-    {
-      value: "Audi",
-    },
-    {
-      value: "BMW",
-    },
+    
   ];
 
+  let Mode = [
+    {
+      value: "Vetement",
+    },
+    {
+      value: "chaussures",
+    },
+    
+  ];
+  let Véhicule = [
+    {
+      value: "Moto",
+    },
+    {
+      value: "Voiture",
+    },
+    {
+      value: "Camion",
+    },
+    
+  ];
+
+  const SctgCallBack = () => { 
+    if (selectedCtg == "Mode") {
+      return Mode
+    } else { 
+      return Véhicule
+    }
+  }
   return (
     <ScrollView>
       <View style={styles.container}>
@@ -71,21 +74,27 @@ const PublishAnnonce = (props) => {
             iconColor="#E1E1E1"
             label="Catégories"
             data={ctg}
+            onChangeText= {(value)=> setSelectedCtg(value)}
+
           />
 
           <Dropdown
             icon="chevron-down"
             iconColor="#E1E1E1"
             label="Sous catégories"
-            data={Sctg}
+            data={SctgCallBack()}
+            onChangeText= {(value)=> setSelectedSCtg(value)}
+
           />
+          <Text>la valeur est = {selectedSCtg}</Text>
         </Card>
         <Card>
           <Text
             style={{ fontSize: 22, fontWeight: "bold", textAlign: "center" }}
           >
             {" "}
-            Dites-nous en plus !{" "}
+            Dites-nous en plus ! {" "}   
+
           </Text>
 
           <Dropdown
