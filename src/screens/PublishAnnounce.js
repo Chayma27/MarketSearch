@@ -4,7 +4,8 @@ import { StyleSheet, View, ScrollView, TextInput } from "react-native";
 import { Text, Card, Icon, Input, Button } from "react-native-elements";
 import { Dropdown } from "react-native-material-dropdown-v2-fixed";
 import { PricingCard } from "react-native-elements";
-import * as ref_Annonce from "../utilitaires/Ref_Annonce"
+import * as ref_Annonce from "../utilitaires/Ref_Annonce";
+import * as Ref_MVetF from "../utilitaires/Ref_MVetF"
 import {
   MaterialCommunityIcons,
   Ionicons,
@@ -16,56 +17,50 @@ const PublishAnnonce = (props) => {
   const [number, onChangeNumber] = React.useState(null);
   const [text, onChangeText] = React.useState("0");
   const [selectedCtg, setSelectedCtg] = useState("");
-  const [selectedSCtg, setSelectedSCtg] = useState("")
-  const ctg = ref_Annonce.ctg
-  const Mode = ref_Annonce.Mode
-  const Maison_Cuisine = ref_Annonce.Maison_Cuisine
-  const Vehicule = ref_Annonce.Vehicule
-  const Multimedia = ref_Annonce.Multimedia
-  const Loisir = ref_Annonce.Loisir
-  const Sport = ref_Annonce.Sport
-  const Visage_Beaute = ref_Annonce.Visage_Beaute
-  const Animaux = ref_Annonce.Animaux
-  let Sctg = [
-    {
-      value: "Mode",
-    },
-    {
-      value: "Maison & cuisine",
-    },
+  const [selectedSCtg, setSelectedSCtg] = useState("");
+  const ctg = ref_Annonce.ctg;
+  const Mode = ref_Annonce.Mode;
+  const Maison_Cuisine = ref_Annonce.Maison_Cuisine;
+  const Vehicule = ref_Annonce.Vehicule;
+  const Multimedia = ref_Annonce.Multimedia;
+  const Loisir = ref_Annonce.Loisir;
+  const Sport = ref_Annonce.Sport;
+  const Visage_Beaute = ref_Annonce.Visage_Beaute;
+  const Animaux = ref_Annonce.Animaux;
+  const VetF = Ref_MVetF.VetF
 
-  ];
+
 
   const SctgCallBack = () => {
     switch (selectedCtg) {
       case "Mode":
-        return Mode
+        return Mode;
         break;
       case "Maison & Cuisine":
-        return Maison_Cuisine
+        return Maison_Cuisine;
         break;
       case "Véhicule":
-        return Vehicule
+        return Vehicule;
         break;
       case "Multimédia":
-        return Multimedia
+        return Multimedia;
         break;
       case "Loisir":
-        return Loisir
+        return Loisir;
         break;
       case "Sport":
-        return Sport
+        return Sport;
         break;
       case "Visage et Beauté":
-        return Visage_Beaute
+        return Visage_Beaute;
         break;
       case "Animaux":
-        return Animaux
+        return Animaux;
         break;
       default:
         break;
     }
-  }
+  };
   return (
     <ScrollView>
       <View style={styles.container}>
@@ -83,7 +78,6 @@ const PublishAnnonce = (props) => {
             label="Catégories"
             data={ctg}
             onChangeText={(value) => setSelectedCtg(value)}
-
           />
 
           <Dropdown
@@ -92,7 +86,6 @@ const PublishAnnonce = (props) => {
             label="Sous catégories"
             data={SctgCallBack()}
             onChangeText={(value) => setSelectedSCtg(value)}
-
           />
           <Text>la valeur est = {selectedSCtg}</Text>
         </Card>
@@ -101,34 +94,33 @@ const PublishAnnonce = (props) => {
             style={{ fontSize: 22, fontWeight: "bold", textAlign: "center" }}
           >
             {" "}
-            Dites-nous en plus ! {" "}
-
+            Dites-nous en plus !{" "}
           </Text>
-
+          {/* return en fonction de selectedSctg */}
           <Dropdown
             icon="chevron-down"
             iconColor="#E1E1E1"
             label="Marque"
-            data={ctg}
+            data={VetF[0].TypeVetement}
           />
 
           <Dropdown
             icon="chevron-down"
             iconColor="#E1E1E1"
             label="Taille"
-            data={Sctg}
+            data={VetF[0].Taille}
           />
           <Dropdown
             icon="chevron-down"
             iconColor="#E1E1E1"
             label="Couleur"
-            data={Sctg}
+            data={VetF}
           />
           <Dropdown
             icon="chevron-down"
             iconColor="#E1E1E1"
             label="Etat"
-            data={Sctg}
+            data={VetF}
           />
         </Card>
         <Card>
@@ -156,7 +148,13 @@ const PublishAnnonce = (props) => {
           >
             Prix
           </Text>
-          <View style={{ flexDirection: "row", justifyContent: "center", marginVertical: '5%' }}>
+          <View
+            style={{
+              flexDirection: "row",
+              justifyContent: "center",
+              marginVertical: "5%",
+            }}
+          >
             <TextInput
               style={styles.input}
               onChangeText={onChangeText}
@@ -170,7 +168,6 @@ const PublishAnnonce = (props) => {
           />
         </Card>
       </View>
-
     </ScrollView>
   );
 };
