@@ -8,6 +8,10 @@ import * as ref_Annonce from "../utilitaires/Ref_Annonce";
 import * as Ref_Mode from "../utilitaires/Ref_Mode";
 import DroplistVetF from "../components/droplistAnnonces/DroplistVetF";
 import DroplistVetH from "../components/droplistAnnonces/DroplistVetH";
+import DroplistVetEnf from "../components/droplistAnnonces/DroplistVetEnf";
+import DroplistChauss from "../components/droplistAnnonces/DroplistChauss";
+import DroplistSacBag from "../components/droplistAnnonces/DroplistSacBag";
+import DroplistBijMontre from "../components/droplistAnnonces/DroplistBijMontre";
 import {
   MaterialCommunityIcons,
   Ionicons,
@@ -91,10 +95,25 @@ const PublishAnnonce = (props) => {
           <Text>la valeur est = {selectedSCtg}</Text>
         </Card>
         {(() => {
-          if (selectedSCtg == "Vêtements femme") {
+          if (selectedSCtg == "Vêtements femme")
+          {
           return <DroplistVetF />
-          } else if (selectedSCtg == "Vêtements homme") {
+          }
+          else if (selectedSCtg == "Vêtements homme")
+          {
             return <DroplistVetH /> 
+          }
+          else if (selectedSCtg == "Vêtements enfant") {
+            return <DroplistVetEnf /> 
+          }
+          else if (selectedSCtg == "Chaussures") {
+            return <DroplistChauss /> 
+          }
+          else if (selectedSCtg == "Sac, bagage et accessoires") {
+            return <DroplistSacBag /> 
+          }
+          else if (selectedSCtg == "Bijoux et montres") {
+            return <DroplistBijMontre /> 
           }
         })()}
         <Card>

@@ -38,7 +38,7 @@ export const Mode = [
     value: "Chaussures",
   },
   {
-    value: "Sac,bagage et accessoires",
+    value: "Sac, bagage et accessoires",
   },
   {
     value: "Bijoux et montres",
