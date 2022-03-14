@@ -7,6 +7,7 @@ import { PricingCard } from "react-native-elements";
 import * as ref_Annonce from "../utilitaires/Ref_Annonce";
 import * as Ref_Mode from "../utilitaires/Ref_Mode";
 import DroplistVetF from "../components/droplistAnnonces/DroplistVetF";
+import DroplistVetH from "../components/droplistAnnonces/DroplistVetH";
 import {
   MaterialCommunityIcons,
   Ionicons,
@@ -92,6 +93,8 @@ const PublishAnnonce = (props) => {
         {(() => {
           if (selectedSCtg == "Vêtements femme") {
           return <DroplistVetF />
+          } else if (selectedSCtg == "Vêtements homme") {
+            return <DroplistVetH /> 
           }
         })()}
         <Card>

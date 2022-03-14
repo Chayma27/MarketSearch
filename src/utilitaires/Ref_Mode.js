@@ -225,8 +225,7 @@ export const VetF = [
       ],
     },
   ];
-  
-  export const VetH = [
+  export const VetH = [ // marque,couleur,etat
     {
       TypeVetement: [
         {
@@ -289,7 +288,7 @@ export const VetF = [
     },
   ];
 
-  export const VetEnf = [
+  export const VetEnf = [ //couleur,etat
     {
       TypeVetement: [
         {
@@ -486,7 +485,7 @@ export const VetF = [
     },
   ];
 
-  export const Chauss = [   
+  export const Chauss = [   // couleur , etat
     {
       Univers: [
         {
@@ -751,7 +750,7 @@ export const VetF = [
     },
   ];
 
-  export const SacBag = [
+  export const SacBag = [ // Univers chaussure , couleur, etat
     {
       Type: [
         {
@@ -960,7 +959,7 @@ export const VetF = [
     },
   ];
 
-  export const BijMontre = [
+  export const BijMontre = [ // couleur , etat
     {
     
         Univers: [
