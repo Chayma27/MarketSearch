@@ -5,7 +5,8 @@ import { Text, Card, Icon, Input, Button } from "react-native-elements";
 import { Dropdown } from "react-native-material-dropdown-v2-fixed";
 import { PricingCard } from "react-native-elements";
 import * as ref_Annonce from "../utilitaires/Ref_Annonce";
-import * as Ref_MVetF from "../utilitaires/Ref_Mode"
+import * as Ref_Mode from "../utilitaires/Ref_Mode";
+import DroplistVetF from "../components/droplistAnnonces/DroplistVetF";
 import {
   MaterialCommunityIcons,
   Ionicons,
@@ -27,7 +28,6 @@ const PublishAnnonce = (props) => {
   const Sport = ref_Annonce.Sport;
   const Visage_Beaute = ref_Annonce.Visage_Beaute;
   const Animaux = ref_Annonce.Animaux;
-  const VetF = Ref_MVetF.VetF
 
 
 
@@ -89,40 +89,11 @@ const PublishAnnonce = (props) => {
           />
           <Text>la valeur est = {selectedSCtg}</Text>
         </Card>
-        <Card>
-          <Text
-            style={{ fontSize: 22, fontWeight: "bold", textAlign: "center" }}
-          >
-            {" "}
-            Dites-nous en plus !{" "}
-          </Text>
-          {/* return en fonction de selectedSctg */}
-          <Dropdown
-            icon="chevron-down"
-            iconColor="#E1E1E1"
-            label="Marque"
-            data={VetF[0].TypeVetement}
-          />
-
-          <Dropdown
-            icon="chevron-down"
-            iconColor="#E1E1E1"
-            label="Taille"
-            data={VetF[0].Taille}
-          />
-          <Dropdown
-            icon="chevron-down"
-            iconColor="#E1E1E1"
-            label="Couleur"
-            data={VetF}
-          />
-          <Dropdown
-            icon="chevron-down"
-            iconColor="#E1E1E1"
-            label="Etat"
-            data={VetF}
-          />
-        </Card>
+        {(() => {
+          if (selectedSCtg == "Vêtements femme") {
+          return <DroplistVetF />
+          }
+        })()}
         <Card>
           <Text
             style={{ fontSize: 22, fontWeight: "bold", textAlign: "center" }}

@@ -962,7 +962,7 @@ export const VetF = [
 
   export const BijMontre = [
     {
-      {
+    
         Univers: [
           {
             value: "Femme",
@@ -1191,5 +1191,5 @@ export const VetF = [
             value: "Autres",
           },
         ],
-    },
+      }
   ];
