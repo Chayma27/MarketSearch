@@ -56,7 +56,12 @@ const DroplistMoto = (props) => {
         label="Modèle"
         data={SctgCallBack()}
         onChangeText={(value) => setSelectedModel(value)}
-
+      />
+       <Dropdown
+        icon="chevron-down"
+        iconColor="#E1E1E1"
+        label="Type"
+        data={Moto[0].Type}
       />
      
    
