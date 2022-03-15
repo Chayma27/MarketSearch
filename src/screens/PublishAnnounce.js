@@ -6,12 +6,15 @@ import { Dropdown } from "react-native-material-dropdown-v2-fixed";
 import { PricingCard } from "react-native-elements";
 import * as ref_Annonce from "../utilitaires/Ref_Annonce";
 import * as Ref_Mode from "../utilitaires/Ref_Mode";
-import DroplistVetF from "../components/droplistAnnonces/DroplistVetF";
-import DroplistVetH from "../components/droplistAnnonces/DroplistVetH";
-import DroplistVetEnf from "../components/droplistAnnonces/DroplistVetEnf";
-import DroplistChauss from "../components/droplistAnnonces/DroplistChauss";
-import DroplistSacBag from "../components/droplistAnnonces/DroplistSacBag";
-import DroplistBijMontre from "../components/droplistAnnonces/DroplistBijMontre";
+
+import DroplistVetF from "../components/droplistAnnonces/ModeDroplist/DroplistVetF";
+import DroplistVetH from "../components/droplistAnnonces/ModeDroplist/DroplistVetH";
+import DroplistVetEnf from "../components/droplistAnnonces/ModeDroplist/DroplistVetEnf";
+import DroplistChauss from "../components/droplistAnnonces/ModeDroplist/DroplistChauss";
+import DroplistSacBag from "../components/droplistAnnonces/ModeDroplist/DroplistSacBag";
+import DroplistBijMontre from "../components/droplistAnnonces/ModeDroplist/DroplistBijMontre";
+import DroplistVoiture from "../components/droplistAnnonces/VehiculeDroplist/DroplistVoiture";
+
 import {
   MaterialCommunityIcons,
   Ionicons,
@@ -115,6 +118,10 @@ const PublishAnnonce = (props) => {
           else if (selectedSCtg == "Bijoux et montres") {
             return <DroplistBijMontre /> 
           }
+          else if (selectedSCtg == "Voitures") {
+            return <DroplistVoiture /> 
+          }
+
         })()}
         <Card>
           <Text

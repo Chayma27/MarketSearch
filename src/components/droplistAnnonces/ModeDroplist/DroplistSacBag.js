@@ -2,11 +2,12 @@ import React from "react";
 import { View, StyleSheet } from "react-native";
 import { Text, Card, Icon, Input, Button } from "react-native-elements";
 import { Dropdown } from "react-native-material-dropdown-v2-fixed";
-import * as Ref_Mode from "../../utilitaires/Ref_Mode";
+import * as Ref_Mode from "../../../utilitaires/Ref_Mode";
 const VetF = Ref_Mode.VetF;
 const Chauss = Ref_Mode.Chauss;
+const SacBag = Ref_Mode.SacBag;
 
-const DroplistChauss = (props) => {
+const DroplistSacBag = (props) => {
   return (
     <Card>
       <Text
@@ -29,22 +30,21 @@ const DroplistChauss = (props) => {
       <Dropdown
         icon="chevron-down"
         iconColor="#E1E1E1"
-        label="Type chaussure"
-        data={Chauss[0].TypeChaussure}
-      />
-        <Dropdown
-        icon="chevron-down"
-        iconColor="#E1E1E1"
-        label="Pointure"
-        data={Chauss[0].Pointure}
+        label="Type"
+        data={SacBag[0].Type}
       />
       <Dropdown
         icon="chevron-down"
         iconColor="#E1E1E1"
         label="Marque"
-        data={Chauss[0].Marque}
+        data={SacBag[0].Marque}
       />
-
+      <Dropdown
+        icon="chevron-down"
+        iconColor="#E1E1E1"
+        label="Matiere"
+        data={SacBag[0].Matiere}
+      />
       <Dropdown
         icon="chevron-down"
         iconColor="#E1E1E1"
@@ -72,4 +72,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default DroplistChauss;
+export default DroplistSacBag;
