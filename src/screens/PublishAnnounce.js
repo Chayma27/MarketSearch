@@ -14,6 +14,7 @@ import DroplistChauss from "../components/droplistAnnonces/ModeDroplist/Droplist
 import DroplistSacBag from "../components/droplistAnnonces/ModeDroplist/DroplistSacBag";
 import DroplistBijMontre from "../components/droplistAnnonces/ModeDroplist/DroplistBijMontre";
 import DroplistVoiture from "../components/droplistAnnonces/VehiculeDroplist/DroplistVoiture";
+import DroplistMoto from "../components/droplistAnnonces/VehiculeDroplist/DroplistMoto";
 
 import {
   MaterialCommunityIcons,
@@ -120,6 +121,9 @@ const PublishAnnonce = (props) => {
           }
           else if (selectedSCtg == "Voitures") {
             return <DroplistVoiture /> 
+          }
+          else if (selectedSCtg == "Motos") {
+            return <DroplistMoto /> 
           }
 
         })()}
