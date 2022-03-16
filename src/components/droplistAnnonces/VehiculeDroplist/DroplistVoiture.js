@@ -169,7 +169,6 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   datePickerStyle: {
-    // flexDirection : 'row',
     justifyContent : "center",
     width: 200,
     marginTop: 20,
