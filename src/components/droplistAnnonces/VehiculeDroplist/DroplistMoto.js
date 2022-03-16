@@ -3,13 +3,15 @@ import { View, StyleSheet } from "react-native";
 import { Text, Card, Icon, Input, Button } from "react-native-elements";
 import { Dropdown } from "react-native-material-dropdown-v2-fixed";
 import * as Ref_Vehicule from "../../../utilitaires/Ref_Vehicule";
-
+import * as Ref_Mode from "../../../utilitaires/Ref_Mode";
+const VetF = Ref_Mode.VetF;
 // MODELE 
 const M_Yamaha = Ref_Vehicule.M_Yamaha;
 const M_Honda = Ref_Vehicule.M_Honda;
 
 //Schema Voiture Droplist
 const Moto = Ref_Vehicule.Moto;
+const Voiture = Ref_Vehicule.Voiture;
 
 
 
@@ -57,11 +59,23 @@ const DroplistMoto = (props) => {
         data={SctgCallBack()}
         onChangeText={(value) => setSelectedModel(value)}
       />
+           <Dropdown
+        icon="chevron-down"
+        iconColor="#E1E1E1"
+        label="Année modèle"
+        data={Voiture[0].AnneeModele}
+      />
        <Dropdown
         icon="chevron-down"
         iconColor="#E1E1E1"
         label="Type"
         data={Moto[0].Type}
+      />
+      <Dropdown
+        icon="chevron-down"
+        iconColor="#E1E1E1"
+        label="Couleur"
+        data={VetF[0].Couleur}
       />
      
    
