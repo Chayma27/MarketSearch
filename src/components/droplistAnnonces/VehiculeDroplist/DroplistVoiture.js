@@ -7,6 +7,7 @@ import {
   Input,
   Button,
   Divider,
+  Slider
 } from "react-native-elements";
 import { Dropdown } from "react-native-material-dropdown-v2-fixed";
 import * as Ref_Vehicule from "../../../utilitaires/Ref_Vehicule";
@@ -26,7 +27,25 @@ const DroplistVoiture = (props) => {
   const [selectedMarque, setSelectedMarque] = useState("");
   const [selectedModel, setSelectedModel] = useState("");
   const [date, setDate] = useState("01-01-2020");
+  const [state, setState] = useState(0);
+
+
   const [value, setValue] = useState(0);
+  const [vertValue, setVertValue] = useState(0);
+
+  const interpolate = (start, end) => {
+    let k = (value - 0) / 10; // 0 =>min  && 10 => MAX
+    return Math.ceil((1 - k) * start + k * end) % 256;
+  };
+
+  const color = () => {
+    let r = interpolate(255, 0);
+    let g = interpolate(0, 255);
+    let b = interpolate(0, 0);
+    return `rgb(${r},${g},${b})`;
+  };
+
+
   const SctgCallBack = () => {
     switch (selectedMarque) {
       case "Audi":
@@ -57,6 +76,7 @@ const DroplistVoiture = (props) => {
         break;
     }
   };
+
   return (
     <Card>
       <Text
@@ -151,7 +171,7 @@ const DroplistVoiture = (props) => {
           placeholder="select date"
           format="DD-MM-YYYY"
           minDate="01-01-2000"
-          maxDate="01-01-2022"
+          maxDate="31-12-2022"
           confirmBtnText="Confirm"
           cancelBtnText="Cancel"
           customStyles={{
@@ -195,12 +215,57 @@ const DroplistVoiture = (props) => {
       >
         <NumericInput
           onLimitReached={(isMax, msg) => console.log(isMax, msg)}
-          value={value}
+          value={state}
           minValue={0}
           step={20}
-          onChange={(value) => setValue({ value })}
+          onChange={(value) => setState({ value })}
         />
       </View>
+
+      <Divider
+        color="#f8f8f9"
+        style={{ borderWidth: 0.5, marginBottom: "4%" }}
+      />
+         <Text
+        style={{
+          color: "grey",
+          fontSize: 16,
+          fontWeight: "900",
+          textAlign: "center",
+          marginBottom: "5%",
+        }}
+      >
+        Puissance Fiscale (CV){" "}
+      </Text>
+      <View style={[styles.contentView]}>
+        <Slider
+          value={value}
+          onValueChange={setValue}
+          maximumValue={10}
+          minimumValue={0}
+          step={1}
+          allowTouchTrack
+          trackStyle={{ height: 5, backgroundColor: 'transparent' }}
+          thumbStyle={{ height: 20, width: 20, backgroundColor: 'transparent' }}
+          thumbProps={{
+            children: (
+              <Icon
+                name="car"
+                type="font-awesome"
+                size={20}
+                reverse
+                containerStyle={{ bottom: 20, right: 20 }}
+                color={color()}
+              />
+            ),
+          }}
+        />
+        <Text style={{ paddingTop: 20 }}>Value: {value}</Text>
+      </View>
+
+
+
+
     </Card>
   );
 };
