@@ -1,57 +1,62 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import { View, StyleSheet } from "react-native";
-import { Text, Card, Icon, Input, Button,Divider } from "react-native-elements";
+import {
+  Text,
+  Card,
+  Icon,
+  Input,
+  Button,
+  Divider,
+} from "react-native-elements";
 import { Dropdown } from "react-native-material-dropdown-v2-fixed";
 import * as Ref_Vehicule from "../../../utilitaires/Ref_Vehicule";
-import DatePicker from 'react-native-datepicker';
+import DatePicker from "react-native-datepicker";
+import NumericInput from "react-native-numeric-input";
 
-// MODELE 
+// MODELE
 const M_Audi = Ref_Vehicule.M_Audi;
 const M_BMW = Ref_Vehicule.M_BMW;
 const M_Mercedes = Ref_Vehicule.M_Mercedes;
 const M_Citroen = Ref_Vehicule.M_Citroen;
 
-
 //Schema Voiture Droplist
 const Voiture = Ref_Vehicule.Voiture;
 
-
-
 const DroplistVoiture = (props) => {
-    const [selectedMarque, setSelectedMarque] = useState("");
-    const [selectedModel, setSelectedModel] = useState("");
-    const [date, setDate] = useState('01-01-2020');
-
-    const SctgCallBack = () => {
-        switch (selectedMarque) {
-          case "Audi":
-            return M_Audi;
-            break;
-          case "BMW":
-            return M_BMW;
-            break;
-          case "Mercedes":
-            return M_Mercedes;
-            break;
-          case "Citroen":
-            return M_Citroen;
-            break;
-        //   case "Loisir":
-        //     return Loisir;
-        //     break;
-        //   case "Sport":
-        //     return Sport;
-        //     break;
-        //   case "Visage et Beauté":
-        //     return Visage_Beaute;
-        //     break;
-        //   case "Animaux":
-        //     return Animaux;
-        //     break;
-          default:
-            break;
-        }
-      };
+  const [selectedMarque, setSelectedMarque] = useState("");
+  const [selectedModel, setSelectedModel] = useState("");
+  const [date, setDate] = useState("01-01-2020");
+  const [value, setValue] = useState(0);
+  const SctgCallBack = () => {
+    switch (selectedMarque) {
+      case "Audi":
+        return M_Audi;
+        break;
+      case "BMW":
+        return M_BMW;
+        break;
+      case "Mercedes":
+        return M_Mercedes;
+        break;
+      case "Citroen":
+        return M_Citroen;
+        break;
+      //   case "Loisir":
+      //     return Loisir;
+      //     break;
+      //   case "Sport":
+      //     return Sport;
+      //     break;
+      //   case "Visage et Beauté":
+      //     return Visage_Beaute;
+      //     break;
+      //   case "Animaux":
+      //     return Animaux;
+      //     break;
+      default:
+        break;
+    }
+  };
   return (
     <Card>
       <Text
@@ -72,13 +77,12 @@ const DroplistVoiture = (props) => {
         data={Voiture[0].Marque}
         onChangeText={(value) => setSelectedMarque(value)}
       />
-       <Dropdown
+      <Dropdown
         icon="chevron-down"
         iconColor="#E1E1E1"
         label="Modèle"
         data={SctgCallBack()}
         onChangeText={(value) => setSelectedModel(value)}
-
       />
       <Dropdown
         icon="chevron-down"
@@ -110,23 +114,37 @@ const DroplistVoiture = (props) => {
         label="Nombre de places"
         data={Voiture[0].NbrPlace}
       />
-       <Dropdown
+      <Dropdown
         icon="chevron-down"
         iconColor="#E1E1E1"
         label="Couleur"
         data={Voiture[0].Couleur}
       />
-       <Dropdown
+      <Dropdown
         icon="chevron-down"
         iconColor="#E1E1E1"
         label="Type de véhicule"
         data={Voiture[0].TypeVehicule}
       />
-          <Text style={{color: 'grey', fontSize : 16, fontWeight : '900',  textAlign : "center"}}> Date de première mise en circulation
-  </Text>
-  <View style={{flexDirection : 'row',justifyContent : "center" , marginBottom : '5%'}}>
-
-       <DatePicker
+      <Text
+        style={{
+          color: "grey",
+          fontSize: 16,
+          fontWeight: "900",
+          textAlign: "center",
+        }}
+      >
+        {" "}
+        Date de première mise en circulation
+      </Text>
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "center",
+          marginBottom: "5%",
+        }}
+      >
+        <DatePicker
           style={styles.datePickerStyle}
           date={date} //initial date from state
           mode="date" //The enum of date, datetime and time
@@ -139,7 +157,7 @@ const DroplistVoiture = (props) => {
           customStyles={{
             dateIcon: {
               // display: 'none',
-              position: 'absolute',
+              position: "absolute",
               left: 0,
               top: 4,
               marginLeft: 0,
@@ -152,9 +170,37 @@ const DroplistVoiture = (props) => {
             setDate(date);
           }}
         />
-        </View>
-        <Divider color="#f8f8f9" style={{borderWidth : 0.2}} />
-
+      </View>
+      <Divider
+        color="#f8f8f9"
+        style={{ borderWidth: 0.5, marginBottom: "4%" }}
+      />
+      <Text
+        style={{
+          color: "grey",
+          fontSize: 16,
+          fontWeight: "900",
+          textAlign: "center",
+          marginBottom: "5%",
+        }}
+      >
+        Kilométrage{" "}
+      </Text>
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "center",
+          marginBottom: "5%",
+        }}
+      >
+        <NumericInput
+          onLimitReached={(isMax, msg) => console.log(isMax, msg)}
+          value={value}
+          minValue={0}
+          step={20}
+          onChange={(value) => setValue({ value })}
+        />
+      </View>
     </Card>
   );
 };
@@ -169,7 +215,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
   },
   datePickerStyle: {
-    justifyContent : "center",
+    justifyContent: "center",
     width: 200,
     marginTop: 20,
   },

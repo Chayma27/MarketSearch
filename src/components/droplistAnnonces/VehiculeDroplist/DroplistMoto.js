@@ -5,6 +5,7 @@ import { Dropdown } from "react-native-material-dropdown-v2-fixed";
 import * as Ref_Vehicule from "../../../utilitaires/Ref_Vehicule";
 import * as Ref_Mode from "../../../utilitaires/Ref_Mode";
 import DatePicker from 'react-native-datepicker';
+import NumericInput from "react-native-numeric-input";
 
 const VetF = Ref_Mode.VetF;
 // MODELE 
@@ -21,6 +22,7 @@ const DroplistMoto = (props) => {
     const [selectedMarque, setSelectedMarque] = useState("");
     const [selectedModel, setSelectedModel] = useState("");
     const [date, setDate] = useState('01-01-2020');
+    const [value, setValue] = useState(0);
 
     const SctgCallBack = () => {
         switch (selectedMarque) {
@@ -112,7 +114,81 @@ const DroplistMoto = (props) => {
         />
         </View>
         <Divider color="#f8f8f9" style={{borderWidth : 0.2}} />
-   
+        <Text
+        style={{
+          color: "grey",
+          fontSize: 16,
+          fontWeight: "900",
+          textAlign: "center",
+        }}
+      >
+        {" "}
+        Date de première mise en circulation
+      </Text>
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "center",
+          marginBottom: "5%",
+        }}
+      >
+        <DatePicker
+          style={styles.datePickerStyle}
+          date={date} //initial date from state
+          mode="date" //The enum of date, datetime and time
+          placeholder="select date"
+          format="DD-MM-YYYY"
+          minDate="01-01-2000"
+          maxDate="01-01-2022"
+          confirmBtnText="Confirm"
+          cancelBtnText="Cancel"
+          customStyles={{
+            dateIcon: {
+              // display: 'none',
+              position: "absolute",
+              left: 0,
+              top: 4,
+              marginLeft: 0,
+            },
+            dateInput: {
+              marginLeft: 36,
+            },
+          }}
+          onDateChange={(date) => {
+            setDate(date);
+          }}
+        />
+      </View>
+      <Divider
+        color="#f8f8f9"
+        style={{ borderWidth: 0.5, marginBottom: "4%" }}
+      />
+      <Text
+        style={{
+          color: "grey",
+          fontSize: 16,
+          fontWeight: "900",
+          textAlign: "center",
+          marginBottom: "5%",
+        }}
+      >
+        Kilométrage{" "}
+      </Text>
+      <View
+        style={{
+          flexDirection: "row",
+          justifyContent: "center",
+          marginBottom: "5%",
+        }}
+      >
+        <NumericInput
+          onLimitReached={(isMax, msg) => console.log(isMax, msg)}
+          value={value}
+          minValue={0}
+          step={20}
+          onChange={(value) => setValue({ value })}
+        />
+      </View>
     </Card>
   );
 };
