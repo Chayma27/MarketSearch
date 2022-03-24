@@ -69,6 +69,7 @@ const DroplistVetF = (props) => {
         ]}
         defaultRating={4}
         size={20}
+        // onFinishRating={rating => console.log(rating)}
       />
     </Card>
   );
