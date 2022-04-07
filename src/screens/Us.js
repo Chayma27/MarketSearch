@@ -1,26 +1,45 @@
 import React from "react";
-import {View,Text,StyleSheet} from  'react-native'
+import { View, Text, StyleSheet, Image } from "react-native";
 
-const Us = (props) => { 
+const Us = (props) => {
+  return (
+    <View style={styles.container}>
+      <Text style={styles.titleHeader}> A propos de nous ! Screen ! </Text>
+      <Text style= {styles.Us}>
+        There are many variations of passages of Lorem Ipsum available, but the
+        majority have suffered alteration in some form, by injected humour, or
+        randomised words which don't look even slightly believable. If you are
+        going to use a passage of Lorem Ipsum, you need to be sure there isn't
+        anything embarrassing hidden in the middle of text. All the Lorem Ipsum
+        generators on the Internet tend to repeat predefined chunks as
+        necessary, making this the first true generator on the Internet. It uses
+        a dictionary of over 200 Latin words, combined with a handful of model
+        sentence structures, to generate Lorem Ipsum which looks reasonable. The
+        generated Lorem Ipsum is therefore always free from repetition, injected
+        humour, or non-characteristic words etc.
+      </Text>
+      <Image
+        source={require('../../assets/aboutus.png')}
+      />
+    </View>
     
-    return(
-        <View style = {styles.container}>
-            <Text style = {styles.titleHeader}> A propos de nous ! Screen ! </Text>
-        </View>
-    )
-}
-
+  );
+};
 
 const styles = StyleSheet.create({
-    container : { 
-        flex: 1 
-    }, 
-    titleHeader: { 
-        fontSize : 17, 
-        textAlign : 'center', 
-        fontWeight : 'bold'
-    }
-})
+  container: {
+    flex: 1,
+  },
+  Us : { 
+  marginHorizontal: '2%'
+  },
+  titleHeader: {
+    fontSize: 17,
+    textAlign: "center",
+    fontWeight: "bold",
+    marginVertical : '5%',
+    fontFamily : 'arial'
+  },
+});
 
-
-export default Us
+export default Us;
