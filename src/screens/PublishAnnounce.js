@@ -1,6 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
-import { StyleSheet, View, ScrollView, TextInput } from "react-native";
+import { StyleSheet, View, ScrollView, TextInput, Image, Touchable, TouchableOpacity } from "react-native";
 import { Text, Card, Icon, Input, Button } from "react-native-elements";
 import { Dropdown } from "react-native-material-dropdown-v2-fixed";
 import { PricingCard } from "react-native-elements";
@@ -141,6 +141,19 @@ const PublishAnnonce = (props) => {
             numberOfLines={5}
           />
         </Card>
+
+        {/* Image function add database */}
+
+        <Card>
+          <Text
+            style={{ fontSize: 22, fontWeight: "bold", textAlign: "center" }}
+          >
+            Ajouter des photos
+          </Text>
+          <TouchableOpacity style={{alignItems: 'center'}}>
+          <Image style={styles.resizePicture} source={require('../../assets/add-photo.png')} />
+          </TouchableOpacity>
+        </Card>
         <Card>
           <Text
             style={{
@@ -187,5 +200,9 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
   },
+  resizePicture : { 
+    width: 150,
+    height: 150,
+  }
 });
 export default PublishAnnonce;
