@@ -18,12 +18,12 @@ const MyAccount = (props) => {
             onPress={() => props.navigation.navigate("MesCommandes")}
             >
             <View style={{ flexDirection: "row" }}>
-              <MaterialCommunityIcons
-                name="shopping-outline"
+              <AntDesign
+                name="save"
                 size={24}
                 color="black"
               />
-              <Text style={styles.cardTitle}> Mes commandes</Text>
+              <Text style={styles.cardTitle}> Mes enregistrements</Text>
               <View
                 style={{
                   alignItems: "flex-end",
