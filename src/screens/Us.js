@@ -18,9 +18,13 @@ const Us = (props) => {
         generated Lorem Ipsum is therefore always free from repetition, injected
         humour, or non-characteristic words etc.
       </Text>
+      <View style={{alignItems: 'center', marginTop : '5%'}}>
       <Image
+        style={{width: 300 , height : 300}}
         source={require('../../assets/aboutus.png')}
       />
+      </View>
+   
     </View>
     
   );
