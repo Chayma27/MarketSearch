@@ -4,7 +4,7 @@ import { View, Text, StyleSheet, Image } from "react-native";
 const Us = (props) => {
   return (
     <View style={styles.container}>
-      <Text style={styles.titleHeader}> A propos de nous ! Screen ! </Text>
+      <Text style={styles.titleHeader}> A propos de nous !</Text>
       <Text style= {styles.Us}>
         There are many variations of passages of Lorem Ipsum available, but the
         majority have suffered alteration in some form, by injected humour, or

@@ -153,6 +153,13 @@ const Connexion = (props) => {
                   >
                     <Text style={link}> Mot de passe oublié ? </Text>
                   </TouchableOpacity>
+                      
+                  <TouchableOpacity
+                  style={{marginTop : '30%'}}
+                    onPress={() => props.navigation.navigate("adminEspace")}
+                  >
+                    <Text> Espace-Admin </Text>
+                  </TouchableOpacity>
                 </View>
               </>
             )}

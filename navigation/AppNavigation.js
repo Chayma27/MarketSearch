@@ -15,6 +15,7 @@ import MesCommandes from "../src/screens/MesCommandes";
 import MesArticles from "../src/screens/MesArticles";
 import Mesfavoris from "../src/screens/Mesfavoris";
 import Us from "../src/screens/Us";
+import adminEspace from "../src/screens/adminEspace";
 import Mesinfos from "../src/screens/MesInfos";
 import Scmode from "../src/screens/S_catg/Scmode";
 import Scanimaux from "../src/screens/S_catg/Scanimaux";
@@ -90,6 +91,7 @@ const AppNavigation = () => {
       <Stack.Screen name="Scsport" component={Scsport} options={{  title : 'Sport'}} />
       <Stack.Screen name="Scvisage" component={Scvisage} options={{  title : 'Visage et Beauté'}} />
       <Stack.Screen name="Scanimaux" component={Scanimaux} options={{  title : 'Animaux'}} />
+      <Stack.Screen name="adminEspace" component={adminEspace} options={{  title : 'Espace Administrateur'}} />
     </Stack.Navigator>
   </NavigationContainer>
   );
