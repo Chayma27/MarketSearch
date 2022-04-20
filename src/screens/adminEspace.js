@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -7,10 +7,17 @@ import {
   TextInput,
   ImageBackground,
 } from "react-native";
-import { Button } from 'react-native-elements';
+import { Button } from "react-native-elements";
 
-const adminEsapce = (props) => {
+const AdminEsapce = (props) => {
   const image = require("../../assets/background-image-admin.jpeg");
+  const [admin, setAdmin] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = () => {
+    console.log("administrateur : ", admin, "password : ", password);
+    props.navigation.navigate("DashboardAdmin");
+  };
   return (
     <View style={styles.container}>
       <ImageBackground source={image} resizeMode="cover" style={styles.image}>
@@ -26,21 +33,29 @@ const adminEsapce = (props) => {
           <TextInput
             style={styles.inputUnderLine}
             placeholder="Email"
-            // onChangeText={(username) => this.setState({ username })}
+            onChangeText={(admin) => setAdmin(admin)}
             // onSubmitEditing={(username) => this.setState({ username })}
             // value={this.state.username}
           />
           <TextInput
             style={styles.inputUnderLine}
             placeholder="Mot de passe"
-            // onChangeText={(username) => this.setState({ username })}
+            onChangeText={(password) => setPassword(password)}
             // onSubmitEditing={(username) => this.setState({ username })}
             // value={this.state.username}
           />
         </View>
-        <Button title="Accéder" type="solid" style={{marginTop: '5%',  width: "95%",
+        <Button
+          title="Accéder"
+          type="solid"
+          style={{
+            marginTop: "5%",
+            width: "95%",
             justifyContent: "center",
-            marginLeft: "2%",}} />
+            marginLeft: "2%",
+          }}
+          onPress={handleSubmit}
+        />
       </ImageBackground>
     </View>
   );
@@ -74,4 +89,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default adminEsapce;
+export default AdminEsapce;
