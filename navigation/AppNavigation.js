@@ -94,8 +94,11 @@ const AppNavigation = () => {
       <Stack.Screen name="Scsport" component={Scsport} options={{  title : 'Sport'}} />
       <Stack.Screen name="Scvisage" component={Scvisage} options={{  title : 'Visage et Beauté'}} />
       <Stack.Screen name="Scanimaux" component={Scanimaux} options={{  title : 'Animaux'}} />
+      <Stack.Screen name="User" component={User} options={{  title : 'Gestion des utilisateurs'}} />
+      <Stack.Screen name="Annonces" component={Annonces} options={{  title : 'Gestion des annonces'}} />
       <Stack.Screen name="adminEspace" component={AdminEspace} options={{  title : 'Espace Administrateur'}} />
       <Stack.Screen name="DashboardAdmin" component={DashboardAdmin} options={{  title : 'Dashboard Admin'}} />
+   
     </Stack.Navigator>
   </NavigationContainer>
   );

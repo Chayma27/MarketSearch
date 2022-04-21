@@ -13,7 +13,17 @@ import Carousel from "simple-carousel-react-native";
 
 const DashboardAdmin = (props) => {
   const image = require("../../../assets/background-image-admin.jpeg");
+  const handleUser = () => { 
+    props.navigation.navigate("User")
+  }
 
+  const handleAnnonces = () => { 
+    props.navigation.navigate("Annonces")
+  }
+  const handleLogOut = () => { 
+    props.navigation.navigate("Connexion")
+
+  }
   return (
     <View style={styles.container}>
       <ImageBackground source={image} resizeMode="cover" style={styles.image}>
@@ -24,8 +34,14 @@ const DashboardAdmin = (props) => {
             alignContent: "center",
           }}
         >
-          <Carousel backgroundColor="transparent" showScroll={ false } showBubbles={true}>
-            <TouchableOpacity>
+          <Carousel
+            backgroundColor="transparent"
+            showScroll={false}
+            showBubbles={true}
+          >
+            <TouchableOpacity
+              onPress={handleUser}
+            >
               <Image
                 style={{ width: 300, height: 300, marginLeft: "10%" }}
                 source={require("../../../assets/banned-user.png")}
@@ -38,11 +54,13 @@ const DashboardAdmin = (props) => {
                   marginTop: "5%",
                 }}
               >
-                Gerer utilisateur
+                Gérer les utilisateurs
               </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity>
+            <TouchableOpacity
+             onPress={handleAnnonces}
+             >
               <Image
                 style={{ width: 300, height: 300, marginLeft: "10%" }}
                 source={require("../../../assets/panier.png")}
@@ -55,11 +73,13 @@ const DashboardAdmin = (props) => {
                   marginTop: "5%",
                 }}
               >
-                Gerer Annonces
+                Gérer les annonces
               </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity>
+            <TouchableOpacity
+            onPress={handleLogOut}
+            >
               <Image
                 style={{ width: 300, height: 300, marginLeft: "10%" }}
                 source={require("../../../assets/logout.png")}
@@ -72,7 +92,7 @@ const DashboardAdmin = (props) => {
                   marginTop: "5%",
                 }}
               >
-                Se deconnecter
+                Se déconnecter
               </Text>
             </TouchableOpacity>
           </Carousel>
