@@ -34,9 +34,8 @@ const Annonces = (props) => {
       .then(response => response.json())
       .then(response => {
         setData(response);
-        console.log(reponse)
         // ADD THIS
-        setFullData(response.results);
+        setFullData(response);
   
         setIsLoading(false);
       })
@@ -47,18 +46,18 @@ const Annonces = (props) => {
   }, []);
   const [textTaped,setTextTaped] = useState('')
   const handleSearch = text => {
-    setTextTaped(text)
-    const formattedQuery = textTaped.toLowerCase();
+  
+    const formattedQuery = text.toLowerCase();
     const filteredData = filter(fullData, user => {
       return contains(user, formattedQuery);
     });
     setData(filteredData);
     setQuery(text);
   };
-  const contains = ({ name, email }, query) => {
-  const { first, last } = name;
+  const contains = ({ price }, query) => {
+  // const { first, last } = name;
 
-  if (first.includes(query) || last.includes(query) || email.includes(query)) {
+  if (price.toString().includes(query)) {
     return true;
   }
 
@@ -91,7 +90,7 @@ const Annonces = (props) => {
       <ImageBackground source={image} resizeMode="cover" style={styles.image}>
         <Text style={styles.text}> Gestion des annonces </Text>
         <View style={styles.container}>
-      <Text style={styles.textFlatList}>Liste des annonecs</Text>
+      <Text style={styles.textFlatList}>Liste des annones</Text>
       <FlatList
         ListHeaderComponent={renderHeader}
         data={data}
