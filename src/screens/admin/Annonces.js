@@ -21,7 +21,7 @@ const Annonces = (props) => {
     { id: '3', title: 'Third item' },
     { id: '4', title: 'Fourth item' }
   ];
-  const API_ENDPOINT = `https://randomuser.me/api/?seed=1&page=1&results=20`;
+  const API_ENDPOINT = 'https://fakestoreapi.com/products';
   const [isLoading, setIsLoading] = useState(false);
   const [data, setData] = useState([]);
   const [error, setError] = useState(null);
@@ -33,8 +33,8 @@ const Annonces = (props) => {
     fetch(API_ENDPOINT)
       .then(response => response.json())
       .then(response => {
-        setData(response.results);
-  
+        setData(response);
+        console.log(reponse)
         // ADD THIS
         setFullData(response.results);
   
@@ -95,16 +95,16 @@ const Annonces = (props) => {
       <FlatList
         ListHeaderComponent={renderHeader}
         data={data}
-        keyExtractor={item => item.first}
+        keyExtractor={item => item.id}
         renderItem={({ item }) => (
           <View style={styles.listItem}>
             <Image
-              source={{ uri: item.picture.thumbnail }}
+              source={{ uri: item.image }}
               style={styles.coverImage}
             />
             <View style={styles.metaInfo}>
-            <Text style={styles.title}>{`${item.name.first} ${
-                item.name.last
+            <Text style={styles.title}>{`${item.title} ${
+                item.price
               }`}</Text>
             </View>
           </View>
