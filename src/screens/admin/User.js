@@ -99,9 +99,9 @@ const User = (props) => {
           />
         
         </ScrollView>
-          <Pressable style={styles.button} >
+          <TouchableOpacity style={styles.button} >
       <Text style={styles.textButton}>Supprimer</Text>
-    </Pressable>
+    </TouchableOpacity>
       </ImageBackground>
     </View>
   );
@@ -116,11 +116,12 @@ const styles = StyleSheet.create({
   },
   text: {
     color: "white",
-    fontSize: 40,
+    fontSize: 36,
     lineHeight: 84,
     fontWeight: "bold",
     textAlign: "center",
     backgroundColor: "#000000c0",
+    marginBottom : '4%'
   },
   fadingContainer: {
     padding: 20,
