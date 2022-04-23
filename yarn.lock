@@ -4621,6 +4621,11 @@ react-native-codegen@^0.0.6:
     jscodeshift "^0.11.0"
     nullthrows "^1.1.1"
 
+react-native-datatable-component@^2.1.1:
+  version "2.1.1"
+  resolved "https://registry.yarnpkg.com/react-native-datatable-component/-/react-native-datatable-component-2.1.1.tgz#61cd0bb3dab2bce9ddc26f92ba9cc768e4b56cc9"
+  integrity sha512-B9XL4PvAtAJpKZOI15OPLSYMzDN4Cw/jV7ZvydAjsakhXzw25R3b8psvObq487kjmJzKoXDmTM6RsvXyI103IA==
+
 react-native-datepicker@^1.7.2:
   version "1.7.2"
   resolved "https://registry.yarnpkg.com/react-native-datepicker/-/react-native-datepicker-1.7.2.tgz#58d0822591a0ac9b32aba082650222a0ee29669d"
