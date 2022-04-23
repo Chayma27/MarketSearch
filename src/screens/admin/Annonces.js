@@ -28,7 +28,6 @@ const styles = StyleSheet.create({
   },
   image: {
     flex: 1,
-    justifyContent: "center",
   },
   text: {
     color: "white",
@@ -37,7 +36,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
     backgroundColor: "#000000c0",
-    marginTop: "35%",
+    marginTop: "15%",
   },
 });
 
