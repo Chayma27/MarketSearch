@@ -18,21 +18,21 @@ const Mesfavoris = (props) => {
 
     <View style={styles.container} >
       <TouchableOpacity style={styles.card}>
-      <Card Titre = "Jean HM" prix= "100 DT" 
-        path={require('../../assets/thermomix.jpeg')}/>
+      <Card Titre = "Velo VTT" prix= "100 DT" 
+        path={require('../../assets/velo.jpeg')}/>
         </TouchableOpacity>
       <TouchableOpacity style={styles.card}>
-      <Card Titre = "Jean HM" prix= "100 DT" 
-        path={require('../../assets/jean.jpg')}/>
+      <Card Titre = "sac HM" prix= "100 DT" 
+        path={require('../../assets/sac.jpeg')}/>
         </TouchableOpacity>
       <TouchableOpacity style={styles.card}>
-      <Card Titre = "Jean HM" prix= "100 DT" 
-        path={require('../../assets/jean.jpg')}/>
+      <Card Titre = "Pull zara" prix= "100 DT" 
+        path={require('../../assets/pull.jpg')}/>
         </TouchableOpacity>
 
         <View style={styles.card}>
-      <Card Titre = "Thermomix" prix= "100 DT"
-        path={require('../../assets/thermomix.jpeg')}/>
+      <Card Titre = "Florale" prix= "100 DT"
+        path={require('../../assets/parfum.jpg')}/>
       </View>
       <View style={styles.card}>
       <Card Titre = "Jean HM" prix= "100 DT" 
