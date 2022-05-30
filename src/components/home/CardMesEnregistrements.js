@@ -9,10 +9,8 @@ import {
   TouchableOpacity,
 } from "react-native";
 import { Button } from "react-native-elements";
-import { MaterialIcons } from "@expo/vector-icons";
-
-const CardMesFavoris = (props) => {
-
+import { Fontisto } from "@expo/vector-icons";
+const CardMesEnregistrements = (props) => {
   return (
     <View
       style={{
@@ -73,13 +71,13 @@ const CardMesFavoris = (props) => {
           >
             {props.prix}
           </Text>
-          <TouchableOpacity>
-          <MaterialIcons name="favorite" size={24} color="red" /> 
-              </TouchableOpacity>
+          <TouchableOpacity style={{marginRight : '3%'}}>
+            <Fontisto name="favorite" size={24} color="black" />
+          </TouchableOpacity>
         </View>
       </View>
     </View>
   );
 };
 
-export default CardMesFavoris;
+export default CardMesEnregistrements;
