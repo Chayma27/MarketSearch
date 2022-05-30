@@ -81,7 +81,7 @@ const AppNavigation = () => {
       <Stack.Screen name="Inscription" component={Inscription} />
       <Stack.Screen name="MdpOublie" component={MdpOublie} />
       <Stack.Screen name="NouveauMdp" component={NouveauMdp} />
-      <Stack.Screen name="MesCommandes" component={MesCommandes} options={{  title : 'Mes commandes'}}/>
+      <Stack.Screen name="MesCommandes" component={MesCommandes} options={{  title : 'Mes enregistrements'}}/>
       <Stack.Screen name="MesArticles" component={MesArticles} options={{  title : 'Mes articles'}} />
       <Stack.Screen name="MesInfos" component={Mesinfos} options={{  title : 'Mes informations'}} />
       <Stack.Screen name="MesFavoris" component={Mesfavoris} options={{  title : 'Mes favoris'}} />

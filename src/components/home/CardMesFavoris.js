@@ -19,18 +19,20 @@ const CardMesFavoris = (props) => {
           }}
         />
       </View>
-      <View style={{ padding: 30, width: 150, marginBottom : 10 }}>
+      <View style={{ padding: 17, width: 160, marginBottom : 10 , backgroundColor : '#EFE9F4'}}>
         <Text style ={{color: "black" , fontWeight : 'bold' , fontSize : 16 , textAlign : 'center'}}>{props.Titre}</Text> 
         <View style={{flexDirection : 'row' , justifyContent: 'space-between'}}>
-        <Text style ={{color: "#777", textAlign : 'center'}}>{props.prix}</Text>
-        <Text style ={{color: "#777", textAlign : 'center'}}>{props.prix}</Text>
-        </View>
-        <View>
 
         </View>
+
      
       </View>
       
+
+      <View style={{flexDirection : 'row' , justifyContent: 'space-between'}}>
+      <Text style ={{color: "#777", fontWeight : '500', marginLeft : '4%', marginBottom : '3%'}}>{props.prix}</Text>
+        <Text style ={{color: "#777" }}>{props.prix}</Text>
+        </View>
       
     </View>
   </View>
