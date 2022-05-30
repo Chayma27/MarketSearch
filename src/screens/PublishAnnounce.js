@@ -96,7 +96,7 @@ const PublishAnnonce = (props) => {
             data={SctgCallBack()}
             onChangeText={(value) => setSelectedSCtg(value)}
           />
-          <Text>la valeur est = {selectedSCtg}</Text>
+          {/* <Text>la valeur est = {selectedSCtg}</Text> */}
         </Card>
         {(() => {
           if (selectedSCtg == "Vêtements femme")
