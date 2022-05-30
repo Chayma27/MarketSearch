@@ -42,7 +42,7 @@ const CardMesEnregistrements = (props) => {
             padding: 17,
             width: 160,
             marginBottom: 10,
-            backgroundColor: "#EFE9F4",
+            backgroundColor: "#DBE9EE",
           }}
         >
           <Text
