@@ -1,5 +1,11 @@
 import React from "react";
-import { StyleSheet, View, ScrollView, TouchableOpacity , TextInput } from "react-native";
+import {
+  StyleSheet,
+  View,
+  ScrollView,
+  TouchableOpacity,
+  TextInput,
+} from "react-native";
 import { Text, Card, Button, Icon } from "react-native-elements";
 import {
   MaterialCommunityIcons,
@@ -10,34 +16,12 @@ import {
 } from "@expo/vector-icons";
 const MyAccount = (props) => {
   return (
-   
     <ScrollView>
       <View style={styles.container}>
         <Card>
-          <TouchableOpacity 
-            onPress={() => props.navigation.navigate("MesCommandes")}
-            >
-            <View style={{ flexDirection: "row" }}>
-              <AntDesign
-                name="save"
-                size={24}
-                color="black"
-              />
-              <Text style={styles.cardTitle}> Mes enregistrements</Text>
-              <View
-                style={{
-                  alignItems: "flex-end",
-                  flexGrow: 1,
-                }}
-              >
-                <AntDesign name="rightcircleo" size={24} color="black" />
-              </View>
-            </View>
-          </TouchableOpacity>
-          <Card.Divider />
-          <TouchableOpacity 
-                      onPress={() => props.navigation.navigate("MesFavoris")}
-                      >
+          <TouchableOpacity
+            onPress={() => props.navigation.navigate("MesFavoris")}
+          >
             <View style={{ flexDirection: "row" }}>
               <Ionicons name="heart-outline" size={24} color="black" />
               <Text style={styles.cardTitle}> Mes favoris</Text>
@@ -53,10 +37,9 @@ const MyAccount = (props) => {
           </TouchableOpacity>
           <Card.Divider />
 
-          
-          <TouchableOpacity 
-                      onPress={() => props.navigation.navigate("MesArticles")}
-                      >
+          <TouchableOpacity
+            onPress={() => props.navigation.navigate("MesArticles")}
+          >
             <View style={{ flexDirection: "row" }}>
               <Entypo name="publish" size={23} color="black" />
               <Text style={styles.cardTitle}> Mes articles publiés</Text>
@@ -73,8 +56,7 @@ const MyAccount = (props) => {
         </Card>
         <Card>
           <TouchableOpacity
-                      onPress={() => props.navigation.navigate("MesInfos")}
-
+            onPress={() => props.navigation.navigate("MesInfos")}
           >
             <View style={{ flexDirection: "row" }}>
               <MaterialCommunityIcons
@@ -95,10 +77,7 @@ const MyAccount = (props) => {
           </TouchableOpacity>
         </Card>
         <Card>
-          <TouchableOpacity
-                      onPress={() => props.navigation.navigate("Us")}
-
-          >
+          <TouchableOpacity onPress={() => props.navigation.navigate("Us")}>
             <View style={{ flexDirection: "row" }}>
               <Ionicons
                 name="information-circle-outline"
@@ -148,7 +127,7 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     color: "#43484D",
     paddingBottom: "3%",
-    marginTop : '1%'
+    marginTop: "1%",
   },
 });
 export default MyAccount;
