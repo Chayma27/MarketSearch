@@ -22,9 +22,9 @@ const MesArticles = (props) => {
     {
       id: 3,
       prix: 285,
-      path: require("../../assets/iconCategories/Jeux.png"),
-      title: "Jeux et Jouets",
-      sousCtg: "Chiens",
+      path: require("../../assets/velo.jpeg"),
+      title: "Velo Vtt",
+      sousCtg: "Autres",
     },
   ];
   const renderItem = ({ item }) => (
