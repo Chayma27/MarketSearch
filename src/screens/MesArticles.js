@@ -8,47 +8,47 @@ const MesArticles = (props) => {
     {
       id: 1,
       prix: 100,
-      path:require("../../assets/Rouge.jpg"),
+      path: require("../../assets/Rouge.jpg"),
       title: "rouge a levre",
-      sousCtg : "Bijoux et montre"
+      sousCtg: "Bijoux et montre",
     },
     {
       id: 2,
       prix: 12,
-      path:require("../../assets/short.jpg"),
+      path: require("../../assets/short.jpg"),
       title: "Livres",
-      sousCtg : "Vetements homme"
-
+      sousCtg: "Vetements homme",
     },
     {
       id: 3,
       prix: 285,
-      path:require("../../assets/iconCategories/Jeux.png"),
+      path: require("../../assets/iconCategories/Jeux.png"),
       title: "Jeux et Jouets",
+      sousCtg: "Chiens",
     },
-    
   ];
   const renderItem = ({ item }) => (
     <View style={styles.container}>
-    <Card style={styles.cardStyle}>
-      <CardArticlepublier
-        count={item.prix}
-        path={item.path}
-        title={item.title}
-      />
-    </Card>
-      </View>
+      <Card style={styles.cardStyle}>
+        <CardArticlepublier
+          prix={item.prix}
+          path={item.path}
+          title={item.title}
+          sousCtg={item.sousCtg}
+        />
+         
+        {/* <Text style={{ color: "grey", marginLeft :'19%' }}> Prix : {item.prix}</Text> */}
+      </Card>
+    </View>
   );
   return (
     <View style={styles.parent}>
-
-        <FlatList
-          data={data}
-          renderItem={renderItem}
-          keyExtractor={(item) => item.id}
-        />
-          </View>
-
+      <FlatList
+        data={data}
+        renderItem={renderItem}
+        keyExtractor={(item) => item.id}
+      />
+    </View>
   );
 };
 

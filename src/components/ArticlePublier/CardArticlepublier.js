@@ -14,9 +14,17 @@ const CardArticlepublier = (props) => {
     }
   return (
         <TouchableOpacity>
+            
+
           <Card.Title
             title={props.title}
-            subtitle= {Message()}
+            subtitle={(
+                    <View>
+                     <Text>{props.sousCtg} </Text>
+                     <Text style={{fontWeight : '700'}}>{props.prix} € </Text>
+                        </View>
+                
+            )}
             left={() => (
               <Image
                 {...props}
@@ -42,6 +50,10 @@ const CardArticlepublier = (props) => {
               </>
             )}
           />
+            {/* <Card.Content>
+              <Paragraph style={{ color: "grey", marginLeft: 55 }}>Prix : 125</Paragraph>
+          </Card.Content> */}
+       
           </TouchableOpacity>
      
   );
