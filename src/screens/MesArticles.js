@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, StyleSheet, FlatList } from "react-native";
-import Cardsctg from "../components/sousCtg/Cardsctg";
+import CardArticlepublier from "../components/ArticlePublier/CardArticlepublier";
 import { Avatar, Card, Title, Paragraph, Badge } from "react-native-paper";
 
 const MesArticles = (props) => {
@@ -28,7 +28,7 @@ const MesArticles = (props) => {
   const renderItem = ({ item }) => (
     <View style={styles.container}>
     <Card style={styles.cardStyle}>
-      <Cardsctg
+      <CardArticlepublier
         count={item.count}
         path={item.path}
         title={item.title}
