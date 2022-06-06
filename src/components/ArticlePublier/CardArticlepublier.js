@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, StyleSheet , TouchableOpacity } from "react-native";
+import {Image, View, Text, StyleSheet , TouchableOpacity } from "react-native";
 import { Avatar, Card, Title, Paragraph, Badge } from "react-native-paper";
 import { MaterialIcons } from '@expo/vector-icons';
 const CardArticlepublier = (props) => {
@@ -18,11 +18,11 @@ const CardArticlepublier = (props) => {
             title={props.title}
             subtitle= {Message()}
             left={() => (
-              <Avatar.Image
+              <Image
                 {...props}
-                size={40}
                 style={{backgroundColor : "transparent"}}
                 source={props.path}
+                style={{width : 50 , height : 50}}
               />
             )}
             right={() => (

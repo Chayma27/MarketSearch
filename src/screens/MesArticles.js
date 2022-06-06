@@ -7,19 +7,22 @@ const MesArticles = (props) => {
   const data = [
     {
       id: 1,
-      count: 285,
-      path:require("../../assets/iconCategories/Jeux.png"),
-      title: "Jeux et Jouets",
+      prix: 100,
+      path:require("../../assets/Rouge.jpg"),
+      title: "rouge a levre",
+      sousCtg : "Bijoux et montre"
     },
     {
       id: 2,
-      count: 12,
-      path:require("../../assets/iconCategories/Livre.png"),
+      prix: 12,
+      path:require("../../assets/short.jpg"),
       title: "Livres",
+      sousCtg : "Vetements homme"
+
     },
     {
       id: 3,
-      count: 285,
+      prix: 285,
       path:require("../../assets/iconCategories/Jeux.png"),
       title: "Jeux et Jouets",
     },
@@ -29,7 +32,7 @@ const MesArticles = (props) => {
     <View style={styles.container}>
     <Card style={styles.cardStyle}>
       <CardArticlepublier
-        count={item.count}
+        count={item.prix}
         path={item.path}
         title={item.title}
       />
@@ -62,9 +65,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   cardStyle: {
-    marginBottom: "3%",
     backgroundColor: "#F0F0F0",
-    borderRadius: 20,
+    borderRadius: 10,
     width: "96%",
   },
   titleHeader: {
