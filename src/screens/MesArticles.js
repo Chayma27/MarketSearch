@@ -1,9 +1,10 @@
 import React from "react";
 import { View, Text, StyleSheet, FlatList } from "react-native";
 import CardArticlepublier from "../components/ArticlePublier/CardArticlepublier";
-import { Avatar, Card, Title, Paragraph, Badge } from "react-native-paper";
+import { Modal, Portal, Card, Button, Provider } from "react-native-paper";
 
 const MesArticles = (props) => {
+
   const data = [
     {
       id: 1,
@@ -39,16 +40,21 @@ const MesArticles = (props) => {
          
         {/* <Text style={{ color: "grey", marginLeft :'19%' }}> Prix : {item.prix}</Text> */}
       </Card>
+     
     </View>
   );
   return (
     <View style={styles.parent}>
+  
+  
       <FlatList
         data={data}
         renderItem={renderItem}
         keyExtractor={(item) => item.id}
       />
+
     </View>
+
   );
 };
 

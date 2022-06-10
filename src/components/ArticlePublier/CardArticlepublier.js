@@ -1,9 +1,16 @@
-import React from "react";
+import React, { useState } from 'react';
 import { Image, View, Text, StyleSheet, TouchableOpacity } from "react-native";
-import { Avatar, Card, Title, Paragraph, Badge } from "react-native-paper";
 import { MaterialIcons } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { Modal, Portal, Card, Provider } from "react-native-paper";
+import { Button, Overlay } from 'react-native-elements';
+
 const CardArticlepublier = (props) => {
+    const [visible, setVisible] = useState(false);
+  
+    const toggleOverlay = () => {
+      setVisible(!visible);
+    };
   const Message = () => {
     if (props.count > 1) {
       return "Plusieurs annonces sont disponibles";
@@ -13,55 +20,62 @@ const CardArticlepublier = (props) => {
       return "Pas d'annonces pour le moment ... ";
     }
   };
+
   return (
-    <TouchableOpacity>
-      <Card.Title
-        title={props.title}
-        subtitle={
-          <View>
-            <Text>{props.sousCtg} </Text>
-            <Text style={{ fontWeight: "700" }}>{props.prix} € </Text>
-          </View>
-        }
-        left={() => (
-          <Image
-            {...props}
-            style={{ backgroundColor: "transparent" }}
-            source={props.path}
-            style={{ width: 50, height: 50 }}
-          />
-        )}
-        right={() => (
-          <>
-            <View
-              style={{
-                flexDirection: "row",
-                justifyContent: "space-around",
-              }}
-            >
-              <TouchableOpacity>
-                <MaterialCommunityIcons
-                  name="information-outline"
-                  size={34}
-                  color="black"
-                />
-              </TouchableOpacity>
-              <TouchableOpacity>
-                <MaterialIcons
-                  name="delete"
-                  size={34}
-                  color="red"
-                  style={{ marginLeft: "10%" }}
-                />
-              </TouchableOpacity>
+    <View>
+        
+        <View>
+
+      <Overlay isVisible={visible} onBackdropPress={toggleOverlay}>
+        <Text>{props.title}</Text>
+      </Overlay>
+    </View>
+      <View>
+        <Card.Title
+          title={props.title}
+          subtitle={
+            <View>
+              <Text>{props.sousCtg} </Text>
+              <Text style={{ fontWeight: "700" }}>{props.prix} € </Text>
             </View>
-          </>
-        )}
-      />
-      {/* <Card.Content>
-              <Paragraph style={{ color: "grey", marginLeft: 55 }}>Prix : 125</Paragraph>
-          </Card.Content> */}
-    </TouchableOpacity>
+          }
+          left={() => (
+            <Image
+              {...props}
+              style={{ backgroundColor: "transparent" }}
+              source={props.path}
+              style={{ width: 50, height: 50 }}
+            />
+          )}
+          right={() => (
+            <>
+              <View
+                style={{
+                  flexDirection: "row",
+                  justifyContent: "space-around",
+                }}
+              >
+                <TouchableOpacity onPress={toggleOverlay}>
+                  <MaterialCommunityIcons
+                    name="information-outline"
+                    size={34}
+                    color="black"
+                  />
+                </TouchableOpacity>
+                <TouchableOpacity>
+                  <MaterialIcons
+                    name="delete"
+                    size={34}
+                    color="red"
+                    style={{ marginLeft: "10%" }}
+                  />
+                </TouchableOpacity>
+              </View>
+            </>
+          )}
+        />
+      </View>
+    </View>
   );
 };
 
