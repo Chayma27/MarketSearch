@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import { Image, View, Text, StyleSheet, TouchableOpacity } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 import { Modal, Portal, Card, Provider } from "react-native-paper";
-import { Button, Overlay } from 'react-native-elements';
+import { Button, Overlay } from "react-native-elements";
 
 const CardArticlepublier = (props) => {
-    const [visible, setVisible] = useState(false);
-  
-    const toggleOverlay = () => {
-      setVisible(!visible);
-    };
+  const [visible, setVisible] = useState(false);
+
+  const toggleOverlay = () => {
+    setVisible(!visible);
+  };
   const Message = () => {
     if (props.count > 1) {
       return "Plusieurs annonces sont disponibles";
@@ -23,13 +23,68 @@ const CardArticlepublier = (props) => {
 
   return (
     <View>
-        
-        <View>
+      <View>
+        <Overlay
+          isVisible={visible}
+          onBackdropPress={toggleOverlay}
+          overlayStyle={styles.overlayStyle}
+        >
+          <Card>
+            <View style={{ flexDirection: "row", margin: "5%" }}>
+              <Text style={{ fontWeight: "700" }}>ID-Article : </Text>
+              <Text>{props.id}</Text>
+            </View>
+          </Card>
+          <Card>
+            <View style={{ flexDirection: "row", margin: "5%" }}>
+              <Text style={{ fontWeight: "700" }}>Nom de l'article : </Text>
+              <Text>{props.title}</Text>
+            </View>
+          </Card>
+          <Card>
+            <View style={{ flexDirection: "row", margin: "5%" }}>
+              <Text style={{ fontWeight: "700" }}>Categories : </Text>
+              <Text>Chien</Text>
+            </View>
+          </Card>
+          <Card>
+            <View style={{ flexDirection: "row", margin: "5%" }}>
+              <Text style={{ fontWeight: "700" }}>Sous Categories : </Text>
+              <Text>{props.sousCtg}</Text>
+            </View>
+          </Card>
+          <Card>
+            <View style={{ flexDirection: "row", margin: "5%" }}>
+              <Text style={{ fontWeight: "700" }}>Prix : </Text>
+              <Text>{props.prix} €</Text>
+            </View>
+          </Card>
+          <Card>
+            <View style={{ flexDirection: "column", margin: "5%" }}>
+              <Text style={{ fontWeight: "700" }}>Description : </Text>
 
-      <Overlay isVisible={visible} onBackdropPress={toggleOverlay}>
-        <Text>{props.title}</Text>
-      </Overlay>
-    </View>
+              <Text>
+                Lorem Ipsum is simply dummy text of the printing and typesetting
+                industry. Lorem Ipsum has been the industry's standard dummy
+                text ever since the 1500s, when an unknown printer took a galley
+                of type and scrambled it to make a type specimen book. It has
+                survived not only five centuries, but also the leap into
+                electronic typesetting, remaining essentially unchanged. It was
+                popularised in the 1960s with the release of Letraset sheets
+                containing Lorem Ipsum passages, and more recently with desktop
+                publishing software like Aldus PageMaker including versions of
+                Lorem Ipsum.
+              </Text>
+            </View>
+          </Card>
+          <Card>
+            <View style={{ flexDirection: "row", margin: "5%" }}>
+              <Text style={{ fontWeight: "700" }}>Date de publication : </Text>
+              <Text>10-05-2022:11:12:01</Text>
+            </View>
+          </Card>
+        </Overlay>
+      </View>
       <View>
         <Card.Title
           title={props.title}
@@ -100,6 +155,11 @@ const styles = StyleSheet.create({
     fontSize: 17,
     textAlign: "center",
     fontWeight: "bold",
+  },
+  overlayStyle: {
+    height: "80%",
+    width: "90%",
+    borderRadius: 25,
   },
 });
 

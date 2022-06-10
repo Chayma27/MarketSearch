@@ -27,11 +27,19 @@ const MesArticles = (props) => {
       title: "Velo Vtt",
       sousCtg: "Autres",
     },
+    {
+      id: 1997,
+      prix: 1000,
+      path: require("../../assets/thermomix.jpeg"),
+      title: "Thermomix G",
+      sousCtg: "Electromenager",
+    },
   ];
   const renderItem = ({ item }) => (
     <View style={styles.container}>
       <Card style={styles.cardStyle}>
         <CardArticlepublier
+          id={item.id}
           prix={item.prix}
           path={item.path}
           title={item.title}
@@ -45,8 +53,6 @@ const MesArticles = (props) => {
   );
   return (
     <View style={styles.parent}>
-  
-  
       <FlatList
         data={data}
         renderItem={renderItem}
