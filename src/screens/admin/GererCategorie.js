@@ -11,7 +11,7 @@ import {
 import { Button } from "react-native-elements";
 import Carousel from "simple-carousel-react-native";
 
-const DashboardAdmin = (props) => {
+const GererCategorie = (props) => {
   const image = require("../../../assets/background-image-admin.jpeg");
   const handleUser = () => { 
     props.navigation.navigate("User")
@@ -42,30 +42,13 @@ const DashboardAdmin = (props) => {
             showScroll={false}
             showBubbles={true}
           >
-            <TouchableOpacity
-              onPress={handleUser}
-            >
-              <Image
-                style={{ width: 300, height: 300, marginLeft: "10%" }}
-                source={require("../../../assets/banned-user.png")}
-              />
-              <Text
-                style={{
-                  fontSize: 18,
-                  fontWeight: "bold",
-                  textAlign: "center",
-                  marginTop: "5%",
-                }}
-              >
-                Gérer les utilisateurs
-              </Text>
-            </TouchableOpacity>
+          
             <TouchableOpacity
               onPress={handleCategories}
             >
               <Image
                 style={{ width: 300, height: 300, marginLeft: "10%" }}
-                source={require("../../../assets/categories.png")}
+                source={require("../../../assets/categ.png")}
               />
               <Text
                 style={{
@@ -75,7 +58,7 @@ const DashboardAdmin = (props) => {
                   marginTop: "5%",
                 }}
               >
-                Gérer les catégories et les sous catégories
+                Gérer les catégories
               </Text>
             </TouchableOpacity>
 
@@ -84,7 +67,7 @@ const DashboardAdmin = (props) => {
              >
               <Image
                 style={{ width: 300, height: 300, marginLeft: "10%" }}
-                source={require("../../../assets/panier.png")}
+                source={require("../../../assets/sCtg.png")}
               />
               <Text
                 style={{
@@ -94,28 +77,11 @@ const DashboardAdmin = (props) => {
                   marginTop: "5%",
                 }}
               >
-                Gérer les annonces
+                Gérer les sous catégories
               </Text>
             </TouchableOpacity>
 
-            <TouchableOpacity
-            onPress={handleLogOut}
-            >
-              <Image
-                style={{ width: 300, height: 300, marginLeft: "10%" }}
-                source={require("../../../assets/logout.png")}
-              />
-              <Text
-                style={{
-                  fontSize: 18,
-                  fontWeight: "bold",
-                  textAlign: "center",
-                  marginTop: "5%",
-                }}
-              >
-                Se déconnecter
-              </Text>
-            </TouchableOpacity>
+           
           </Carousel>
         </View>
       </ImageBackground>
@@ -133,4 +99,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default DashboardAdmin;
+export default GererCategorie;

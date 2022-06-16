@@ -28,6 +28,7 @@ import Scmultimedia from "../src/screens/S_catg/Scmultimedia";
 import Scsport from "../src/screens/S_catg/Scsport";
 import Scvisage from "../src/screens/S_catg/Scvisage";
 import Scvehicule from "../src/screens/S_catg/Scvehicule";
+import GererCategorie from "../src/screens/admin/GererCategorie";
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 const Stack = createNativeStackNavigator();
@@ -98,6 +99,7 @@ const AppNavigation = () => {
       <Stack.Screen name="Annonces" component={Annonces} options={{  title : 'Gestion des annonces'}} />
       <Stack.Screen name="adminEspace" component={AdminEspace} options={{  title : 'Espace Administrateur'}} />
       <Stack.Screen name="DashboardAdmin" component={DashboardAdmin} options={{  title : 'Dashboard Admin'}} />
+      <Stack.Screen name="GererCategorie" component={GererCategorie} options={{  title : 'Gestion des catégories'}} />
    
     </Stack.Navigator>
   </NavigationContainer>
