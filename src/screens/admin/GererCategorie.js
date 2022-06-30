@@ -20,12 +20,12 @@ const GererCategorie = (props) => {
   const handleAnnonces = () => { 
     props.navigation.navigate("Annonces")
   }
-  const handleLogOut = () => { 
-    props.navigation.navigate("Connexion")
+  const handleSousCategories = () => { 
+    props.navigation.navigate("AdminSousCategories")
 
   }
   const handleCategories = () => {
-    props.navigation.navigate("GererCategorie")
+    props.navigation.navigate("AdminCategories")
   }
   return (
     <View style={styles.container}>
@@ -63,7 +63,7 @@ const GererCategorie = (props) => {
             </TouchableOpacity>
 
             <TouchableOpacity
-             onPress={handleAnnonces}
+             onPress={handleSousCategories}
              >
               <Image
                 style={{ width: 300, height: 300, marginLeft: "10%" }}

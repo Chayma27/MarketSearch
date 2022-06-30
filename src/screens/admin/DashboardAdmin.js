@@ -75,7 +75,7 @@ const DashboardAdmin = (props) => {
                   marginTop: "5%",
                 }}
               >
-                Gérer les catégories et les sous catégories
+                Gérer les catégories et sous catégories
               </Text>
             </TouchableOpacity>
 
