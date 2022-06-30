@@ -15,7 +15,8 @@ import DroplistSacBag from "../components/droplistAnnonces/ModeDroplist/Droplist
 import DroplistBijMontre from "../components/droplistAnnonces/ModeDroplist/DroplistBijMontre";
 import DroplistVoiture from "../components/droplistAnnonces/VehiculeDroplist/DroplistVoiture";
 import DroplistMoto from "../components/droplistAnnonces/VehiculeDroplist/DroplistMoto";
-
+import * as ImagePicker from "expo-image-picker";
+import { result } from "lodash";
 import {
   MaterialCommunityIcons,
   Ionicons,
@@ -24,6 +25,7 @@ import {
   AntDesign,
 } from "@expo/vector-icons";
 const PublishAnnonce = (props) => {
+  const [image, setImage] = useState(null);
   const [number, onChangeNumber] = React.useState(null);
   const [text, onChangeText] = React.useState("0");
   const [selectedCtg, setSelectedCtg] = useState("");
@@ -39,7 +41,21 @@ const PublishAnnonce = (props) => {
   const Animaux = ref_Annonce.Animaux;
 
 
+  const pickImage = async () => {
+    // No permissions request is necessary for launching the image library
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      allowsEditing: true,
+      aspect: [4, 3],
+      quality: 1,
+    });
 
+    console.log(result);
+
+    if (!result.cancelled) {
+      setImage(result.uri);
+    }
+  };
   const SctgCallBack = () => {
     switch (selectedCtg) {
       case "Mode":
@@ -88,7 +104,7 @@ const PublishAnnonce = (props) => {
             data={ctg}
             onChangeText={(value) => setSelectedCtg(value)}
           />
-          
+
           <Dropdown
             icon="chevron-down"
             iconColor="#E1E1E1"
@@ -150,9 +166,23 @@ const PublishAnnonce = (props) => {
           >
             Ajouter des photos
           </Text>
-          <TouchableOpacity style={{alignItems: 'center'}}>
+          <TouchableOpacity onPress={pickImage} style={{alignItems: 'center'}}>
           <Image style={styles.resizePicture} source={require('../../assets/add-photo.png')} />
           </TouchableOpacity>
+          <View
+                  style={{
+                    flex: 1,
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  {image && (
+                    <Image
+                      source={{ uri: image }}
+                      style={{ width: 200, height: 200 }}
+                    />
+                  )}
+                </View>
         </Card>
         <Card>
           <Text
