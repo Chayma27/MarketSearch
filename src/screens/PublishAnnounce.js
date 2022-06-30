@@ -88,7 +88,7 @@ const PublishAnnonce = (props) => {
             data={ctg}
             onChangeText={(value) => setSelectedCtg(value)}
           />
-
+          
           <Dropdown
             icon="chevron-down"
             iconColor="#E1E1E1"
