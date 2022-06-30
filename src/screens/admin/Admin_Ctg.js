@@ -1,20 +1,19 @@
-import { StatusBar } from "expo-status-bar";
-import React, { useState } from "react";
-import { StyleSheet, View, ScrollView, TextInput, Image, Touchable, TouchableOpacity, Platform } from "react-native";
-import { Text, Card, Icon, Input, Button } from "react-native-elements";
-import { Dropdown } from "react-native-material-dropdown-v2-fixed";
-import { PricingCard } from "react-native-elements";
-import * as ImagePicker from 'expo-image-picker';
-
-
-
+// Formik x React Native example
+import React from "react";
 import {
-  MaterialCommunityIcons,
-  Ionicons,
-  Entypo,
-  FontAwesome,
-  AntDesign,
-} from "@expo/vector-icons";
+  TextInput,
+  View,
+  StyleSheet,
+  ScrollView,
+  TouchableOpacity,
+  Image,
+} from "react-native";
+import { Formik } from "formik";
+import { useState } from "react";
+import { Text, Card, Icon, Input, Button } from "react-native-elements";
+import * as ImagePicker from "expo-image-picker";
+import { result } from "lodash";
+
 const Admin_Ctg = (props) => {
   const [number, onChangeNumber] = React.useState(null);
   const [text, onChangeText] = React.useState("0");
@@ -34,57 +33,103 @@ const Admin_Ctg = (props) => {
       setImage(result.uri);
     }
   };
- 
   return (
-    <ScrollView>
-      <View style={styles.container}>
-        <Card>
-          <Text
-            style={{ fontSize: 22, fontWeight: "bold", textAlign: "center" }}
-          >
-            {" "}
-            Nom de la catégorie {" "}
-          </Text>
-          <Input placeholder="Merci de saisir le nom fsd" />
-      
-        </Card>
+    <Formik
+      initialValues={{ name: "" }}
+      onSubmit={(values) => {
+        values['uri_image'] = image;
+        console.log(values)
+      }}
+    >
+      {({ handleChange, handleBlur, handleSubmit, values }) => (
+        <View>
+          <ScrollView>
+            <View style={styles.container}>
+              <Card>
+                <Text
+                  style={{
+                    fontSize: 22,
+                    fontWeight: "bold",
+                    textAlign: "center",
+                  }}
+                >
+                  {" "}
+                  Nom de la catégorie{" "}
+                </Text>
+                <Input placeholder="Merci de saisir le nom de catégorie"
+                value={values.name}
+                onChangeText={handleChange('name')}
+                onBlur={handleBlur('name')} />
+              </Card>
 
-        {/* Image function add database */}
+              {/* Image function add database */}
 
-        <Card>
-          <Text
-            style={{ fontSize: 22, fontWeight: "bold", textAlign: "center" }}
-          >
-            Ajouter une photo pour votre nouvelle catégorie
-          </Text>
-          <TouchableOpacity style={{alignItems: 'center'}} onPress={pickImage}>
-          <Image style={styles.resizePicture} source={require('../../../assets/add-photo.png')} />
-          </TouchableOpacity>
-          <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      {image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
-    </View>
-        </Card>
-        <Card>
-       
-          <View
-            style={{
-              flexDirection: "row",
-              justifyContent: "center",
-              marginVertical: "5%",
-            }}
-          >
-          </View>
-          <Button
-            title="Créer la catégorie"
-            buttonStyle={{ backgroundColor: "#4f9deb" }}
-          />
-        </Card>
-      
-      </View>
-    </ScrollView>
+              <Card>
+                <Text
+                  style={{
+                    fontSize: 22,
+                    fontWeight: "bold",
+                    textAlign: "center",
+                  }}
+                >
+                  Ajouter une photo pour votre nouvelle catégorie
+                </Text>
+                <TouchableOpacity
+                  style={{ alignItems: "center" }}
+                  onPress={pickImage}
+                >
+                  <Image
+                    style={styles.resizePicture}
+                    source={require("../../../assets/add-photo.png")}
+                  />
+                </TouchableOpacity>
+                <View
+                  style={{
+                    flex: 1,
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  {image && (
+                    <Image
+                      source={{ uri: image }}
+                      style={{ width: 200, height: 200 }}
+                    />
+                  )}
+                </View>
+              </Card>
+              <Card>
+                <View
+                  style={{
+                    flexDirection: "row",
+                    justifyContent: "center",
+                    marginVertical: "5%",
+                  }}
+                ></View>
+                <Button
+                  title="Créer la catégorie"
+                  buttonStyle={{ backgroundColor: "#4f9deb" }}
+                  onPress={handleSubmit}
+                />
+              </Card>
+            </View>
+          </ScrollView>
+        </View>
+      )}
+    </Formik>
   );
 };
 const styles = StyleSheet.create({
+  inputUnderLine: {
+    backgroundColor: "white",
+    borderBottomWidth: 1,
+    borderColor: "grey",
+    padding: 10,
+    fontSize: 20,
+    marginVertical: "2%",
+    borderRadius: 5,
+    textAlign: "center",
+  },
   cardTitle: {
     fontWeight: "bold",
     color: "#43484D",
@@ -96,9 +141,9 @@ const styles = StyleSheet.create({
     fontWeight: "bold",
     textAlign: "center",
   },
-  resizePicture : { 
+  resizePicture: {
     width: 150,
     height: 150,
-  }
+  },
 });
 export default Admin_Ctg;
