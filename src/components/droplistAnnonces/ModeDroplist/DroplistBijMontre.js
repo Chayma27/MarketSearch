@@ -26,36 +26,48 @@ const DroplistBijMontre = (props) => {
         iconColor="#E1E1E1"
         label="Univers"
         data={Chauss[0].Univers}
+        onChangeText={(value) => props.setUnivers(value)}
+
       />
       <Dropdown
         icon="chevron-down"
         iconColor="#E1E1E1"
         label="Type"
         data={BijMontre[0].Type}
+        onChangeText={(value) => props.setTypeBijoux(value)}
+
       />
       <Dropdown
         icon="chevron-down"
         iconColor="#E1E1E1"
         label="Marque"
         data={BijMontre[0].Marque}
+        onChangeText={(value) => props.setMarque(value)}
+
       />
       <Dropdown
         icon="chevron-down"
         iconColor="#E1E1E1"
         label="Matiere"
         data={BijMontre[0].Matiere}
+        onChangeText={(value) => props.setMatiere(value)}
+
       />
       <Dropdown
         icon="chevron-down"
         iconColor="#E1E1E1"
         label="Couleur"
         data={VetF[0].Couleur}
+        onChangeText={(value) => props.setCouleur(value)}
+
       />
       <Dropdown
         icon="chevron-down"
         iconColor="#E1E1E1"
         label="Etat"
         data={VetF[0].Etat}
+        onChangeText={(value) => props.setEtat(value)}
+
       />
     </Card>
   );

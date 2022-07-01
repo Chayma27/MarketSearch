@@ -29,6 +29,7 @@ const PublishAnnonce = (props) => {
   const [TypeVet, setTypeVet] = useState('');
   const [TypeChauss, setTypeChauss] = useState('');
   const [TypeSac, setTypeSac] = useState('');
+  const [TypeBijoux, setTypeBijoux] = useState('');
   const [Taille, setTaille] = useState('');
   const [Marque, setMarque] = useState('');
   const [Couleur, setCouleur] = useState('');
@@ -209,7 +210,14 @@ const PublishAnnonce = (props) => {
             /> 
           }
           else if (selectedSCtg == "Bijoux et montres") {
-            return <DroplistBijMontre /> 
+            return <DroplistBijMontre
+            setUnivers={setUnivers}
+            setTypeBijoux={setTypeBijoux} 
+            setMatiere={setMatiere} 
+            setTaille={setTaille} 
+            setMarque={setMarque} 
+            setCouleur={setCouleur} 
+            setEtat={setEtat}  /> 
           }
           else if (selectedSCtg == "Voitures") {
             return <DroplistVoiture /> 
@@ -223,7 +231,7 @@ const PublishAnnonce = (props) => {
           <Text
             style={{ fontSize: 22, fontWeight: "bold", textAlign: "center" }}
           >
-            Description de l'article {}
+            Description de l'article {Etat}
           </Text>
           <TextInput
             onChangeText={onChangeNumber}
