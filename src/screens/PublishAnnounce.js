@@ -174,7 +174,11 @@ const PublishAnnonce = (props) => {
           }
           else if (selectedSCtg == "Vêtements enfant") {
             return <DroplistVetEnf 
-            
+            setTypeVet={setTypeVet} 
+            setTaille={setTaille} 
+            setMarque={setMarque} 
+            setCouleur={setCouleur} 
+            setEtat={setEtat} 
             /> 
           }
           else if (selectedSCtg == "Chaussures") {

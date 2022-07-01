@@ -25,18 +25,24 @@ const DroplistVetEnf = (props) => {
         iconColor="#E1E1E1"
         label="Type de vêtement"
         data={VetEnf[0].TypeVetement}
+        onChangeText={(value) => props.setTypeVet(value)}
+
       />
       <Dropdown
         icon="chevron-down"
         iconColor="#E1E1E1"
         label="Taille"
         data={VetEnf[0].Taille}
+        onChangeText={(value) => props.setTaille(value)}
+
       />
       <Dropdown
         icon="chevron-down"
         iconColor="#E1E1E1"
         label="Marque"
         data={VetEnf[0].Marque}
+        onChangeText={(value) => props.setMarque(value)}
+
       />
 
       <Dropdown
@@ -44,6 +50,8 @@ const DroplistVetEnf = (props) => {
         iconColor="#E1E1E1"
         label="Couleur"
         data={VetF[0].Couleur}
+        onChangeText={(value) => props.setCouleur(value)}
+
       />
       <Text
         style={{
@@ -69,7 +77,7 @@ const DroplistVetEnf = (props) => {
         ]}
         defaultRating={4}
         size={20}
-        // onFinishRating={rating => console.log(rating)}
+        onFinishRating={rating => props.setEtat(rating)}
       />
     </Card>
   );
