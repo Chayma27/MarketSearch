@@ -27,10 +27,15 @@ import {
 const PublishAnnonce = (props) => {
   // state droplistMode 
   const [TypeVet, setTypeVet] = useState('');
+  const [TypeChauss, setTypeChauss] = useState('');
+  const [TypeSac, setTypeSac] = useState('');
   const [Taille, setTaille] = useState('');
   const [Marque, setMarque] = useState('');
   const [Couleur, setCouleur] = useState('');
   const [Etat, setEtat] = useState('');
+  const [Univers, setUnivers] = useState('');
+  const [Pointure, setPointure] = useState('');
+  const [Matiere, setMatiere] = useState('');
   // 
 
 
@@ -182,10 +187,26 @@ const PublishAnnonce = (props) => {
             /> 
           }
           else if (selectedSCtg == "Chaussures") {
-            return <DroplistChauss /> 
+            return <DroplistChauss
+            setUnivers={setUnivers}
+            setTypeChauss={setTypeChauss} 
+            setPointure={setPointure} 
+            setTaille={setTaille} 
+            setMarque={setMarque} 
+            setCouleur={setCouleur} 
+            setEtat={setEtat} 
+            /> 
           }
           else if (selectedSCtg == "Sac, bagage et accessoires") {
-            return <DroplistSacBag /> 
+            return <DroplistSacBag
+            setUnivers={setUnivers}
+            setTypeSac={setTypeSac} 
+            setMatiere={setMatiere} 
+            setTaille={setTaille} 
+            setMarque={setMarque} 
+            setCouleur={setCouleur} 
+            setEtat={setEtat} 
+            /> 
           }
           else if (selectedSCtg == "Bijoux et montres") {
             return <DroplistBijMontre /> 
@@ -202,7 +223,7 @@ const PublishAnnonce = (props) => {
           <Text
             style={{ fontSize: 22, fontWeight: "bold", textAlign: "center" }}
           >
-            Description de l'article {TypeVet}
+            Description de l'article {}
           </Text>
           <TextInput
             onChangeText={onChangeNumber}

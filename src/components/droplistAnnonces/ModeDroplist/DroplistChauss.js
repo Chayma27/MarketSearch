@@ -25,24 +25,32 @@ const DroplistChauss = (props) => {
         iconColor="#E1E1E1"
         label="Univers"
         data={Chauss[0].Univers}
+        onChangeText={(value) => props.setUnivers(value)}
+
       />
       <Dropdown
         icon="chevron-down"
         iconColor="#E1E1E1"
         label="Type chaussure"
         data={Chauss[0].TypeChaussure}
+        onChangeText={(value) => props.setTypeChauss(value)}
+
       />
         <Dropdown
         icon="chevron-down"
         iconColor="#E1E1E1"
         label="Pointure"
         data={Chauss[0].Pointure}
+        onChangeText={(value) => props.setPointure(value)}
+
       />
       <Dropdown
         icon="chevron-down"
         iconColor="#E1E1E1"
         label="Marque"
         data={Chauss[0].Marque}
+        onChangeText={(value) => props.setMarque(value)}
+
       />
 
       <Dropdown
@@ -50,6 +58,8 @@ const DroplistChauss = (props) => {
         iconColor="#E1E1E1"
         label="Couleur"
         data={VetF[0].Couleur}
+        onChangeText={(value) => props.setCouleur(value)}
+
       />
       <Text
         style={{
@@ -75,7 +85,7 @@ const DroplistChauss = (props) => {
         ]}
         defaultRating={4}
         size={20}
-        // onFinishRating={rating => console.log(rating)}
+        onFinishRating={rating => props.setEtat(rating)}
       />
     </Card>
   );
