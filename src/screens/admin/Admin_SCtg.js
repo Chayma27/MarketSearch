@@ -40,8 +40,11 @@ const Admin_SCtg = (props) => {
     };
   return (
     <Formik
-      initialValues={{ name: "", categorie : "" }}
+      initialValues={{ name: ""  }}
       onSubmit={(values) => {
+        values['uri_image'] = image;
+        values['categorie'] = selectedCtg;
+
         console.log(values);
       }}
     >
@@ -148,7 +151,7 @@ const Admin_SCtg = (props) => {
                 ></View>
                 <Button
                   title="Créer la sous catégorie"
-                  buttonStyle={{ backgroundColor: "#4f9deb" }}
+                  buttonStyle={{ backgroundColor: "#4f9deb", marginBottom : '8%' }}
                   onPress={handleSubmit}
                 />
               </Card>

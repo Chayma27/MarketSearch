@@ -17,7 +17,7 @@ const DroplistVetH = (props) => {
       }}
     >
       {" "}
-      Dites-nous en plus !{" "}
+      Dites-nous en plus !{" "}  
     </Text>
     {/* return en fonction de selectedSctg */}
 
@@ -26,6 +26,8 @@ const DroplistVetH = (props) => {
         iconColor="#E1E1E1"
         label="Type de vêtement"
         data={VetH[0].TypeVetement}
+        onChangeText={(value) => console.log(value)}
+
       />
       <Dropdown
         icon="chevron-down"

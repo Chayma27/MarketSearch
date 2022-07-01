@@ -6,7 +6,7 @@ import { Dropdown } from "react-native-material-dropdown-v2-fixed";
 import { PricingCard } from "react-native-elements";
 import * as ref_Annonce from "../utilitaires/Ref_Annonce";
 import * as Ref_Mode from "../utilitaires/Ref_Mode";
-
+import { Formik } from "formik";  
 import DroplistVetF from "../components/droplistAnnonces/ModeDroplist/DroplistVetF";
 import DroplistVetH from "../components/droplistAnnonces/ModeDroplist/DroplistVetH";
 import DroplistVetEnf from "../components/droplistAnnonces/ModeDroplist/DroplistVetEnf";
@@ -87,6 +87,30 @@ const PublishAnnonce = (props) => {
     }
   };
   return (
+    <Formik
+    initialValues={{ titre: "", description : ""  }}
+    onSubmit={(values) => {
+      values['uri_image'] = image;
+      values['categorie'] = selectedCtg;
+      values['sous_categorie'] = selectedSCtg;
+      values['prix'] = text;
+      if (selectedCtg=='Mode')
+       {
+        values['tailleVetement'] = 'XXL';
+        // delete ceux de l'autre categorie 
+        delete values['moteur'];
+
+       } else if (selectedCtg == 'Véhicule'){
+        values['moteur'] = 'Diesel';
+        // delete ceux de l'autre categorie 
+
+        delete values['tailleVetement'];
+
+       }
+      console.log(values);
+    }}
+  >
+    {({ handleChange, handleBlur, handleSubmit, values }) => (
     <ScrollView>
       <View style={styles.container}>
         <Card>
@@ -96,7 +120,11 @@ const PublishAnnonce = (props) => {
             {" "}
             Commencons par !{" "}
           </Text>
-          <Input placeholder="Titre de l'annonce" />
+          <Input placeholder="Titre de l'annonce"
+           value={values.titre}
+           onChangeText={handleChange('titre')}
+           onBlur={handleBlur('titre')}
+          />
           <Dropdown
             icon="chevron-down"
             iconColor="#E1E1E1"
@@ -155,6 +183,9 @@ const PublishAnnonce = (props) => {
             placeholder="Description ... "
             multiline={true}
             numberOfLines={5}
+            value={values.description}
+            onChangeText={handleChange('description')}
+            // onBlur={handleBlur('description')}
           />
         </Card>
 
@@ -212,10 +243,14 @@ const PublishAnnonce = (props) => {
           <Button
             title="Publier annonce"
             buttonStyle={{ backgroundColor: "#4f9deb" }}
+            onPress={handleSubmit}
+
           />
         </Card>
       </View>
     </ScrollView>
+       )}
+       </Formik>
   );
 };
 const styles = StyleSheet.create({

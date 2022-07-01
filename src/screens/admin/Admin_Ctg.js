@@ -110,7 +110,7 @@ const Admin_Ctg = (props) => {
                 ></View>
                 <Button
                   title="Créer la catégorie"
-                  buttonStyle={{ backgroundColor: "#4f9deb" }}
+                  buttonStyle={{ backgroundColor: "#4f9deb" , marginBottom : '8%' }}
                   onPress={handleSubmit}
                 />
               </Card>

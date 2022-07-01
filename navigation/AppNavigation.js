@@ -100,11 +100,10 @@ const AppNavigation = () => {
       <Stack.Screen name="User" component={User} options={{  title : 'Gestion des utilisateurs'}} />
       <Stack.Screen name="Annonces" component={Annonces} options={{  title : 'Gestion des annonces'}} />
       <Stack.Screen name="adminEspace" component={AdminEspace} options={{  title : 'Espace Administrateur'}} />
-      <Stack.Screen name="DashboardAdmin" component={DashboardAdmin} options={{  title : 'Dashboard Admin'}} />
+      <Stack.Screen name="DashboardAdmin" component={DashboardAdmin} options={{  title : 'Dashboard Admin'}} options={{headerLeft:()=> null , headerShown : false}} />
       <Stack.Screen name="GererCategorie" component={GererCategorie} options={{  title : 'Gestion des catégories'}} />
       <Stack.Screen name="AdminCategories" component={AdminCategories} options={{  title : 'Gestion des catégories'}} />
       <Stack.Screen name="AdminSousCategories" component={AdminSousCategories} options={{  title : 'Gestion des sous catégories'}} />
-   
     </Stack.Navigator>
   </NavigationContainer>
   );
