@@ -1,4 +1,4 @@
-import React from "react";
+import React,{ useState } from "react";
 import {View,StyleSheet} from  'react-native'
 import { Text, Card, Icon, Input, Button, AirbnbRating } from "react-native-elements";
 import { Dropdown } from "react-native-material-dropdown-v2-fixed";
@@ -7,8 +7,9 @@ const VetF = Ref_Mode.VetF;
 const VetH = Ref_Mode.VetH;
 
 const DroplistVetH = (props) => { 
+
     return(
-        <Card>
+    <Card>
     <Text
       style={{
         fontSize: 22,
@@ -17,7 +18,7 @@ const DroplistVetH = (props) => {
       }}
     >
       {" "}
-      Dites-nous en plus !{" "}  
+      Dites-nous en plus !{" "}
     </Text>
     {/* return en fonction de selectedSctg */}
 
@@ -26,20 +27,23 @@ const DroplistVetH = (props) => {
         iconColor="#E1E1E1"
         label="Type de vêtement"
         data={VetH[0].TypeVetement}
-        onChangeText={(value) => console.log(value)}
-
+        onChangeText={(value) => props.setTypeVet(value)}
       />
       <Dropdown
         icon="chevron-down"
         iconColor="#E1E1E1"
         label="Taille"
         data={VetH[0].Taille}
+        onChangeText={(value) => props.setTaille(value)}
+
       />
       <Dropdown
         icon="chevron-down"
         iconColor="#E1E1E1"
         label="Marque"
         data={VetF[0].Marque}
+        onChangeText={(value) => props.setMarque(value)}
+
       />
 
       <Dropdown
@@ -47,6 +51,8 @@ const DroplistVetH = (props) => {
         iconColor="#E1E1E1"
         label="Couleur"
         data={VetF[0].Couleur}
+        onChangeText={(value) => props.setCouleur(value)}
+
       />
       <Text
         style={{
@@ -72,7 +78,7 @@ const DroplistVetH = (props) => {
         ]}
         defaultRating={4}
         size={20}
-        // onFinishRating={rating => console.log(rating)}
+        onFinishRating={rating => props.setEtat(rating)}
       />
   </Card>
     )

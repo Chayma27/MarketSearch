@@ -25,6 +25,15 @@ import {
   AntDesign,
 } from "@expo/vector-icons";
 const PublishAnnonce = (props) => {
+  // state droplistMode 
+  const [TypeVet, setTypeVet] = useState('');
+  const [Taille, setTaille] = useState('');
+  const [Marque, setMarque] = useState('');
+  const [Couleur, setCouleur] = useState('');
+  const [Etat, setEtat] = useState('');
+  // 
+
+
   const [image, setImage] = useState(null);
   const [number, onChangeNumber] = React.useState(null);
   const [text, onChangeText] = React.useState("0");
@@ -96,7 +105,7 @@ const PublishAnnonce = (props) => {
       values['prix'] = text;
       if (selectedCtg=='Mode')
        {
-        values['tailleVetement'] = 'XXL';
+        values['TypeVet'] = 'XXL';
         // delete ceux de l'autre categorie 
         delete values['moteur'];
 
@@ -145,14 +154,28 @@ const PublishAnnonce = (props) => {
         {(() => {
           if (selectedSCtg == "Vêtements femme")
           {
-          return <DroplistVetF />
+          return <DroplistVetF
+          setTypeVet={setTypeVet} 
+            setTaille={setTaille} 
+            setMarque={setMarque} 
+            setCouleur={setCouleur} 
+            setEtat={setEtat} 
+          />
           }
           else if (selectedSCtg == "Vêtements homme")
           {
-            return <DroplistVetH /> 
+            return <DroplistVetH 
+            setTypeVet={setTypeVet} 
+            setTaille={setTaille} 
+            setMarque={setMarque} 
+            setCouleur={setCouleur} 
+            setEtat={setEtat} 
+            /> 
           }
           else if (selectedSCtg == "Vêtements enfant") {
-            return <DroplistVetEnf /> 
+            return <DroplistVetEnf 
+            
+            /> 
           }
           else if (selectedSCtg == "Chaussures") {
             return <DroplistChauss /> 
@@ -175,7 +198,7 @@ const PublishAnnonce = (props) => {
           <Text
             style={{ fontSize: 22, fontWeight: "bold", textAlign: "center" }}
           >
-            Description de l'article
+            Description de l'article {TypeVet}
           </Text>
           <TextInput
             onChangeText={onChangeNumber}
@@ -195,7 +218,7 @@ const PublishAnnonce = (props) => {
           <Text
             style={{ fontSize: 22, fontWeight: "bold", textAlign: "center" }}
           >
-            Ajouter une photo
+            Ajouter une photo 
           </Text>
           <TouchableOpacity onPress={pickImage} style={{alignItems: 'center'}}>
           <Image style={styles.resizePicture} source={require('../../assets/add-photo.png')} />
