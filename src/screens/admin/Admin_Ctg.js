@@ -51,6 +51,8 @@ const Admin_Ctg = (props) => {
                     fontSize: 22,
                     fontWeight: "bold",
                     textAlign: "center",
+                    marginBottom : '5%'
+
                   }}
                 >
                   {" "}

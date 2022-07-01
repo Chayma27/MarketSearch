@@ -164,7 +164,7 @@ const PublishAnnonce = (props) => {
           <Text
             style={{ fontSize: 22, fontWeight: "bold", textAlign: "center" }}
           >
-            Ajouter des photos
+            Ajouter une photo
           </Text>
           <TouchableOpacity onPress={pickImage} style={{alignItems: 'center'}}>
           <Image style={styles.resizePicture} source={require('../../assets/add-photo.png')} />

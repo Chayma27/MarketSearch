@@ -15,7 +15,6 @@ import * as ImagePicker from "expo-image-picker";
 import { result } from "lodash";
 import * as ref_Annonce from "../../utilitaires/Ref_Annonce";
 import { Dropdown } from "react-native-material-dropdown-v2-fixed";
-
 const Admin_SCtg = (props) => {
   const [number, onChangeNumber] = React.useState(null);
   const [text, onChangeText] = React.useState("0");
@@ -23,6 +22,22 @@ const Admin_SCtg = (props) => {
   const [selectedCtg, setSelectedCtg] = useState("");
   const ctg = ref_Annonce.ctg;
 
+
+    const pickImage = async () => {
+      // No permissions request is necessary for launching the image library
+      let result = await ImagePicker.launchImageLibraryAsync({
+        mediaTypes: ImagePicker.MediaTypeOptions.All,
+        allowsEditing: true,
+        aspect: [4, 3],
+        quality: 1,
+      });
+  
+      console.log(result);
+  
+      if (!result.cancelled) {
+        setImage(result.uri);
+      }
+    };
   return (
     <Formik
       initialValues={{ name: "", categorie : "" }}
@@ -40,6 +55,7 @@ const Admin_SCtg = (props) => {
                     fontSize: 22,
                     fontWeight: "bold",
                     textAlign: "center",
+                    marginBottom : '5%'
                   }}
                 >
                   {" "}
@@ -86,6 +102,40 @@ const Admin_SCtg = (props) => {
                   <Text>
                   Veuillez sélectionner la catégorie qui sera attribuée à la nouvelle sous-catégorie que vous souhaitez créer
                   </Text>
+                </View>
+              </Card>
+              <Card>
+                <Text
+                  style={{
+                    fontSize: 20,
+                    fontWeight: "bold",
+                    textAlign: "center",
+                  }}
+                >
+                  Importer une photo de sous catégorie
+                </Text>
+                <TouchableOpacity
+                  style={{ alignItems: "center" }}
+                  onPress={pickImage}
+                >
+                  <Image
+                    style={styles.resizePicture}
+                    source={require("../../../assets/add-photo.png")}
+                  />
+                </TouchableOpacity>
+                <View
+                  style={{
+                    flex: 1,
+                    alignItems: "center",
+                    justifyContent: "center",
+                  }}
+                >
+                  {image && (
+                    <Image
+                      source={{ uri: image }}
+                      style={{ width: 200, height: 200 }}
+                    />
+                  )}
                 </View>
               </Card>
               <Card>
@@ -136,4 +186,4 @@ const styles = StyleSheet.create({
     height: 150,
   },
 });
-export default Admin_SCtg;
+export default Admin_SCtg ;
