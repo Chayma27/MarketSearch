@@ -24,17 +24,11 @@ const M_Citroen = Ref_Vehicule.M_Citroen;
 const Voiture = Ref_Vehicule.Voiture;
 
 const DroplistVoiture = (props) => {
-  const [selectedMarque, setSelectedMarque] = useState("");
-  const [selectedModel, setSelectedModel] = useState("");
-  const [date, setDate] = useState("01-01-2020");
-  const [state, setState] = useState(0);
 
-
-  const [value, setValue] = useState(0);
   const [vertValue, setVertValue] = useState(0);
 
   const interpolate = (start, end) => {
-    let k = (value - 0) / 10; // 0 =>min  && 10 => MAX
+    let k = (props.Puissance - 0) / 10; // 0 =>min  && 10 => MAX
     return Math.ceil((1 - k) * start + k * end) % 256;
   };
 
@@ -47,7 +41,7 @@ const DroplistVoiture = (props) => {
 
 
   const SctgCallBack = () => {
-    switch (selectedMarque) {
+    switch (props.selectedMarque) {
       case "Audi":
         return M_Audi;
         break;
@@ -95,56 +89,70 @@ const DroplistVoiture = (props) => {
         iconColor="#E1E1E1"
         label="Marque"
         data={Voiture[0].Marque}
-        onChangeText={(value) => setSelectedMarque(value)}
+        onChangeText={(value) => props.setSelectedMarque(value)}
       />
       <Dropdown
         icon="chevron-down"
         iconColor="#E1E1E1"
         label="Modèle"
         data={SctgCallBack()}
-        onChangeText={(value) => setSelectedModel(value)}
+        onChangeText={(value) => props.setSelectedModel(value)}
       />
       <Dropdown
         icon="chevron-down"
         iconColor="#E1E1E1"
         label="Année modèle"
         data={Voiture[0].AnneeModele}
+        onChangeText={(value) => props.setAnnee_model(value)}
+
       />
       <Dropdown
         icon="chevron-down"
         iconColor="#E1E1E1"
         label="Carburant"
         data={Voiture[0].Carburant}
-      />
+        onChangeText={(value) => props.setCarburant(value)}
+
+/>
       <Dropdown
         icon="chevron-down"
         iconColor="#E1E1E1"
         label="Boite de vitesse"
         data={Voiture[0].BoiteVitesse}
+        onChangeText={(value) => props.setBoiteVitesse(value)}
+
       />
       <Dropdown
         icon="chevron-down"
         iconColor="#E1E1E1"
         label="Nombre de porte"
         data={Voiture[0].NbrPorte}
+        onChangeText={(value) => props.setNbPorte(value)}
+
       />
       <Dropdown
         icon="chevron-down"
         iconColor="#E1E1E1"
         label="Nombre de places"
         data={Voiture[0].NbrPlace}
+        onChangeText={(value) => props.setNbPlace(value)}
+
       />
       <Dropdown
         icon="chevron-down"
         iconColor="#E1E1E1"
         label="Couleur"
         data={Voiture[0].Couleur}
+        onChangeText={(value) => props.setCouleur(value)}
+
       />
       <Dropdown
         icon="chevron-down"
         iconColor="#E1E1E1"
         label="Type de véhicule"
         data={Voiture[0].TypeVehicule}
+        onChangeText={(value) => props.setTypeVehicule(value)}
+
       />
       <Text
         style={{
@@ -166,7 +174,7 @@ const DroplistVoiture = (props) => {
       >
         <DatePicker
           style={styles.datePickerStyle}
-          date={date} //initial date from state
+          date={props.date} //initial date from state
           mode="date" //The enum of date, datetime and time
           placeholder="select date"
           format="DD-MM-YYYY"
@@ -187,10 +195,13 @@ const DroplistVoiture = (props) => {
             },
           }}
           onDateChange={(date) => {
-            setDate(date);
+            props.setDate(date);
           }}
         />
+       {/* <Text style={{ paddingTop: 20 }}>la date  : {date}</Text> */}
+
       </View>
+      
       <Divider
         color="#f8f8f9"
         style={{ borderWidth: 0.5, marginBottom: "4%" }}
@@ -215,11 +226,13 @@ const DroplistVoiture = (props) => {
       >
         <NumericInput
           onLimitReached={(isMax, msg) => console.log(isMax, msg)}
-          value={state}
+          value={props.kilo}
           minValue={0}
           step={20}
-          onChange={(value) => setState({ value })}
+          onChange={(value) => props.setKilo(value)}
         />
+                {/* <Text style={{ paddingTop: 20 }}>km : {kilo}</Text> */}
+
       </View>
 
       <Divider
@@ -239,8 +252,8 @@ const DroplistVoiture = (props) => {
       </Text>
       <View style={[styles.contentView]}>
         <Slider
-          value={value}
-          onValueChange={setValue}
+          value={props.Puissance}
+          onValueChange={props.setPuissance}
           maximumValue={10}
           minimumValue={0}
           step={1}
@@ -260,7 +273,7 @@ const DroplistVoiture = (props) => {
             ),
           }}
         />
-        <Text style={{ paddingTop: 20 }}>Value: {value}</Text>
+        <Text style={{ paddingTop: 20 }}>C.V : {props.Puissance}</Text>
       </View>
 
 

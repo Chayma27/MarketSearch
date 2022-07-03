@@ -37,7 +37,18 @@ const PublishAnnonce = (props) => {
   const [Univers, setUnivers] = useState('');
   const [Pointure, setPointure] = useState('');
   const [Matiere, setMatiere] = useState('');
-  // 
+  // state droplistVehicule 
+  const [selectedMarque, setSelectedMarque] = useState("");
+  const [selectedModel, setSelectedModel] = useState("");
+  const [annee_model, setAnnee_model] = useState("")
+  const [Carburant, setCarburant] = useState("")
+  const [BoiteVitesse, setBoiteVitesse] = useState("")
+  const [NbPorte, setNbPorte] = useState("")
+  const [NbPlace, setNbPlace] = useState("")
+  const [TypeVehicule, setTypeVehicule] = useState("")
+  const [date, setDate] = useState("01-01-2020");
+  const [kilo, setKilo] = useState(0);
+  const [Puissance, setPuissance] = useState(0);
 
 
   const [image, setImage] = useState(null);
@@ -220,7 +231,24 @@ const PublishAnnonce = (props) => {
             setEtat={setEtat}  /> 
           }
           else if (selectedSCtg == "Voitures") {
-            return <DroplistVoiture /> 
+            return <DroplistVoiture
+            setSelectedMarque={setSelectedMarque}
+            selectedMarque={selectedMarque}
+            setSelectedModel={setSelectedModel}
+            selectedModel={selectedMarque}
+            setAnnee_model={setAnnee_model}
+            setCarburant={setCarburant}
+            setBoiteVitesse={setBoiteVitesse}
+            setNbPorte={setNbPorte}
+            setNbPlace={setNbPlace}
+            setCouleur={setCouleur}
+            setTypeVehicule={setTypeVehicule}
+            setDate={setDate}
+            setKilo={setKilo}
+            setPuissance={setPuissance}
+            date={date}
+            Puissance={Puissance}
+            /> 
           }
           else if (selectedSCtg == "Motos") {
             return <DroplistMoto /> 
@@ -231,7 +259,7 @@ const PublishAnnonce = (props) => {
           <Text
             style={{ fontSize: 22, fontWeight: "bold", textAlign: "center" }}
           >
-            Description de l'article {Etat}
+            Description de l'article 
           </Text>
           <TextInput
             onChangeText={onChangeNumber}
