@@ -21,15 +21,15 @@ const Voiture = Ref_Vehicule.Voiture;
 const DroplistMoto = (props) => {
     const [selectedMarque, setSelectedMarque] = useState("");
     const [selectedModel, setSelectedModel] = useState("");
-    const [date, setDate] = useState('01-01-2020');
-    const [state, setState] = useState(0);
+    // const [date, setDate] = useState('01-01-2020');
+    // const [state, setState] = useState(0);
 
 
-    const [value, setValue] = useState(0);
+    // const [value, setValue] = useState(0);
     const [vertValue, setVertValue] = useState(0);
   
     const interpolate = (start, end) => {
-      let k = (value - 0) / 10; // 0 =>min  && 10 => MAX
+      let k = (props.Puissance - 0) / 10; // 0 =>min  && 10 => MAX
       return Math.ceil((1 - k) * start + k * end) % 256;
     };
   
@@ -118,7 +118,7 @@ const DroplistMoto = (props) => {
       >
         <DatePicker
           style={styles.datePickerStyle}
-          date={date} //initial date from state
+          date={props.date} //initial date from state
           mode="date" //The enum of date, datetime and time
           placeholder="select date"
           format="DD-MM-YYYY"
@@ -139,7 +139,7 @@ const DroplistMoto = (props) => {
             },
           }}
           onDateChange={(date) => {
-            setDate(date);
+            props.setDate(date);
           }}
         />
       </View>
@@ -167,10 +167,10 @@ const DroplistMoto = (props) => {
       >
         <NumericInput
           onLimitReached={(isMax, msg) => console.log(isMax, msg)}
-          value={state}
+          value={props.kilo}
           minValue={0}
           step={20}
-          onChange={(value) => setState({ value })}
+          onChange={(value) => props.setKilo(value)}
         />
       </View>
 
@@ -191,8 +191,8 @@ const DroplistMoto = (props) => {
       </Text>
       <View style={[styles.contentView]}>
         <Slider
-          value={value}
-          onValueChange={setValue}
+          value={props.Puissance}
+          onValueChange={props.setPuissance}
           maximumValue={10}
           minimumValue={0}
           step={1}
@@ -212,7 +212,7 @@ const DroplistMoto = (props) => {
             ),
           }}
         />
-        <Text style={{ paddingTop: 20 }}>Value: {value}</Text>
+        <Text style={{ paddingTop: 20 }}>C.V: {props.Puissance}</Text>
       </View>
 
     </Card>

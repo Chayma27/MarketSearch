@@ -49,7 +49,7 @@ const PublishAnnonce = (props) => {
   const [date, setDate] = useState("01-01-2020");
   const [kilo, setKilo] = useState(0);
   const [Puissance, setPuissance] = useState(0);
-
+// state dropListMoto
 
   const [image, setImage] = useState(null);
   const [number, onChangeNumber] = React.useState(null);
@@ -251,7 +251,14 @@ const PublishAnnonce = (props) => {
             /> 
           }
           else if (selectedSCtg == "Motos") {
-            return <DroplistMoto /> 
+            return <DroplistMoto
+            setDate={setDate}
+            kilo={kilo}
+            setKilo={setKilo}
+            setPuissance={setPuissance}
+            date={date}
+            Puissance={Puissance}
+            /> 
           }
 
         })()}
@@ -259,7 +266,7 @@ const PublishAnnonce = (props) => {
           <Text
             style={{ fontSize: 22, fontWeight: "bold", textAlign: "center" }}
           >
-            Description de l'article 
+            Description de l'article {kilo}
           </Text>
           <TextInput
             onChangeText={onChangeNumber}
