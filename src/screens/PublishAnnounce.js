@@ -231,7 +231,6 @@ const PublishAnnonce = (props) => {
               break;
             case "Sac, bagage et accessoires":
 
-            console.log('bienvenue')
               values["Univers"] = Univers;
               values["typeSac"] = TypeSac;
               values["Taille"] = Taille;
