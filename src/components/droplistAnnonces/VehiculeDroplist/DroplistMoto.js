@@ -19,8 +19,8 @@ const Voiture = Ref_Vehicule.Voiture;
 
 
 const DroplistMoto = (props) => {
-    const [selectedMarque, setSelectedMarque] = useState("");
-    const [selectedModel, setSelectedModel] = useState("");
+    // const [selectedMarque, setSelectedMarque] = useState("");
+    // const [selectedModel, setSelectedModel] = useState("");
     // const [date, setDate] = useState('01-01-2020');
     // const [state, setState] = useState(0);
 
@@ -41,7 +41,7 @@ const DroplistMoto = (props) => {
     };
   
     const SctgCallBack = () => {
-        switch (selectedMarque) {
+        switch (props.selectedMarque) {
           case "Yamaha":
             return M_Yamaha;
             break;
@@ -71,32 +71,37 @@ const DroplistMoto = (props) => {
         iconColor="#E1E1E1"
         label="Marque"
         data={Moto[0].Marque}
-        onChangeText={(value) => setSelectedMarque(value)}
+        onChangeText={(value) => props.setSelectedMarque(value)}
       />
        <Dropdown
         icon="chevron-down"
         iconColor="#E1E1E1"
         label="Modèle"
         data={SctgCallBack()}
-        onChangeText={(value) => setSelectedModel(value)}
+        onChangeText={(value) => props.setSelectedModel(value)}
       />
            <Dropdown
         icon="chevron-down"
         iconColor="#E1E1E1"
         label="Année modèle"
         data={Voiture[0].AnneeModele}
+        onChangeText={(value) => props.setAnnee_model(value)}
+
       />
        <Dropdown
         icon="chevron-down"
         iconColor="#E1E1E1"
         label="Type"
         data={Moto[0].Type}
+        onChangeText={(value) => props.setTypeVehicule(value)}
       />
       <Dropdown
         icon="chevron-down"
         iconColor="#E1E1E1"
         label="Couleur"
         data={VetF[0].Couleur}
+        onChangeText={(value) => props.setCouleur(value)}
+
       />
        <Text
         style={{
