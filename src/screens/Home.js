@@ -69,8 +69,7 @@ const Home = (props) => {
     {
       Titre: "Pull",
       prix: "50 DT ",
-      description:
-        "Pull en maille retournée basique de la marque pull&bear",
+      description: "Pull en maille retournée basique de la marque pull&bear",
       path: require("../../assets/pull.jpg"),
     },
     {
@@ -78,35 +77,120 @@ const Home = (props) => {
       prix: "352 DT ",
       description:
         "Mon Guerlain est le nouveau parfum de la Maison, un hommage à la féminité d’aujourd’hui : une féminité forte, libre et sensuelle, inspirée par Angelina Jolie.",
-      path: require('../../assets/parfum.jpg'),
+      path: require("../../assets/parfum.jpg"),
     },
     {
       Titre: "Apple Watch series 6 ",
       prix: "1899 DT ",
       description:
         "L’Apple Watch Series 6 est une montre connectée. Elle représente la version 2020 de la célèbre montre d’Apple.",
-      path: require('../../assets/applewatch.png'),
+      path: require("../../assets/applewatch.png"),
     },
     {
       Titre: "Short Nike ",
       prix: "15 DT ",
-      description:
-        "Short Nike pour femme peu utilisé.",
-      path: require('../../assets/short.jpg'),
+      description: "Short Nike pour femme peu utilisé.",
+      path: require("../../assets/short.jpg"),
     },
     {
       Titre: "Tv Samsung Smart ",
       prix: "700 DT ",
       description:
         "Tv Samsung Smart état comme neuf, vente à cause de déménagement international.",
-      path: require('../../assets/Tv.jpeg'),
+      path: require("../../assets/Tv.jpeg"),
     },
   ];
   const BlackFridayAnnounced = [
-    { id: "1", title: "First item" },
-    { id: "2", title: "Second item" },
-    { id: "3", title: "Third item" },
-    { id: "4", title: "Fourth item" },
+    {
+      Titre: "Jean HM",
+      prix: "100 DT",
+      description:
+        "Jean 5 poches en denim de coton lavé. Modèle taille haute avec braguette zippée surmontée d’un bouton. Jambes droites et amples.",
+      path: require("../../assets/jean.jpg"),
+      soldeRemise: "-20%",
+      newPrice: "80 DT", // fonction
+    },
+    {
+      Titre: "Mercedes Gla",
+      prix: "149.000 DT",
+      description:
+        "Mercedes GLA excellant état, première main, toujours garée dans un garage fermé, édition limitée en finition avec toit ouvrant.",
+      path: require("../../assets/gla.jpeg"),
+      soldeRemise: "-10%",
+      newPrice: "134.100 DT",
+    },
+    {
+      Titre: "Thermomix TM5",
+      prix: "352 DT",
+      description:
+        "Thermomix connecté en très bon état, il vient d'être révisé et a donc un an de garantie confort.Pas sérieux s'abstenir",
+      path: require("../../assets/thermomix.jpeg"),
+      soldeRemise: "-40%",
+      newPrice: "281.6 DT",
+    },
+    {
+      Titre: "Nettoyeur bouteil lb",
+      prix: "123 DT",
+      description:
+        "Vend nettoyeCur bouteille graver lb déposée je le vend 120 Dinars.Pas sérieux s'abstenir",
+      path: require("../../assets/lb.jpeg"),
+      soldeRemise: "-40%",
+      newPrice: "73.8 DT",
+    },
+    {
+      Titre: "Sac chanel",
+      prix: "8.000 DT",
+      description:
+        "Véritable sac CHANEL modèle double rabat en cuir matelassé rouge. Caractérisé par la présence d'une pochette de chaque côté, à voir sur les photos. Modèle rare.",
+      path: require("../../assets/sac.jpeg"),
+      soldeRemise: "-40%",
+      newPrice: "60 DT",
+    },
+    {
+      Titre: "VELO VTC",
+      prix: "450 DT",
+      description:
+        "Velo vtc tres bon état general ,équipé du coffre arriére à clés amovible,panier avant, sacoche avec bidon,support avec pompe.compteur de vitesse.S i pas trop loin,je peux vous le livrer.",
+      path: require("../../assets/velo.jpeg"),
+      soldeRemise: "-40%",
+      newPrice: "60 DT",
+    },
+    {
+      Titre: "Rouge à lévres",
+      prix: "35 DT",
+      description:
+        "Rouge à lèvres liquide ultra mat de la marque SEPHORA, ultra couvrant, longue tenue et sans transfert.",
+      path: require("../../assets/Rouge.jpg"),
+      soldeRemise: "-40%",
+      newPrice: "60 DT",
+    },
+    {
+      Titre: "Pull",
+      prix: "50 DT ",
+      description: "Pull en maille retournée basique de la marque pull&bear",
+      path: require("../../assets/pull.jpg"),
+      soldeRemise: "-40%",
+      newPrice: "60 DT",
+    },
+    {
+      Titre: "Eau de parfum mon Guerlain ",
+      prix: "352 DT ",
+      description:
+        "Mon Guerlain est le nouveau parfum de la Maison, un hommage à la féminité d’aujourd’hui : une féminité forte, libre et sensuelle, inspirée par Angelina Jolie.",
+      path: require("../../assets/parfum.jpg"),
+      soldeRemise: "-40%",
+      newPrice: "60 DT",
+    },
+    {
+      Titre: "Apple Watch series 6 ",
+      prix: "1899 DT ",
+      description:
+        "L’Apple Watch Series 6 est une montre connectée. Elle représente la version 2020 de la célèbre montre d’Apple.",
+      path: require("../../assets/applewatch.png"),
+      soldeRemise: "-40%",
+      newPrice: "1139.4 DT",
+    },
+  
   ];
   const [search, setSearch] = useState("");
 
@@ -161,32 +245,6 @@ const Home = (props) => {
         <View>
           <Text style={styles.newsArtcl}>Ajout récents</Text>
         </View>
-
-        {/* <Card Titre = "Jean HM" prix= "100 DT" description="Jean 5 poches en denim de coton lavé. Modèle taille haute avec braguette zippée surmontée d’un bouton. Jambes droites et amples."
-        path={require('../../assets/jean.jpg')}/>
-        <Card Titre = "Mercedes GLA" prix= "149.000 DT" description="Mercedes GLA excellant état, première main, toujours garée dans un garage fermé, édition limitée en finition avec toit ouvrant ."
-        path={require('../../assets/gla.jpeg')}/>
-        <Card Titre = "Thermomix TM5" prix= "2.475 DT" description="Thermomix connecté en très bon état, il vient d'être révisé et a donc un an de garantie confort.Pas sérieux s'abstenir"
-        path={require('../../assets/thermomix.jpeg')}/>
-        <Card Titre = "Nettoyeur bouteil lb" prix= "120 DT" description="Vend nettoyeur bouteille graver lb déposée je le vend 120 Dinars.Pas sérieux s'abstenir"
-        path={require('../../assets/lb.jpeg')}/>
-        <Card Titre = "sac chanel " prix= "8.000 DT" description="Véritable sac CHANEL modèle double rabat en cuir matelassé rouge. Caractérisé par la présence d'une pochette de chaque côté, à voir sur les photos. Modèle rare."
-        path={require('../../assets/sac.jpeg')}/>
-        <Card Titre = "Velo Vtc" prix= "450 DT" description="Velo vtc tres bon état general ,équipé du coffre arriére à clés amovible,panier avant, sacoche avec bidon,support avec pompe.compteur de vitesse.S i pas trop loin,je peux vous le livrer."
-        path={require('../../assets/velo.jpeg')}/>
-        <Card Titre = "Pull" prix= "50 DT" description="Pull en maille retournée basique de la marque pull&bear"
-        path={require('../../assets/pull.jpg')}/>
-        <Card Titre = "Rouge à lévres" prix= "35 DT" description="Rouge à lèvres liquide ultra mat de la marque SEPHORA, ultra couvrant, longue tenue et sans transfert."
-        path={require('../../assets/Rouge.jpg')}/>
-        <Card Titre = "Eau de parfum mon Guerlain " prix= "352 DT" description="Mon Guerlain est le nouveau parfum de la Maison, un hommage à la féminité d’aujourd’hui : une féminité forte, libre et sensuelle, inspirée par Angelina Jolie."
-        path={require('../../assets/parfum.jpg')}/>
-        <Card Titre = "Apple Watch series 6 " prix= "1899 DT" description="L’Apple Watch Series 6 est une montre connectée. Elle représente la version 2020 de la célèbre montre d’Apple."
-        path={require('../../assets/applewatch.png')}/>
-        <Card Titre = "Short Nike " prix= "15 DT" description="Short Nike pour femme peu utilisé."
-        path={require('../../assets/short.jpg')}/>
-        <Card Titre = "Tv Samsung Smart " prix= "700 DT" description="Tv Samsung Smart état comme neuf, vente à cause de déménagement international."
-        path={require('../../assets/Tv.jpeg')}/>
-         */}
         <FlatList
           data={RecentAnnounced}
           horizontal={true}
@@ -221,9 +279,8 @@ const Home = (props) => {
           </View>
           <Text style={styles.BlackFriday}>Black Friday</Text>
         </View>
-        <ScrollView horizontal={true}>
-          <View style={styles.product}>
-            <Promo
+
+        {/* <Promo
               Titre="Jean HM"
               prix="100 DT"
               description="Jean 5 poches en denim de coton lavé. Modèle taille haute avec braguette zippée surmontée d’un bouton. Jambes droites et amples."
@@ -270,9 +327,26 @@ const Home = (props) => {
               path={require("../../assets/applewatch.png")}
               soldeRemise="SOLDE -30%"
               newPrice="1329.3 DT"
-            />
-          </View>
-        </ScrollView>
+            /> */}
+        <FlatList
+          data={BlackFridayAnnounced}
+          horizontal={true}
+          keyExtractor={(item) => item.Titre}
+          renderItem={({ item }) => (
+            <ScrollView horizontal={true}>
+              <View style={styles.product}>
+                <Promo
+                  Titre={item.Titre}
+                  prix={item.prix}
+                  description={item.description}
+                  path={item.path}
+                  soldeRemise={item.soldeRemise}
+                  newPrice={item.newPrice}
+                />
+              </View>
+            </ScrollView>
+          )}
+        />
       </KeyboardAwareScrollView>
     </View>
   );
